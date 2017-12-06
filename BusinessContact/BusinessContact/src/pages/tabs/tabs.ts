@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 
 import { KampagnePage} from '../kampagne/kampagne';
 import { ContactPage } from '../contact/contact';
-import { VoicerecorderPage} from '../voicerecord/voicerecord';
+import { VoicerecorderPage } from '../voicerecord/voicerecord';
+
 @Component({
   templateUrl: 'tabs.html'
 })
