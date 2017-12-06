@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import { KampagnePage} from '../kampagne/kampagne';
 import { ContactPage } from '../contact/contact';
-
+import { VoicerecorderPage } from '../voicerecord/voicerecord';
 @Component({
   templateUrl: 'tabs.html'
 })
@@ -11,6 +11,7 @@ export class TabsPage {
   // should be each tab's root Page
     tab1Root: any = ContactPage;
     tab2Root: any = KampagnePage;
+    tab3root: any = VoicerecorderPage;
 
   constructor() {
 
