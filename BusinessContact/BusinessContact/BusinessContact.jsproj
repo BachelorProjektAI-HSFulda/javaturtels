@@ -55,6 +55,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>7921889d-4f1c-40d9-9393-fc1aad7b7b87</ProjectGuid>
+    <TypeScriptToolsVersion>2.3</TypeScriptToolsVersion>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup Condition="'$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '15.0'">
