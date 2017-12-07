@@ -4,14 +4,12 @@ import { MyApp } from './app.component';
 import { ContactPage } from '../pages/contact/contact';
 import { KampagnePage} from '../pages/kampagne/kampagne';
 import { TabsPage } from '../pages/tabs/tabs';
-import { VoicerecorderPage } from '../pages/voicerecord/voicerecord';
 
 @NgModule({
   declarations: [
     MyApp,
     ContactPage,
     KampagnePage,
-    VoicerecorderPage,
     TabsPage
   ],
   imports: [
@@ -22,7 +20,6 @@ import { VoicerecorderPage } from '../pages/voicerecord/voicerecord';
     MyApp,
     ContactPage,
     KampagnePage,
-    VoicerecorderPage,
     TabsPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
