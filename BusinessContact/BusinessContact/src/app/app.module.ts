@@ -4,13 +4,16 @@ import { MyApp } from './app.component';
 import { ContactPage } from '../pages/contact/contact';
 import { KampagnePage} from '../pages/kampagne/kampagne';
 import { TabsPage } from '../pages/tabs/tabs';
-
+import { voicePage } from '../pages/voice/voice';
+import { groupsPage } from '../pages/groups/groups';
 @NgModule({
   declarations: [
     MyApp,
     ContactPage,
     KampagnePage,
-    TabsPage
+      TabsPage,
+      voicePage,
+    groupsPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -20,7 +23,9 @@ import { TabsPage } from '../pages/tabs/tabs';
     MyApp,
     ContactPage,
     KampagnePage,
-    TabsPage
+      TabsPage,
+      voicePage,
+    groupsPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
