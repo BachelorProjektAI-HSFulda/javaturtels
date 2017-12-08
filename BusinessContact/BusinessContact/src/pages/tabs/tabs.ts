@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 
 import { KampagnePage} from '../kampagne/kampagne';
 import { ContactPage } from '../contact/contact';
-import { voicePage } from '../voice/voice';
 import { groupsPage } from '../groups/groups';
 @Component({
   templateUrl: 'tabs.html'
@@ -13,7 +12,7 @@ export class TabsPage {
     tab1Root: any = ContactPage;
     tab2Root: any = KampagnePage;
     tab3Root: any = groupsPage;
-    tab4Root: any = voicePage;
+
 
   constructor() {
 

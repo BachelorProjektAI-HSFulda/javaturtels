@@ -4,7 +4,6 @@ import { MyApp } from './app.component';
 import { ContactPage } from '../pages/contact/contact';
 import { KampagnePage} from '../pages/kampagne/kampagne';
 import { TabsPage } from '../pages/tabs/tabs';
-import { voicePage } from '../pages/voice/voice';
 import { groupsPage } from '../pages/groups/groups';
 @NgModule({
   declarations: [
@@ -12,7 +11,6 @@ import { groupsPage } from '../pages/groups/groups';
     ContactPage,
     KampagnePage,
       TabsPage,
-      voicePage,
     groupsPage
   ],
   imports: [
@@ -24,7 +22,6 @@ import { groupsPage } from '../pages/groups/groups';
     ContactPage,
     KampagnePage,
       TabsPage,
-      voicePage,
     groupsPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
