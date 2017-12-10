@@ -16,5 +16,10 @@ export class TabsPage {
 
   constructor() {
 
+    }
+
+  recordVoice()
+  {
+      alert("Record Your Voice");
   }
 }

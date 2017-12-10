@@ -5,6 +5,7 @@ import { ContactPage } from '../pages/contact/contact';
 import { KampagnePage} from '../pages/kampagne/kampagne';
 import { TabsPage } from '../pages/tabs/tabs';
 import { groupsPage } from '../pages/groups/groups';
+import { Camera } from '@ionic-native/camera';
 @NgModule({
   declarations: [
     MyApp,
@@ -24,6 +25,8 @@ import { groupsPage } from '../pages/groups/groups';
       TabsPage,
     groupsPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [
+  Camera,
+      { provide: ErrorHandler, useClass: IonicErrorHandler }]
 })
 export class AppModule {}

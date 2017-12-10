@@ -51,6 +51,9 @@
         },
         "cordova-plugin-file-transfer": {
             "PACKAGE_NAME": "io.cordova.myapp2d678f"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "io.cordova.myapp2d678f"
         }
     },
     "dependent_plugins": {

@@ -22215,3 +22215,14 @@ sub {
     padding-top: calc(16px + 20px);
   }
 }
+
+page-contact .block {
+  position: relative;
+}
+
+page-contact .block .deleteIcon {
+  position: absolute;
+  margin-left: 85%;
+  margin-top: 5px;
+  color: #ffffff;
+}
