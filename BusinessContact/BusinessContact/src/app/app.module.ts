@@ -6,13 +6,20 @@ import { KampagnePage} from '../pages/kampagne/kampagne';
 import { TabsPage } from '../pages/tabs/tabs';
 import { groupsPage } from '../pages/groups/groups';
 import { Camera } from '@ionic-native/camera';
+import { anmeldungPage } from '../pages/anmeldung/anmeldung';
+import { profilePage } from '../pages/profile/profile';
+import { helpPage } from '../pages/help/help'; 
+
 @NgModule({
   declarations: [
     MyApp,
     ContactPage,
     KampagnePage,
       TabsPage,
-    groupsPage
+    groupsPage,
+    anmeldungPage,
+    profilePage,
+    helpPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -23,7 +30,10 @@ import { Camera } from '@ionic-native/camera';
     ContactPage,
     KampagnePage,
       TabsPage,
-    groupsPage
+      groupsPage,
+      anmeldungPage,
+      profilePage, 
+      helpPage
   ],
   providers: [
   Camera,
