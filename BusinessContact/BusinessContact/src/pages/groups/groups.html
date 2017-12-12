@@ -7,7 +7,23 @@
 <ion-header>
 
   <ion-navbar color="primary">
-    <ion-title>groups</ion-title>
+    <ion-title class="titre">
+        groups
+        </ion-title>
+      <ion-buttons>
+          <button ion-button (click)="newContact()">
+              <ion-icon name="add"></ion-icon>
+          </button>
+      </ion-buttons>
+      <button ion-button menuToggle right>
+          <ion-icon name="more"></ion-icon>
+      </button>
+      <ion-buttons right>
+          <button ion-button (click)="search()">
+              <ion-icon name="search"></ion-icon>
+          </button>
+      </ion-buttons>
+
   </ion-navbar>
 
 </ion-header>
