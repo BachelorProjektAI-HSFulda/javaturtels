@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar color="primary">
-    <ion-title>
+    <ion-title class="titre">
        Contact
     </ion-title>
     <ion-buttons >
@@ -23,10 +23,10 @@
 <ion-content padding>
    <ion-grid>
        <ion-row>
-           <ion-col col-4 *ngFor="let pic of photo; let id = index">
+           <ion-col col-4 *ngFor="let photo of photos; let id = index">
                <ion-card class="block">
                    <ion-icon name="trash" class="deleteIcon" (click)="deleteContact(id)"></ion-icon>
-                   <img [src]="pic" *ngIf="pic"/>
+                   <img [src]="photo" *ngIf="photo"/>
                </ion-card>
            </ion-col>
        </ion-row>

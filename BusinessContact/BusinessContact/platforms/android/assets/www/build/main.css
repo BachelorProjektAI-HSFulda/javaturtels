@@ -22253,7 +22253,7 @@ page-anmeldung .image {
 page-anmeldung .image .imageBlock {
   width: inherit;
   height: inherit;
-  position: relative;
+  position: center;
 }
 
 page-contact .block {
@@ -22265,4 +22265,8 @@ page-contact .block .deleteIcon {
   margin-left: 85%;
   margin-top: 5px;
   color: #ffffff;
+}
+
+page-contact .titre {
+  text-align: center;
 }

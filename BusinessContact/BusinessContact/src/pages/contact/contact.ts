@@ -8,7 +8,7 @@ import { NavController, AlertController } from 'ionic-angular';
   templateUrl: 'contact.html'
 })
 export class ContactPage {
-    public photo: any;
+    public photos: any;
     public base64Image: String;
 
 
@@ -19,7 +19,7 @@ export class ContactPage {
 
   ng0nInit()
   {
-      this.photo = [];
+      this.photos = [];
   }
 
   newContact()
@@ -35,8 +35,8 @@ export class ContactPage {
           // imageData is either a base64 encoded string or a file URI
           // If it's base64:
           this.base64Image = 'data:image/jpeg;base64,' + imageData;
-          this.photo.push(this.base64Image); 
-          this.photo.reverse();
+          this.photos.push(this.base64Image); 
+          this.photos.reverse();
       }, (err) => {
           // Handle error
       });
@@ -58,7 +58,7 @@ export class ContactPage {
               {
                   text: 'yes',
                   handler: () => {
-                      this.photo.splice(index, 1); 
+                      this.photos.splice(index, 1); 
                   }
               }
           ]
