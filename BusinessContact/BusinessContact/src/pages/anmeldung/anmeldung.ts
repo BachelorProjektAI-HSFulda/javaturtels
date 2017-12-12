@@ -19,4 +19,14 @@ export class anmeldungPage {
         console.log('ionViewDidLoad anmeldungPage');
     }
 
+    signIn()
+    {
+        alert("you have clicked on sign In"); 
+    }
+
+    signUp()
+    {
+        alert("you have clicked on sign Up");
+    }
+
 }
