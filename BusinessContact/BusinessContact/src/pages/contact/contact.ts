@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Camera, CameraOptions } from '@ionic-native/camera';
-import { NavController, AlertController } from 'ionic-angular';
+import { NavController, AlertController, ActionSheetController } from 'ionic-angular';
 
 
 @Component({
@@ -13,7 +13,7 @@ export class ContactPage {
 
 
 
-  constructor(public navCtrl: NavController, private camera:Camera, private alert: AlertController) {
+    constructor(public navCtrl: NavController, private camera: Camera, private alert: AlertController, public actionSheetCtrl: ActionSheetController) {
 
     }
 
@@ -22,7 +22,45 @@ export class ContactPage {
       this.photos = [];
   }
 
-  newContact()
+
+  newAction()
+  {
+      let actionSheet = this.actionSheetCtrl.create({
+          title: 'New',
+          buttons: [
+              {
+                  text: 'Contact',
+                  role: 'contact',
+                  handler: () => {
+                      alert("Contact clicked");
+                  }
+              },
+              {
+                  text: 'group',
+                  handler: () => {
+                      alert("group clicked");
+                  }
+              },
+              {
+                  text: 'Campaign',
+                  handler: () => {
+                      alert("Campaign clicked");
+                  }
+              },
+              {
+                  text: 'Cancel',
+                  role: 'cancel',
+                  handler: () => {
+                      alert("Cancel clicked");
+                  }
+              }
+          ]
+      });
+
+      actionSheet.present();
+  }
+
+  takePicture()
   {
       const options: CameraOptions = {
           quality: 50,
