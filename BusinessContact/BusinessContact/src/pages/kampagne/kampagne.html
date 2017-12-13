@@ -1,4 +1,5 @@
 <ion-header>
+
     <ion-navbar color="primary">
         <ion-title>
             Campagain
@@ -17,9 +18,15 @@
             </button>
         </ion-buttons>
     </ion-navbar>
+
 </ion-header>
 
-<ion-content>
+<ion-content padding>
+
+    <ion-list inset>
+         <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">
+             {{ item }}
+         </button>
+    </ion-list>
 
 </ion-content>
-
