@@ -16,40 +16,13 @@ export class KampagnePage {
       window.open(url);
     }
 
-  newAction() {
-      let actionSheet = this.actionSheetCtrl.create({
-          title: 'New',
-          buttons: [
-              {
-                  text: 'Contact',
-                  role: 'contact',
-                  handler: () => {
-                      alert("Contact clicked");
-                  }
-              },
-              {
-                  text: 'group',
-                  handler: () => {
-                      alert("group clicked");
-                  }
-              },
-              {
-                  text: 'Campaign',
-                  handler: () => {
-                      alert("Campaign clicked");
-                  }
-              },
-              {
-                  text: 'Cancel',
-                  role: 'cancel',
-                  handler: () => {
-                      alert("Cancel clicked");
-                  }
-              }
-          ]
-      });
-
-      actionSheet.present();
+  newCampaign()
+  {
+      alert("new Campaign"); 
   }
 
+  search()
+  {
+      alert("search Groups"); 
+  }
 }

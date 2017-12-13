@@ -19,4 +19,15 @@ export class groupsPage {
         console.log('ionViewDidLoad groupsPage');
     }
 
+
+    newGroup()
+    {
+        alert("Create a new Group"); 
+    }
+
+    search()
+    {
+        alert("search groups"); 
+    }
+
 }

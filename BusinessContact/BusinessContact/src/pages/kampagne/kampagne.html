@@ -1,11 +1,11 @@
 <ion-header>
 
     <ion-navbar color="primary">
-        <ion-title>
-            Campagain
+        <ion-title class="titron">
+            Campaign
         </ion-title>
         <ion-buttons>
-            <button ion-button (click)="newAction()">
+            <button ion-button (click)="newCampaign()">
                 <ion-icon name="add"></ion-icon>
             </button>
         </ion-buttons>
@@ -13,7 +13,7 @@
             <ion-icon name="more"></ion-icon>
         </button> 
         <ion-buttons right>
-            <button ion-button>
+            <button ion-button (click)="search()">
                 <ion-icon name="search"></ion-icon>
             </button>
         </ion-buttons>
