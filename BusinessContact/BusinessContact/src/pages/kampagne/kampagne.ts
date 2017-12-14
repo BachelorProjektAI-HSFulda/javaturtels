@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { searchPage } from '../search/search';
 
 import { NavController, ActionSheetController } from 'ionic-angular';
 
@@ -23,6 +24,6 @@ export class KampagnePage {
 
   search()
   {
-      alert("search Groups"); 
+      this.navCtrl.push(searchPage);
   }
 }

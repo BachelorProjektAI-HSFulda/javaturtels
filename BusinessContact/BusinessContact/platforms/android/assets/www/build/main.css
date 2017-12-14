@@ -22278,3 +22278,7 @@ page-groups .titre {
 page-kampagne .titron {
   text-align: center;
 }
+
+page-search .nav {
+  height: 20px;
+}
