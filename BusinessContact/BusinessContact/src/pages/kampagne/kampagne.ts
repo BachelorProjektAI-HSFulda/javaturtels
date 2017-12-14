@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { NavController } from 'ionic-angular';
+import { NavController, ActionSheetController } from 'ionic-angular';
 
 @Component({
   selector: 'page-kampagne',
@@ -8,12 +8,21 @@ import { NavController } from 'ionic-angular';
 })
 export class KampagnePage {
 
-  constructor(public navCtrl: NavController) {
+    constructor(public navCtrl: NavController, public actionSheetCtrl: ActionSheetController) {
 
   }
   
   onLink(url: string) {
       window.open(url);
+    }
+
+  newCampaign()
+  {
+      alert("new Campaign"); 
   }
 
+  search()
+  {
+      alert("search Groups"); 
+  }
 }

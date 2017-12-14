@@ -5,6 +5,7 @@ import { anmeldungPage } from '../pages/anmeldung/anmeldung';
 import { profilePage } from '../pages/profile/profile';
 import { TabsPage } from '../pages/tabs/tabs';
 import { helpPage } from '../pages/help/help'; 
+import { settingsPage}from'../pages/settings/settings'; 
 
 
 @Component({
@@ -31,12 +32,12 @@ export class MyApp {
 
   goToprofil()
   {
-      this.nav.setRoot(profilePage);
+      this.nav.push(profilePage);
   }
 
   gotoHelp()
   {
-      this.nav.setRoot(helpPage);
+      this.nav.push(helpPage);
   }
 
   goToShare()
@@ -46,6 +47,6 @@ export class MyApp {
 
   goToSettings()
   {
-      alert("Settings"); 
+      this.nav.push(settingsPage); 
   }
 }

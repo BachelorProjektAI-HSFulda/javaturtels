@@ -6,11 +6,47 @@
 -->
 <ion-header>
 
-  <ion-navbar color="primary">
-    <ion-title>groups</ion-title>
-  </ion-navbar>
+    <ion-navbar color="primary">
+        <ion-title class="titre">groups</ion-title>
+        <ion-buttons>
+            <button ion-button (click)="newGroup()">
+                <ion-icon name="add"></ion-icon>
+            </button>
+        </ion-buttons>
+        <button ion-button menuToggle right>
+            <ion-icon name="more"></ion-icon>
+        </button>
+        <ion-buttons right>
+            <button ion-button (click)="search()">
+                <ion-icon name="search"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
 
 </ion-header>
+
+
+<ion-content>
+
+    <ion-list>
+
+        <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">
+
+            {{ items }}
+
+        </button>
+
+    </ion-list>
+
+
+    <ion-buttons>
+        <button ion-button>
+            <ion-icon name="camera">  Take Picture</ion-icon>
+        </button>
+    </ion-buttons>
+
+</ion-content>
+
 
 
 <ion-content padding>

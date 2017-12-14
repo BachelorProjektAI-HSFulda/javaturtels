@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Camera, CameraOptions } from '@ionic-native/camera';
-import { NavController, AlertController } from 'ionic-angular';
+import { NavController, AlertController, ActionSheetController } from 'ionic-angular';
 
 
 @Component({
@@ -8,67 +8,31 @@ import { NavController, AlertController } from 'ionic-angular';
   templateUrl: 'contact.html'
 })
 export class ContactPage {
-    public photo: any;
+    public photos: any;
     public base64Image: String;
 
 
 
-  constructor(public navCtrl: NavController, private camera:Camera, private alert: AlertController) {
+    constructor(public navCtrl: NavController, private camera: Camera, private alert: AlertController, public actionSheetCtrl: ActionSheetController) {
 
     }
 
   ng0nInit()
   {
-      this.photo = [];
+      this.photos = [];
   }
 
-  newContact()
-  {
-      const options: CameraOptions = {
-          quality: 50,
-          destinationType: this.camera.DestinationType.DATA_URL,
-          encodingType: this.camera.EncodingType.JPEG,
-          mediaType: this.camera.MediaType.PICTURE
-      }
 
-      this.camera.getPicture(options).then((imageData) => {
-          // imageData is either a base64 encoded string or a file URI
-          // If it's base64:
-          this.base64Image = 'data:image/jpeg;base64,' + imageData;
-          this.photo.push(this.base64Image); 
-          this.photo.reverse();
-      }, (err) => {
-          // Handle error
-      });
-
-  }
-
-  deleteContact(index)
-  {
-      let confirm = this.alert.create({
-          title: 'Delete Contact?',
-          message: 'Do you realy want to delete this Contact?',
-          buttons: [
-              {
-                  text: 'No',
-                  handler: () => {
-                   
-                  }
-              },
-              {
-                  text: 'yes',
-                  handler: () => {
-                      this.photo.splice(index, 1); 
-                  }
-              }
-          ]
-      });
-      confirm.present();
-  }
+  
 
   search()
   {
       alert("search Contact or group"); 
+  }
+
+  newContact()
+  {
+      alert("creat a new Contact")
   }
 
 }
