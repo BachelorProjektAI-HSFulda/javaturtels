@@ -1,5 +1,7 @@
 ﻿import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { sign_upPage } from '../sign-up/sign-up';
+import { sign_inPage} from '../sign-in/sign-in'; 
 
 /*
   Generated class for the anmeldung page.
@@ -21,12 +23,12 @@ export class anmeldungPage {
 
     signIn()
     {
-        alert("you have clicked on sign In"); 
+        this.navCtrl.setRoot(sign_inPage); 
     }
 
     signUp()
     {
-        alert("you have clicked on sign Up");
+        this.navCtrl.setRoot(sign_upPage);
     }
 
 }

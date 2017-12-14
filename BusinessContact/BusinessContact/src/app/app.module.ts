@@ -4,7 +4,14 @@ import { MyApp } from './app.component';
 import { ContactPage } from '../pages/contact/contact';
 import { KampagnePage} from '../pages/kampagne/kampagne';
 import { TabsPage } from '../pages/tabs/tabs';
-import { VoicerecorderPage } from '../pages/voicerecord/voicerecord';
+import { groupsPage } from '../pages/groups/groups';
+import { Camera } from '@ionic-native/camera';
+import { anmeldungPage } from '../pages/anmeldung/anmeldung';
+import { profilePage } from '../pages/profile/profile';
+import { helpPage } from '../pages/help/help'; 
+import { sign_upPage } from '../pages/sign-up/sign-up'; 
+import { sign_inPage } from '../pages/sign-in/sign-in';
+import { settingsPage} from'../pages/settings/settings';
 
 @NgModule({
   declarations: [
@@ -17,13 +24,13 @@ import { VoicerecorderPage } from '../pages/voicerecord/voicerecord';
     profilePage,
       helpPage, 
       sign_inPage,
-    sign_upPage
+      sign_upPage,
+    settingsPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
-
   entryComponents: [
     MyApp,
     ContactPage,
@@ -34,7 +41,8 @@ import { VoicerecorderPage } from '../pages/voicerecord/voicerecord';
       profilePage, 
       helpPage,
       sign_upPage,
-      sign_inPage
+      sign_inPage,
+      settingsPage
   ],
   providers: [
   Camera,
