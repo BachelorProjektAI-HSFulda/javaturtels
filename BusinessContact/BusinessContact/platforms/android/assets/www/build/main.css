@@ -22278,32 +22278,3 @@ page-groups .titre {
 page-kampagne .titron {
   text-align: center;
 }
-
-page-sign_up .flasche {
-  width: 100%;
-  height: 100%;
-  background-color: #ffffff;
-  position: page;
-  margin: 0;
-}
-
-page-sign_up .flasche .text {
-  text-align: center;
-  font-size: 10px;
-  margin: 0;
-  position: page;
-}
-
-page-sign_up .iconBlock {
-  position: center;
-  margin-left: 19%;
-  margin-right: 20%;
-}
-
-page-sign_up .iconBlock .iconLogo {
-  float: right;
-}
-
-page-sign_up .iconBlock .iconLogo2 {
-  float: left;
-}

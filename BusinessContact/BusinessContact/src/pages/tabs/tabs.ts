@@ -18,5 +18,37 @@ export class TabsPage {
     constructor() {
 
     }
+
+  recordVoice()
+    {
+   let audioObject: MediaObject = this.media.create(this.fileName);
+
+audioObject.startRecord();
+console.log('cache dir: ' + this.file.cacheDirectory);
+console.log('start recording' + this.fileName);
+   setTimeout(() => {
+    audioObject.stopRecord();
+    console.log('duration: ' + audioObject.getDuration());
+    audioObject.release();
+    console.log('done recording' + this.fileName);
+    
+},);
+  }
+
 }
+
+
+playaudiofile()
+{
+
+}
+
+  showAlert(message) {
+      let alert = this.alertCtrl.create({
+          title: 'Recording Error',
+          subTitle: message,
+          buttons: ['Aufnahme fehlgeschlagen']
+      });
+      alert.present()
+  }
  

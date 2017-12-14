@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { NavController, AlertController, ActionSheetController } from 'ionic-angular';
+import { searchPage } from '../search/search';
 
 
 @Component({
@@ -27,7 +28,8 @@ export class ContactPage {
 
   search()
   {
-      alert("search Contact or group"); 
+      this.navCtrl.push(searchPage);
+
   }
 
   newContact()

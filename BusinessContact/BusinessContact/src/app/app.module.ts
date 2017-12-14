@@ -8,10 +8,8 @@ import { groupsPage } from '../pages/groups/groups';
 import { Camera } from '@ionic-native/camera';
 import { anmeldungPage } from '../pages/anmeldung/anmeldung';
 import { profilePage } from '../pages/profile/profile';
-import { helpPage } from '../pages/help/help'; 
-import { sign_upPage } from '../pages/sign-up/sign-up'; 
-import { sign_inPage } from '../pages/sign-in/sign-in';
-import { settingsPage} from'../pages/settings/settings';
+import { helpPage } from '../pages/help/help';
+import { searchPage } from '../pages/search/search';
 
 @NgModule({
   declarations: [
@@ -22,10 +20,8 @@ import { settingsPage} from'../pages/settings/settings';
     groupsPage,
     anmeldungPage,
     profilePage,
-      helpPage, 
-      sign_inPage,
-      sign_upPage,
-    settingsPage
+      helpPage,
+      searchPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -40,9 +36,7 @@ import { settingsPage} from'../pages/settings/settings';
       anmeldungPage,
       profilePage, 
       helpPage,
-      sign_upPage,
-      sign_inPage,
-      settingsPage
+      searchPage
   ],
   providers: [
   Camera,
