@@ -26,6 +26,22 @@
 </ion-header>
 
 
+<ion-content>
+
+    <ion-list>
+
+        <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">
+
+            {{ items }}
+
+        </button>
+
+    </ion-list>
+
+</ion-content>
+
+
+
 <ion-content padding>
 
 </ion-content>

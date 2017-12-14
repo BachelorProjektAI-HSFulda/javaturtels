@@ -9,11 +9,29 @@ import { NavController, NavParams } from 'ionic-angular';
 */
 @Component({
     selector: 'page-groups',
-    templateUrl: 'groups.html'
+	templateUrl: 'groups.html'
 })
+
 export class groupsPage {
 
-    constructor(public navCtrl: NavController, public navParams: NavParams) { }
+	constructor(public navCtrl: NavController, public navParams: NavParams) { }
+
+	items = [
+
+		'Messen',
+
+		'Meetings',
+
+		'Bla',
+
+		'Bla',
+	]
+
+	itemSelected(item: string) {
+
+		console.log("Selected Item", item);
+
+	}
 
     ionViewDidLoad() {
         console.log('ionViewDidLoad groupsPage');
@@ -29,5 +47,8 @@ export class groupsPage {
     {
         alert("search groups"); 
     }
-
+	
 }
+
+
+
