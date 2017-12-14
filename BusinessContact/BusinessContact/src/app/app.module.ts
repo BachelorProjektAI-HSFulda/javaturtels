@@ -9,7 +9,7 @@ import { Camera } from '@ionic-native/camera';
 import { anmeldungPage } from '../pages/anmeldung/anmeldung';
 import { profilePage } from '../pages/profile/profile';
 import { helpPage } from '../pages/help/help'; 
-
+import { searchPage} from '../pages/search/search';
 @NgModule({
   declarations: [
     MyApp,
@@ -19,7 +19,8 @@ import { helpPage } from '../pages/help/help';
     groupsPage,
     anmeldungPage,
     profilePage,
-    helpPage
+      helpPage,
+      searchPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -33,7 +34,8 @@ import { helpPage } from '../pages/help/help';
       groupsPage,
       anmeldungPage,
       profilePage, 
-      helpPage
+      helpPage,
+      searchPage
   ],
   providers: [
   Camera,
