@@ -1,0 +1,40 @@
+page-anmeldung {
+    .buttonBlock {
+        background-color: #0A203F;
+        .signIn {
+            background-color: #0A203F;
+            width: 48%;
+            height: 70px;
+            margin: auto;
+            border: none;
+            position: page;
+         }
+
+        .signUp {
+            background-color: #0A203F;
+            width: 48%;
+            height: 70px;
+            float: right;
+            margin: auto;
+            border: none;
+            position: page;
+        }
+    }
+
+    .image {
+        background-color: #0A203F;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+
+        .imageBlock {
+            width: inherit;
+            height: inherit;
+            position: center;
+        }
+    }
+}

@@ -1,2 +1,17 @@
-page-contact {
+page-contact 
+{
+    .block{
+        position:relative;
+        .deleteIcon{
+            position:absolute;
+            margin-left:85%;
+            margin-top:5px;
+            color:#ffffff;
+        }
+    }
+
+    .titre
+        {
+        text-align:center; 
+    }
 }

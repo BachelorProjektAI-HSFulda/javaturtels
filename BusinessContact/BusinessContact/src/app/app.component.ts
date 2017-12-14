@@ -1,15 +1,18 @@
-import { Component } from '@angular/core';
-import { Platform } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { Platform, Nav} from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
-
+import { anmeldungPage } from '../pages/anmeldung/anmeldung';
+import { profilePage } from '../pages/profile/profile';
 import { TabsPage } from '../pages/tabs/tabs';
+import { helpPage } from '../pages/help/help'; 
 
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage = TabsPage;
+    rootPage: any = TabsPage;
+    @ViewChild(Nav) nav: Nav;
 
   constructor(platform: Platform) {
     platform.ready().then(() => {
@@ -18,5 +21,31 @@ export class MyApp {
       StatusBar.styleDefault();
       Splashscreen.hide();
     });
+    }
+
+
+  signOut()
+  {
+      this.nav.setRoot(anmeldungPage); 
+  }
+
+  goToprofil()
+  {
+      this.nav.setRoot(profilePage);
+  }
+
+  gotoHelp()
+  {
+      this.nav.setRoot(helpPage);
+  }
+
+  goToShare()
+  {
+      alert("Share Contakt or Campaign"); 
+  }
+
+  goToSettings()
+  {
+      alert("Settings"); 
   }
 }

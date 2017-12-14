@@ -3,16 +3,21 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { ContactPage } from '../pages/contact/contact';
 import { KampagnePage} from '../pages/kampagne/kampagne';
-import { VoicerecorderPage } from '../pages/voicerecord/voicerecord';
 import { TabsPage } from '../pages/tabs/tabs';
+import { VoicerecorderPage } from '../pages/voicerecord/voicerecord';
 
 @NgModule({
   declarations: [
     MyApp,
     ContactPage,
     KampagnePage,
-    VoicerecorderPage,
-    TabsPage
+      TabsPage,
+    groupsPage,
+    anmeldungPage,
+    profilePage,
+      helpPage, 
+      sign_inPage,
+    sign_upPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -23,9 +28,16 @@ import { TabsPage } from '../pages/tabs/tabs';
     MyApp,
     ContactPage,
     KampagnePage,
-    VoicerecorderPage,
-    TabsPage
+      TabsPage,
+      groupsPage,
+      anmeldungPage,
+      profilePage, 
+      helpPage,
+      sign_upPage,
+      sign_inPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [
+  Camera,
+      { provide: ErrorHandler, useClass: IonicErrorHandler }]
 })
 export class AppModule {}

@@ -1,1 +1,24 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-menu side= "right" [content] ="content">
+    <ion-content>
+        <ion-list>
+            <ion-item (click)=" goToprofil()">
+                <ion-icon name ="person">   profile</ion-icon>
+            </ion-item>
+            <ion-item (click)="goToSettings()">
+                <ion-icon name ="settings">   settings</ion-icon>
+            </ion-item>
+            <ion-item (click)="goToShare()">
+                <ion-icon name ="share">   share</ion-icon>
+            </ion-item>
+            <ion-item (click)="gotoHelp()">
+                <ion-icon name ="help">   help</ion-icon>
+            </ion-item>
+            <ion-item (click)="signOut()">
+                        <ion-icon name="log-out">   log-out</ion-icon>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content></ion-nav>
+
