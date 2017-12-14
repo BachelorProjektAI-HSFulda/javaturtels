@@ -7,12 +7,54 @@
 <ion-header>
 
   <ion-navbar color="primary">
-    <ion-title>sign_up</ion-title>
+    <ion-title>sign-up</ion-title>
+      <ion-buttons left>
+          <button ion-button (click)="goBack()">
+              <ion-icon name="arrow-back"></ion-icon>
+          </button>
+      </ion-buttons>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+    
+    
+    <ion-buttons>
+        <button ion-button full (click)="createAccount()">Create Account</button>
+    </ion-buttons>
+
+
+    <div class="iconBlock">
+        <ion-buttons>
+            <button ion-button class="iconLogo" (click)="goToFace()">
+                <ion-icon name="logo-facebook"></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-buttons>
+            <button ion-button class="iconLogo" (click)="goToGoo()">
+                <ion-icon name="logo-google"></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-buttons>
+            <button ion-button class="iconLogo" (click)="goToGit()">
+                <ion-icon name="logo-github"></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-buttons>
+            <button ion-button class="iconLogo2" (click)="goToWin()">
+                <ion-icon name="logo-windows"></ion-icon>
+            </button>
+        </ion-buttons>
+    </div>
+
+   
 
 </ion-content>
+
+<ion-footer>
+    <div class="flasche">
+        <p class="text">by registering in to this App you agree to the AGBs and the privacy policy </p>
+    </div>
+</ion-footer>

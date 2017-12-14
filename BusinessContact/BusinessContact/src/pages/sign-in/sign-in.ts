@@ -1,5 +1,6 @@
 ﻿import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { anmeldungPage } from '../anmeldung/anmeldung';
 
 /*
   Generated class for the sign_in page.
@@ -18,5 +19,11 @@ export class sign_inPage {
     ionViewDidLoad() {
         console.log('ionViewDidLoad sign_inPage');
     }
+
+    goBack()
+    {
+        this.navCtrl.setRoot(anmeldungPage);
+    }
+    
 
 }
