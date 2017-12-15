@@ -32,16 +32,4 @@ export class TabsPage {
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 }
