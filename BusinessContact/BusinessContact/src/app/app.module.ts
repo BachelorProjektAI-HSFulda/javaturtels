@@ -10,6 +10,9 @@ import { anmeldungPage } from '../pages/anmeldung/anmeldung';
 import { profilePage } from '../pages/profile/profile';
 import { helpPage } from '../pages/help/help';
 import { searchPage } from '../pages/search/search';
+import { sign_upPage } from '../pages/sign-up/sign-up';
+import { sign_inPage } from '../pages/sign-in/sign-in';
+import { settingsPage } from '../pages/settings/settings';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { searchPage } from '../pages/search/search';
     anmeldungPage,
     profilePage,
       helpPage,
-      searchPage
+      searchPage,
+      sign_upPage,
+      sign_inPage,
+      settingsPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -36,7 +42,10 @@ import { searchPage } from '../pages/search/search';
       anmeldungPage,
       profilePage, 
       helpPage,
-      searchPage
+      searchPage,
+      sign_upPage,
+      sign_inPage,
+      settingsPage
   ],
   providers: [
   Camera,
