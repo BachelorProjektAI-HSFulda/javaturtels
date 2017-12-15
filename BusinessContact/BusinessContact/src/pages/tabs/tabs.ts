@@ -3,7 +3,7 @@ import { MediaPlugin } from 'ionic-native';
 import { KampagnePage } from '../kampagne/kampagne';
 import { ContactPage } from '../contact/contact';
 import { groupsPage } from '../groups/groups';
-
+import { MediaCapture, MediaFile, CaptureError, CaptureAudioOptions } from '@ionic-native/media-capture';
 @Component({
     templateUrl: 'tabs.html'
 })
@@ -15,40 +15,32 @@ export class TabsPage {
     tab3Root: any = groupsPage;
 
 
-    constructor() {
+    constructor(private mediaCapture: MediaCapture) {
 
     }
 
-  recordVoice()
-    {
-   let audioObject: MediaObject = this.media.create(this.fileName);
 
-audioObject.startRecord();
-console.log('cache dir: ' + this.file.cacheDirectory);
-console.log('start recording' + this.fileName);
-   setTimeout(() => {
-    audioObject.stopRecord();
-    console.log('duration: ' + audioObject.getDuration());
-    audioObject.release();
-    console.log('done recording' + this.fileName);
+
+    recordVoice() {
+
+        let options: CaptureAudioOptions = { limit = any, duration = any }
+        var voice = this.mediaCapture.captureAudio(options)
+            .then
+            (voice: MediaFile) => console.log(voice),
+                (voice: CaptureError) => console.error(voice)
+
+}
+      
+       
     
-},);
-  }
-
-}
+  
 
 
-playaudiofile()
-{
 
-}
 
-  showAlert(message) {
-      let alert = this.alertCtrl.create({
-          title: 'Recording Error',
-          subTitle: message,
-          buttons: ['Aufnahme fehlgeschlagen']
-      });
-      alert.present()
-  }
+
+
+
+
+
  
