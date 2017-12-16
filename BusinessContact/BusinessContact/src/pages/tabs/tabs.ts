@@ -23,24 +23,13 @@ export class TabsPage {
 
     recordVoice() {
 
-        let options: CaptureAudioOptions = { limit = any, duration = any }
-        var voice = this.mediaCapture.captureAudio(options)
-            .then
-            (voice: MediaFile) => console.log(voice),
-                (voice: CaptureError) => console.error(voice)
+       // let options: CaptureAudioOptions = { limit = 10 };
+       // var voice = this.mediaCapture.captureAudio(options)
+         //   .then
+        console.log("Voiceaufnahme gestartet");
+        
+
+    }
+
 
 }
-      
-       
-    
-  
-
-
-
-
-
-
-
-
-
- 
