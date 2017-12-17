@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { searchPage } from '../search/search';
+import { kampagneSearchPage } from '../kampagneSearch/kampagneSearch';
 
 import { NavController, ActionSheetController } from 'ionic-angular';
 
@@ -24,6 +24,6 @@ export class KampagnePage {
 
   search()
   {
-      this.navCtrl.push(searchPage);
+      this.navCtrl.push(kampagneSearchPage);
   }
 }

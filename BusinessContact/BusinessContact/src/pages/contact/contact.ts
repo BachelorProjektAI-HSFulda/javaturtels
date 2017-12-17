@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
 import { searchPage } from '../search/search';
-import { Camera, CameraOptions } from '@ionic-native/camera'; 
 
 
 @Component({
@@ -34,7 +33,7 @@ export class ContactPage {
 
   newContact()
   {
-      alert("creat a new Contact")
+      this.navCtrl.push(contactProfilePage); 
   }
 
    takePicture()
@@ -84,11 +83,4 @@ export class ContactPage {
       confirm.present();
   }
 
-
-  }
-
-
-
-
-
-
+}
