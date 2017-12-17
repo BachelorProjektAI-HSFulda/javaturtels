@@ -13,6 +13,9 @@ import { searchPage } from '../pages/search/search';
 import { sign_upPage } from '../pages/sign-up/sign-up';
 import { sign_inPage } from '../pages/sign-in/sign-in';
 import { settingsPage } from '../pages/settings/settings';
+import { kampagneSearchPage } from '../pages/kampagneSearch/kampagneSearch';
+import { groupsSearchPage } from '../pages/groupsSearch/groupsSearch';
+import { contactProfilePage } from '../pages/contactProfile/contactProfile';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,10 @@ import { settingsPage } from '../pages/settings/settings';
       searchPage,
       sign_upPage,
       sign_inPage,
-      settingsPage
+      settingsPage,
+      kampagneSearchPage,
+      groupsSearchPage,
+      contactProfilePage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -45,7 +51,10 @@ import { settingsPage } from '../pages/settings/settings';
       searchPage,
       sign_upPage,
       sign_inPage,
-      settingsPage
+      settingsPage,
+      kampagneSearchPage,
+      groupsSearchPage,
+      contactProfilePage
   ],
   providers: [
   Camera,
