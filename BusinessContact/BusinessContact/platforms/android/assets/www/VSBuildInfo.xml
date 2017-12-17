@@ -4,7 +4,7 @@
   <Metadata>
     <Item Name="VisualStudio" Version="15.0" />
     <Item Name="VisualStudioEdition" Value="Microsoft Visual Studio Enterprise 2017" />
-    <Item Name="OperatingSystem" Version="10.0.16299.15 (WinBuild.160101.0800)" />
+    <Item Name="OperatingSystem" Version="10.0.15063.0 (WinBuild.160101.0800)" />
     <Item Name="ProjectGUID" Value="7921889d-4f1c-40d9-9393-fc1aad7b7b87" />
   </Metadata>
 </VSBuildInfo>

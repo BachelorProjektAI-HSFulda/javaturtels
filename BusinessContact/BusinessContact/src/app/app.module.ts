@@ -5,7 +5,6 @@ import { ContactPage } from '../pages/contact/contact';
 import { KampagnePage} from '../pages/kampagne/kampagne';
 import { TabsPage } from '../pages/tabs/tabs';
 import { groupsPage } from '../pages/groups/groups';
-import { Camera } from '@ionic-native/camera';
 import { anmeldungPage } from '../pages/anmeldung/anmeldung';
 import { profilePage } from '../pages/profile/profile';
 import { helpPage } from '../pages/help/help';
@@ -13,6 +12,7 @@ import { searchPage } from '../pages/search/search';
 import { sign_upPage } from '../pages/sign-up/sign-up';
 import { sign_inPage } from '../pages/sign-in/sign-in';
 import { settingsPage } from '../pages/settings/settings';
+import { Camera } from '@ionic-native/camera';
 
 @NgModule({
   declarations: [
