@@ -33035,6 +33035,11 @@ page-kampagne .titron {
   text-align: center;
 }
 
+page-kampagne .icon {
+  font-size: 20px;
+  padding-right: 15px;
+}
+
 page-search .nav {
   height: 20px;
 }

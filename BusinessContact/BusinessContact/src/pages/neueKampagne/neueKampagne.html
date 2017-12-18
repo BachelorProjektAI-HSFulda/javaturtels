@@ -1,0 +1,15 @@
+﻿<ion-header>
+    <ion-navbar color="primary">
+        <ion-title>add Campaign</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <form (ngSubmit)="onAddKampagne(f.value)" #f="ngForm">
+        <ion-item>
+            <ion-label>Title</ion-label>
+            <ion-input type="text" name="title" ngModel required></ion-input>
+        </ion-item>
+        <button ion-button block type="submit" [disabled]="!f.valid">Submit</button>
+    </form>
+</ion-content>
