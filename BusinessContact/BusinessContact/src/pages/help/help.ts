@@ -19,4 +19,6 @@ export class helpPage {
         console.log('ionViewDidLoad helpPage');
     }
 
+   
+
 }
