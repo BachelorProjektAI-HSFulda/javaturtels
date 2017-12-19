@@ -23,9 +23,12 @@
 
 <ion-content padding>
     <ion-list>
-        <ion-list-header>My Campaigns</ion-list-header>
+        <ion-list-header>Campaign Overview</ion-list-header>
         <ion-item-sliding *ngFor="let item of items">
-            <ion-item class="item-icon-left"><i class="icon ion-ios-list"></i> {{   item.title }} </ion-item>
+            <ion-item class="item-icon-left">
+                <i class="icon ion-ios-list"></i><strong>{{  item.title }} </strong>
+                <button ion-button clear item-right>View</button>
+            </ion-item>
             <ion-item-options>
                 <button ion-button color="primary" icon-left (click)="editKampagne()">
                     <ion-icon name="ios-create"><small><small> Edit</small></small></ion-icon>
