@@ -20,15 +20,23 @@ page-sign_up {
         
         {
            position:center;
-           margin-left:19%; 
+           margin-left:20%; 
            margin-right:23%; 
             .iconLogo
                 {
                    float:right;   
+                   border:hidden;
+                   margin-top: 200px;
+         
+                  
                 }
             .iconLogo2
                 {
                  float:left; 
+                 border:hidden;
+                 margin-top:200px;
+                
+                 
             }
     }
 }
