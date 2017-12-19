@@ -7,7 +7,6 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { helpPage } from '../pages/help/help'; 
 import { settingsPage}from'../pages/settings/settings'; 
 
-
 @Component({
   templateUrl: 'app.html'
 })

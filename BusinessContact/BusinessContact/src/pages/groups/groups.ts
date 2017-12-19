@@ -1,6 +1,6 @@
 ﻿import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import {searchPage} from '../search/search';
+import { groupsSearchPage } from '../groupsSearch/groupsSearch';
 /*
   Generated class for the groups page.
 
@@ -45,7 +45,7 @@ export class groupsPage {
 
     search()
     {
-        this.navCtrl.push(searchPage);
+        this.navCtrl.push(groupsSearchPage);
     }
 	
 }

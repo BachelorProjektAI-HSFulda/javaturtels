@@ -18,8 +18,31 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content >
     
+    <ion-list>
+        <ion-item>
+            <ion-label fixed>Username</ion-label>
+            <ion-input type="Text Input" value=""></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label fixed>Password</ion-label>
+            <ion-input type="Text Input"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label fixed>Email</ion-label>
+            <ion-input type="Text Input"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label fixed>Adresse</ion-label>
+            <ion-input type="Text Input"></ion-input>
+        </ion-item>
+
+    </ion-list>
+
     
     <ion-buttons>
         <button ion-button full (click)="createAccount()">Create Account</button>
@@ -28,23 +51,17 @@
 
     <div class="iconBlock">
         <ion-buttons>
-            <button ion-button class="iconLogo" (click)="goToFace()">
-                <ion-icon name="logo-facebook"></ion-icon>
+            <button ion-button outline color="facebook" class="iconLogo" (click)="goToFace()">
+                <ion-icon name="logo-facebook" ></ion-icon>
             </button>
-        </ion-buttons>
-        <ion-buttons>
-            <button ion-button class="iconLogo" (click)="goToGoo()">
-                <ion-icon name="logo-google"></ion-icon>
+            <button ion-button outline color="google" class="iconLogo" (click)="goToGoo()">
+                <ion-icon name="logo-google" ></ion-icon>
             </button>
-        </ion-buttons>
-        <ion-buttons>
-            <button ion-button class="iconLogo" (click)="goToGit()">
-                <ion-icon name="logo-github"></ion-icon>
+            <button ion-button  outline color ="github" class="iconLogo" (click)="goToGit()">
+                <ion-icon name="logo-github" ></ion-icon>
             </button>
-        </ion-buttons>
-        <ion-buttons>
-            <button ion-button class="iconLogo2" (click)="goToWin()">
-                <ion-icon name="logo-windows"></ion-icon>
+            <button ion-button outline color="microsoft" class="iconLogo2" (click)="goToWin() ">
+                <ion-icon name="logo-windows" ></ion-icon>
             </button>
         </ion-buttons>
     </div>
