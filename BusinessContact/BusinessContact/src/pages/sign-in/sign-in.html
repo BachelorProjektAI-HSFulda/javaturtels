@@ -9,18 +9,16 @@
   <ion-navbar color="primary">
     <ion-title>sign_in</ion-title>
       <ion-buttons left>
-          <button ion-button (click)="goBack()">
+          <button ion-button  (click)="goBack()">
               <ion-icon name="arrow-back"></ion-icon>
           </button>
       </ion-buttons>
-      
   </ion-navbar>
-
 </ion-header>
 
 
-<ion-content padding>
-    <ion-list>
+<ion-content >
+    <ion-list class="Liste" >
         <ion-item>
             <ion-label fixed>Username</ion-label>
             <ion-input type="Text Input" value=""></ion-input>
@@ -30,13 +28,47 @@
             <ion-label fixed>Password</ion-label>
             <ion-input type="Text Input" ></ion-input>
         </ion-item>
-
-
-        
     </ion-list>
 
+    <div class="signInBlock">
+        <button ion-button  block (click)="signIn()">SignIn</button>
+    </div>
 
-    <button ion-button full>SignIn</button>
+    <div class=" forgotBlock">
+        <button ion-button clear (click)="alerPassVerg()">forgot password?</button>
+    </div>
+
+    <div class="texte">
+        <p class="paragr"> Or sign in with </p>
+    </div>
+    
+    <div class="iconBlock">
+        <ion-buttons>
+            <button ion-button outline color="facebook" class="iconLogo" (click)="goToFace()">
+                <ion-icon name="logo-facebook" ></ion-icon>
+            </button>
+            <button ion-button outline color="google" class="iconLogo" (click)="goToGoo()">
+                <ion-icon name="logo-google" ></ion-icon>
+            </button>
+            <button ion-button  outline color ="github" class="iconLogo" (click)="goToGit()">
+                <ion-icon name="logo-github" ></ion-icon>
+            </button>
+            <button ion-button outline color="microsoft" class="iconLogo2" (click)="goToWin()">
+                <ion-icon name="logo-windows" ></ion-icon>
+            </button>
+        </ion-buttons>
+    </div>
+
+</ion-content>
+
+
+   
        
 
-        </ion-content>
+        
+
+<ion-footer>
+    <div class="flasche">
+        <p class="text">by registering in to this App you agree to the AGBs and the privacy policy </p>
+    </div>
+</ion-footer>
