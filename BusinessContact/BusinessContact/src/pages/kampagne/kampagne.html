@@ -23,10 +23,11 @@
 
 <ion-content padding>
     <ion-list>
-        <ion-list-header>Campaign Overview</ion-list-header>
+        <ion-list-header>Overview</ion-list-header>
         <ion-item-sliding *ngFor="let item of items">
             <ion-item class="item-icon-left">
                 <i class="icon ion-ios-list"></i><strong>{{  item.title }} </strong>
+                <p><small>Date TT-MM-YYYY</small></p>
                 <button ion-button clear item-right>View</button>
             </ion-item>
             <ion-item-options>
