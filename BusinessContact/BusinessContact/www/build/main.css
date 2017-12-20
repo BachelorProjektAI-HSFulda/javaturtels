@@ -33027,27 +33027,16 @@ page-contact .titre {
   text-align: center;
 }
 
-page-contact .icon {
-  font-size: 20px;
-  padding-right: 15px;
-}
-
 page-groups .titre {
   text-align: center;
-}
-
-page-groups .icon {
-  font-size: 20px;
-  padding-right: 15px;
 }
 
 page-kampagne .titre {
   text-align: center;
 }
 
-page-kampagne .icon {
-  font-size: 20px;
-  padding-right: 15px;
+page-kampagne .custom-font-size .icon {
+  font-size: 35px;
 }
 
 page-search .nav {

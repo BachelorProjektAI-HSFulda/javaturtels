@@ -3,8 +3,9 @@ page-kampagne {
         text-align: center;
     }
 
-    .icon {
-        font-size: 20px;
-        padding-right: 15px;
+    .custom-font-size {
+        .icon {
+            font-size: 32px;
+        }
     }
 }
