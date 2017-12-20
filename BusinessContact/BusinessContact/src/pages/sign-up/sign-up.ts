@@ -1,6 +1,7 @@
 ﻿import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { anmeldungPage } from '../anmeldung/anmeldung';
+import { TabsPage } from '../tabs/tabs';
 /*
   Generated class for the sign_up page.
 
@@ -46,6 +47,6 @@ export class sign_upPage {
 
     createAccount()
     {
-        alert("create Account");
+        this.navCtrl.setRoot(TabsPage);
     }
 }

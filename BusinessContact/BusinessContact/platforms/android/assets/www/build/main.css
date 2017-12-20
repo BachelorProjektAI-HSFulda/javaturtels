@@ -33027,11 +33027,21 @@ page-contact .titre {
   text-align: center;
 }
 
+page-contact .icon {
+  font-size: 20px;
+  padding-right: 15px;
+}
+
 page-groups .titre {
   text-align: center;
 }
 
-page-kampagne .titron {
+page-groups .icon {
+  font-size: 20px;
+  padding-right: 15px;
+}
+
+page-kampagne .titre {
   text-align: center;
 }
 
@@ -33042,6 +33052,71 @@ page-kampagne .icon {
 
 page-search .nav {
   height: 20px;
+}
+
+page-sign_in .flasche {
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  position: page;
+  margin: 0;
+}
+
+page-sign_in .flasche .text {
+  text-align: center;
+  font-size: 10px;
+  margin: 0;
+  position: page;
+}
+
+page-sign_in .iconBlock {
+  position: center;
+  margin-left: 20%;
+  margin-right: 23%;
+}
+
+page-sign_in .iconBlock .iconLogo {
+  float: right;
+  border: hidden;
+  margin-top: 80px;
+}
+
+page-sign_in .iconBlock .iconLogo2 {
+  float: left;
+  border: hidden;
+  margin-top: 80px;
+}
+
+page-sign_in .Liste {
+  margin-top: 80px;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+page-sign_in .signInBlock {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+page-sign_in .forgotBlock {
+  margin-top: 70px;
+  margin-left: 25%;
+  margin-right: 30%;
+}
+
+page-sign_in .texte {
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 70px;
+  border-bottom: solid;
+  border-bottom-color: grey;
+  border-bottom-width: 1px;
+}
+
+page-sign_in .texte .paragr {
+  text-align: center;
+  font-size: 12px;
+  color: grey;
 }
 
 page-sign_up .flasche {
@@ -33068,11 +33143,37 @@ page-sign_up .iconBlock {
 page-sign_up .iconBlock .iconLogo {
   float: right;
   border: hidden;
-  margin-top: 200px;
+  margin-top: 100px;
 }
 
 page-sign_up .iconBlock .iconLogo2 {
   float: left;
   border: hidden;
-  margin-top: 200px;
+  margin-top: 100px;
+}
+
+page-sign_up .CreButton {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+page-sign_up .liste {
+  margin-top: 80px;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+page-sign_up .signUpText {
+  margin-top: 70px;
+  margin-left: 10%;
+  margin-right: 10%;
+  border-bottom: solid;
+  border-bottom-color: grey;
+  border-bottom-width: 1px;
+}
+
+page-sign_up .signUpText .texT {
+  text-align: center;
+  font-size: 12px;
+  color: grey;
 }

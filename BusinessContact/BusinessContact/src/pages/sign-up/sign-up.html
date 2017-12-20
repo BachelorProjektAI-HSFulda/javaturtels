@@ -20,33 +20,32 @@
 
 <ion-content >
     
-    <ion-list>
-        <ion-item>
-            <ion-label fixed>Username</ion-label>
-            <ion-input type="Text Input" value=""></ion-input>
-        </ion-item>
+    <div class="liste">
+        <ion-list>
+            <ion-item>
+                <ion-label fixed>Email</ion-label>
+                <ion-input type="Text Input"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label fixed>Password</ion-label>
+                <ion-input type="Text Input"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label fixed>Confirm </ion-label>
+                <ion-input type="Text Input"></ion-input>
+            </ion-item>
+        </ion-list>
+    </div>
+     
+    <div class="CreButton">
+        <ion-buttons>
+            <button ion-button block (click)="createAccount()">Create Account</button>
+        </ion-buttons>
+    </div>
 
-        <ion-item>
-            <ion-label fixed>Password</ion-label>
-            <ion-input type="Text Input"></ion-input>
-        </ion-item>
-
-        <ion-item>
-            <ion-label fixed>Email</ion-label>
-            <ion-input type="Text Input"></ion-input>
-        </ion-item>
-
-        <ion-item>
-            <ion-label fixed>Adresse</ion-label>
-            <ion-input type="Text Input"></ion-input>
-        </ion-item>
-
-    </ion-list>
-
-    
-    <ion-buttons>
-        <button ion-button full (click)="createAccount()">Create Account</button>
-    </ion-buttons>
+    <div class="signUpText">
+        <p class="texT">Or sign Up with</p>
+    </div>
 
 
     <div class="iconBlock">
