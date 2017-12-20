@@ -1,17 +1,21 @@
-page-contact 
-{
-    .block{
-        position:relative;
-        .deleteIcon{
-            position:absolute;
-            margin-left:85%;
-            margin-top:5px;
-            color:#ffffff;
+page-contact {
+    .block {
+        position: relative;
+
+        .deleteIcon {
+            position: absolute;
+            margin-left: 85%;
+            margin-top: 5px;
+            color: #ffffff;
         }
     }
 
-    .titre
-        {
-        text-align:center; 
+    .titre {
+        text-align: center;
+    }
+
+    .icon {
+        font-size: 20px;
+        padding-right: 15px;
     }
 }
