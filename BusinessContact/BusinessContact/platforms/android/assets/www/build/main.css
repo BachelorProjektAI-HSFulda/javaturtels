@@ -33032,6 +33032,10 @@ page-contact .icon {
   padding-right: 15px;
 }
 
+page-contact .image-wrapper {
+  width: 100%;
+}
+
 page-groups .titre {
   text-align: center;
 }
@@ -33100,8 +33104,13 @@ page-sign_in .signInBlock {
 
 page-sign_in .forgotBlock {
   margin-top: 70px;
-  margin-left: 25%;
+  margin-left: 35%;
   margin-right: 30%;
+}
+
+page-sign_in .forgotBlock .bouton {
+  font-size: 8px;
+  border: hidden;
 }
 
 page-sign_in .texte {

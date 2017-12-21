@@ -1,7 +1,7 @@
 <ion-header>
     <ion-navbar color="primary">
         <ion-buttons left>
-            <button ion-button (click)="newContact()">
+            <button ion-button (click)="gotoCamera()">
                 <ion-icon name="add"></ion-icon>
             </button>
         </ion-buttons>
@@ -22,25 +22,5 @@
 </ion-header>
 
 <ion-content padding>
-   
-    <ion-buttons>
-        <button ion-button full>
-            <ion-icon name="camera" (click)="takePicture()">&nbsp; Take Picture</ion-icon>
-        </button>
-     </ion-buttons>
-      
-
-    <ion-grid>
-        <ion-row>
-            <ion-col col-6 *ngFor="let photo of photos;let id = index">
-                <ion-card class="block">
-                    <ion-icon name="trash" class="deleteIcon" (click)="deletePhoto(id)"></ion-icon>
-                    <img [src]="photo" *ngIf="photo" />
-                </ion-card>
-            </ion-col>
-        </ion-row>
-    </ion-grid>
-
-  
 
 </ion-content>

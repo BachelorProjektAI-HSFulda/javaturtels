@@ -18,7 +18,9 @@ import { contactProfilePage } from '../pages/contactProfile/contactProfile';
 import { Camera } from '@ionic-native/camera';
 import { NeueKampagnePage } from '../pages/neueKampagne/neueKampagne';
 import { KampagneService } from '../services/kampagne.service';
+import { camerSeitePage } from '../pages/camerSeite/camerSeite'; 
 
+     
 
 @NgModule({
     declarations: [
@@ -37,7 +39,8 @@ import { KampagneService } from '../services/kampagne.service';
         kampagneSearchPage,
         groupsSearchPage,
         contactProfilePage,
-        NeueKampagnePage
+        NeueKampagnePage,
+        camerSeitePage
     ],
     imports: [
         IonicModule.forRoot(MyApp)
@@ -59,7 +62,8 @@ import { KampagneService } from '../services/kampagne.service';
         kampagneSearchPage,
         groupsSearchPage,
         contactProfilePage,
-        NeueKampagnePage
+        NeueKampagnePage,
+        camerSeitePage
     ],
     providers: [
         Camera, KampagneService,
