@@ -2,8 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
 import { searchPage } from '../search/search';
 import { Camera, CameraOptions } from '@ionic-native/camera';
-import { contactProfilePage } from '../contactProfile/contactProfile';
-import { Tesseract } from 'tesseract.js'; 
+import { contactProfilePage } from '../contactProfile/contactProfile'; 
 import { camerSeitePage } from '../camerSeite/camerSeite'; 
 
 

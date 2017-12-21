@@ -1,7 +1,9 @@
 ﻿import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams , LoadingController } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera'; 
-import  { TabsPage } from '../tabs/tabs';
+import { TabsPage } from '../tabs/tabs';
+
+
 /*
   Generated class for the camerSeite page.
 
@@ -13,9 +15,12 @@ import  { TabsPage } from '../tabs/tabs';
     templateUrl: 'camerSeite.html'
 })
 export class camerSeitePage {
+     
+    public base64Image: any; 
+    public textOutput: any; 
 
     constructor(public navCtrl: NavController, public navParams: NavParams,
-    private camera: Camera)
+    private camera: Camera , public loadingCtrl: LoadingController)
     { 
         const options: CameraOptions = {
             quality: 100,
@@ -27,7 +32,7 @@ export class camerSeitePage {
         this.camera.getPicture(options).then((imageData) => {
             // imageData is either a base64 encoded string or a file URI
             // If it's base64:
-            let base64Image = 'data:image/jpeg;base64,' + imageData;
+            this.base64Image = 'data:image/jpeg;base64,' + imageData;
         }, (err) => {
             // Handle error
         });
@@ -39,6 +44,9 @@ export class camerSeitePage {
     {
         this.navCtrl.setRoot(TabsPage);
     }
+
+
+    
 }
 
     

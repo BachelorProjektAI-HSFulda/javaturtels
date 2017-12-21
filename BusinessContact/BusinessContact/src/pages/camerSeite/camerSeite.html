@@ -20,4 +20,10 @@
 
 <ion-content padding>
 
+
+    <div *ngIf="base64Image" class="image-wrapper">
+        <img id="image" [src]="base64Image" />
+        <button ion-button icon-left block (click)="ocrTest()" color="light"> Read</button>
+    </div>
+
 </ion-content>
