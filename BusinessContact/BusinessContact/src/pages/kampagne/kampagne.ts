@@ -34,11 +34,18 @@ export class KampagnePage {
   }
 
   deleteKampagne(item) {
+      let index = this.items.indexOf(item);
+
       if (confirm("Are you sure, this Campaign will be deleted?") == true) {
-          (this.items).splice(item, 1);
+          if (index > -1) {
+              this.items.splice(index, 1);
+              // remove also from service
+              this.kampagneService.removeKampagne(item);
+          }
       } else {
           // do nothing
       }
+      
   }
 
   search()
