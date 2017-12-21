@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
 import { searchPage } from '../search/search';
 import { Camera, CameraOptions } from '@ionic-native/camera';
-import { contactProfilePage} from '../contactProfile/contactProfile';
+import { contactProfilePage } from '../contactProfile/contactProfile';
+import { Tesseract } from 'tesseract.js'; 
+import { camerSeitePage } from '../camerSeite/camerSeite'; 
 
 
 @Component({
@@ -11,20 +13,19 @@ import { contactProfilePage} from '../contactProfile/contactProfile';
 })
 export class ContactPage {
 
-    public photos: any;
-    public base64Image: string; 
+   
+    public base64Image: any; 
 
     constructor(public navCtrl: NavController, private alert: AlertController, 
     private camera : Camera) {
 
     }
 
-    ngOnInit()
+   
+    gotoCamera()
     {
-        this.photos = [];
+        this.navCtrl.setRoot(camerSeitePage); 
     }
-
-
   
 
   search()
@@ -40,7 +41,6 @@ export class ContactPage {
 
    takePicture()
   {
-      
       const options: CameraOptions = {
           quality: 50,
           destinationType: this.camera.DestinationType.DATA_URL,
@@ -52,37 +52,12 @@ export class ContactPage {
           // imageData is either a base64 encoded string or a file URI
           // If it's base64:
           this.base64Image = 'data:image/jpeg;base64,' + imageData;
-          this.photos.push(this.base64Image);
-          this.photos.reverse();
+         
       }, (err) => {
           // Handle error
       });
-      
   }
 
-  deletePhoto(index)
-  {
-      
-
-      let confirm = this.alert.create({
-          title: 'Delete this photo?',
-          message: '',
-          buttons: [
-              {
-                  text: 'NO',
-                  handler: () => {
-                     
-                  }
-              },
-              {
-                  text: 'yes',
-                  handler: () => {
-                      this.photos.splice(index, 1);
-                  }
-              }
-          ]
-      });
-      confirm.present();
+ 
   }
 
-}

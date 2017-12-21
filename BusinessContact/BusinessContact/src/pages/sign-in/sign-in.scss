@@ -45,9 +45,16 @@ page-sign_in {
     }
 
     .forgotBlock {
+
         margin-top: 70px;
-        margin-left: 25%;
+        margin-left: 35%;
         margin-right: 30%;
+        .bouton 
+           {
+               font-size:8px;
+               border:hidden;
+         
+        }
     }
 
     .texte {
@@ -64,6 +71,7 @@ page-sign_in {
             color: grey;
         }
     }
+
 
     
 }
