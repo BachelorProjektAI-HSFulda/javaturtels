@@ -4,6 +4,7 @@ import { searchPage } from '../search/search';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { contactProfilePage } from '../contactProfile/contactProfile'; 
 import { camerSeitePage } from '../camerSeite/camerSeite'; 
+import { Tesseract } from 'tesseract.ts'; 
 
 
 @Component({
@@ -13,7 +14,7 @@ import { camerSeitePage } from '../camerSeite/camerSeite';
 export class ContactPage {
 
    
-    public base64Image: any; 
+    public base64Image: string; 
 
     constructor(public navCtrl: NavController, private alert: AlertController, 
     private camera : Camera) {
@@ -44,7 +45,8 @@ export class ContactPage {
           quality: 50,
           destinationType: this.camera.DestinationType.DATA_URL,
           encodingType: this.camera.EncodingType.JPEG,
-          mediaType: this.camera.MediaType.PICTURE
+          mediaType: this.camera.MediaType.PICTURE,
+          sourceType: this.camera.PictureSourceType.CAMERA
       }
 
       this.camera.getPicture(options).then((imageData) => {
@@ -57,6 +59,21 @@ export class ContactPage {
       });
   }
 
+
+   ocrTest()
+   {
+
+       Tesseract
+           .recognize(this.base64Image)
+           .progress(console.log)
+           .then((res: any) => {
+               console.log(res);
+           })
+           .catch(console.error);
+   }
+
+   }
+
  
-  }
+  
 

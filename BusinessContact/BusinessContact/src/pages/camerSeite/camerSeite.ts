@@ -2,6 +2,7 @@
 import { NavController, NavParams , LoadingController } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera'; 
 import { TabsPage } from '../tabs/tabs';
+import { Tesseract } from 'tesseract.ts'; 
 
 
 /*
@@ -45,6 +46,16 @@ export class camerSeitePage {
         this.navCtrl.setRoot(TabsPage);
     }
 
+    ocrTest()
+    {
+        Tesseract
+            .recognize(this.base64Image)
+            .progress(console.log)
+            .then((res: any) => {
+                console.log(res);
+            })
+            .catch(console.error);
+    }
 
     
 }

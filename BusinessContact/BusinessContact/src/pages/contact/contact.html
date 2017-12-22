@@ -1,7 +1,7 @@
 <ion-header>
     <ion-navbar color="primary">
         <ion-buttons left>
-            <button ion-button (click)="gotoCamera()">
+            <button ion-button (click)="takePicture()">
                 <ion-icon name="add"></ion-icon>
             </button>
         </ion-buttons>
@@ -22,5 +22,11 @@
 </ion-header>
 
 <ion-content padding>
+
+    <div *ngIf="base64Image" class="image-wrapper">
+        <img id="image" [src]="base64Image" class="imag"/>
+        <button ion-button icon-left block (click)="ocrTest()" color="light"> Read</button>
+    </div>
+
 
 </ion-content>
