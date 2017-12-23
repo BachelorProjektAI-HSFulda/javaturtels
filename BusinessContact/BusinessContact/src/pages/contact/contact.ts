@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, AlertController } from 'ionic-angular';
+import { NavController, AlertController , LoadingController} from 'ionic-angular';
 import { searchPage } from '../search/search';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { contactProfilePage } from '../contactProfile/contactProfile'; 
@@ -13,11 +13,11 @@ import { Tesseract } from 'tesseract.ts';
 })
 export class ContactPage {
 
-   
+    OCRAD: any; 
     public base64Image: string; 
 
     constructor(public navCtrl: NavController, private alert: AlertController, 
-    private camera : Camera) {
+    private camera : Camera, private loadingCtrl: LoadingController) {
 
     }
 
@@ -70,6 +70,18 @@ export class ContactPage {
                console.log(res);
            })
            .catch(console.error);
+   }
+
+   analyze() {
+       let loader = this.loadingCtrl.create({
+           content: 'Please wait...'
+       });
+       loader.present();
+       (<any>window).OCRAD(document.getElementById('image'), text => {
+           loader.dismissAll();
+           alert(text);
+           console.log(text);
+       });
    }
 
    }
