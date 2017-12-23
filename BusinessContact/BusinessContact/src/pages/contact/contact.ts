@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, AlertController } from 'ionic-angular';
+import { NavController, AlertController , LoadingController} from 'ionic-angular';
 import { searchPage } from '../search/search';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { contactProfilePage } from '../contactProfile/contactProfile'; 
@@ -15,9 +15,10 @@ export class ContactPage {
 
    
     public base64Image: string; 
+    public textOutput: any;
 
     constructor(public navCtrl: NavController, private alert: AlertController, 
-    private camera : Camera) {
+    private camera : Camera, public loadingCtrl : LoadingController) {
 
     }
 
@@ -44,9 +45,9 @@ export class ContactPage {
       const options: CameraOptions = {
           quality: 50,
           destinationType: this.camera.DestinationType.DATA_URL,
-          encodingType: this.camera.EncodingType.JPEG,
+          encodingType: this.camera.EncodingType.PNG,
           mediaType: this.camera.MediaType.PICTURE,
-          sourceType: this.camera.PictureSourceType.CAMERA
+          sourceType: this.camera.PictureSourceType.SAVEDPHOTOALBUM
       }
 
       this.camera.getPicture(options).then((imageData) => {
@@ -62,14 +63,16 @@ export class ContactPage {
 
    ocrTest()
    {
-
+       let loader = this.loadingCtrl.create({
+           content: 'Please wait...'
+       });
+ 
+       loader.present();
        Tesseract
            .recognize(this.base64Image)
-           .progress(console.log)
-           .then((res: any) => {
-               console.log(res);
-           })
-           .catch(console.error);
+           .then(function (result){
+           alert(result)
+       })
    }
 
    }
