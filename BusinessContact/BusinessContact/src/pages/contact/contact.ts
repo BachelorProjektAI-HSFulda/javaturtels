@@ -13,7 +13,7 @@ import { Tesseract } from 'tesseract.ts';
 })
 export class ContactPage {
 
-   
+    OCRAD: any; 
     public base64Image: string; 
     public textOutput: any;
 
@@ -73,6 +73,18 @@ export class ContactPage {
            .then(function (result){
            alert(result)
        })
+   }
+
+   analyze() {
+       let loader = this.loadingCtrl.create({
+           content: 'Please wait...'
+       });
+       loader.present();
+       (<any>window).OCRAD(document.getElementById('image'), text => {
+           loader.dismissAll();
+           alert(text);
+           console.log(text);
+       });
    }
 
    }
