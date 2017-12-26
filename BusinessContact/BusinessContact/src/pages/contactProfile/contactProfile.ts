@@ -1,5 +1,6 @@
 ﻿import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, AlertController } from 'ionic-angular';
+import {TabsPage} from '../tabs/tabs' ; 
 
 /*
   Generated class for the contactProfile page.
@@ -13,10 +14,40 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class contactProfilePage {
 
-    constructor(public navCtrl: NavController, public navParams: NavParams) { }
+
+    constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl : AlertController) { }
 
     ionViewDidLoad() {
         console.log('ionViewDidLoad contactProfilePage');
+    }
+
+    cancel()
+    {
+        let confirm = this.alertCtrl.create({
+            title: 'Do you really want to Cancel?',
+            message:'',
+            buttons: [
+                {
+                    text: 'yes',
+                    handler: () => {
+                       this.navCtrl.setRoot(TabsPage);
+                    }
+                },
+                {
+                    text: 'No',
+                    handler: () => {
+                        
+                    }
+                }
+            ]
+        });
+        confirm.present();
+    }
+        
+    
+    save()
+    {
+        alert("Save Contact");
     }
 
 }

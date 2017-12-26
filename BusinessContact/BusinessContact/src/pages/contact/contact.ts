@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { NavController, AlertController , LoadingController} from 'ionic-angular';
+import { NavController, AlertController , LoadingController, ActionSheetController} from 'ionic-angular';
 import { searchPage } from '../search/search';
 import { Camera, CameraOptions } from '@ionic-native/camera';
-import { contactProfilePage } from '../contactProfile/contactProfile'; 
+//import { contactProfilePage } from '../contactProfile/contactProfile'; 
 import { camerSeitePage } from '../camerSeite/camerSeite'; 
-import { Tesseract } from 'tesseract.ts'; 
+import { imgWahlPage } from '../imgWahl/imgWahl'; 
 
 
 @Component({
@@ -13,19 +13,23 @@ import { Tesseract } from 'tesseract.ts';
 })
 export class ContactPage {
 
-    OCRAD: any; 
+
     public base64Image: string; 
     public textOutput: any;
 
     constructor(public navCtrl: NavController, private alert: AlertController, 
-    private camera : Camera, public loadingCtrl : LoadingController) {
+    private camera : Camera, public loadingCtrl : LoadingController, public actionCtrl : ActionSheetController) {
 
     }
 
+    choosePhoto()
+    {
+        this.navCtrl.push(imgWahlPage);
+    }
    
     gotoCamera()
     {
-        this.navCtrl.setRoot(camerSeitePage); 
+        this.navCtrl.push(camerSeitePage); 
     }
   
 
@@ -35,10 +39,7 @@ export class ContactPage {
 
   }
 
-  newContact()
-  {
-      this.navCtrl.push(contactProfilePage); 
-  }
+  
 
    takePicture()
   {
@@ -60,34 +61,39 @@ export class ContactPage {
       });
   }
 
-
-   ocrTest()
+   newContact()
    {
-       let loader = this.loadingCtrl.create({
-           content: 'Please wait...'
+       let actionSheet = this.actionCtrl.create({
+           title: 'Add Contact',
+           buttons: [
+               {
+                   text: 'Take Photo',
+                   role: 'Take  Photo',
+                   handler: () => {
+                      this.gotoCamera();
+                   }
+               }, {
+                   text: 'Choose Photo',
+                   handler: () => {
+                       this.choosePhoto();
+                   }
+               }, {
+                   text: 'Cancel',
+                   role: 'cancel',
+                   handler: () => {
+                     
+                   }
+               }
+           ]
        });
- 
-       loader.present();
-       Tesseract
-           .recognize(this.base64Image)
-           .then(function (result){
-           alert(result)
-       })
+       actionSheet.present();
    }
+   }
+  
 
-   analyze() {
-       let loader = this.loadingCtrl.create({
-           content: 'Please wait...'
-       });
-       loader.present();
-       (<any>window).OCRAD(document.getElementById('image'), text => {
-           loader.dismissAll();
-           alert(text);
-           console.log(text);
-       });
-   }
+   
 
-   }
+   
 
  
   

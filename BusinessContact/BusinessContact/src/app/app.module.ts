@@ -19,7 +19,7 @@ import { Camera } from '@ionic-native/camera';
 import { NeueKampagnePage } from '../pages/neueKampagne/neueKampagne';
 import { KampagneService } from '../services/kampagne.service';
 import { camerSeitePage } from '../pages/camerSeite/camerSeite'; 
-
+import { imgWahlPage } from '../pages/imgWahl/imgWahl';
      
 
 @NgModule({
@@ -40,7 +40,8 @@ import { camerSeitePage } from '../pages/camerSeite/camerSeite';
         groupsSearchPage,
         contactProfilePage,
         NeueKampagnePage,
-        camerSeitePage
+        camerSeitePage,
+        imgWahlPage
     ],
     imports: [
         IonicModule.forRoot(MyApp)
@@ -63,7 +64,8 @@ import { camerSeitePage } from '../pages/camerSeite/camerSeite';
         groupsSearchPage,
         contactProfilePage,
         NeueKampagnePage,
-        camerSeitePage
+        camerSeitePage,
+        imgWahlPage
     ],
     providers: [
         Camera, KampagneService,
