@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { NavController, AlertController , LoadingController} from 'ionic-angular';
+import { NavController, AlertController , LoadingController, ActionSheetController} from 'ionic-angular';
 import { searchPage } from '../search/search';
 import { Camera, CameraOptions } from '@ionic-native/camera';
-import { contactProfilePage } from '../contactProfile/contactProfile'; 
+//import { contactProfilePage } from '../contactProfile/contactProfile'; 
 import { camerSeitePage } from '../camerSeite/camerSeite'; 
-import { Tesseract } from 'tesseract.ts'; 
+import { imgWahlPage } from '../imgWahl/imgWahl'; 
 
 
 @Component({
@@ -13,18 +13,23 @@ import { Tesseract } from 'tesseract.ts';
 })
 export class ContactPage {
 
-    OCRAD: any; 
+
     public base64Image: string; 
+    public textOutput: any;
 
     constructor(public navCtrl: NavController, private alert: AlertController, 
-    private camera : Camera, private loadingCtrl: LoadingController) {
+    private camera : Camera, public loadingCtrl : LoadingController, public actionCtrl : ActionSheetController) {
 
     }
 
+    choosePhoto()
+    {
+        this.navCtrl.push(imgWahlPage);
+    }
    
     gotoCamera()
     {
-        this.navCtrl.setRoot(camerSeitePage); 
+        this.navCtrl.push(camerSeitePage); 
     }
   
 
@@ -34,19 +39,16 @@ export class ContactPage {
 
   }
 
-  newContact()
-  {
-      this.navCtrl.push(contactProfilePage); 
-  }
+  
 
    takePicture()
   {
       const options: CameraOptions = {
           quality: 50,
           destinationType: this.camera.DestinationType.DATA_URL,
-          encodingType: this.camera.EncodingType.JPEG,
+          encodingType: this.camera.EncodingType.PNG,
           mediaType: this.camera.MediaType.PICTURE,
-          sourceType: this.camera.PictureSourceType.CAMERA
+          sourceType: this.camera.PictureSourceType.SAVEDPHOTOALBUM
       }
 
       this.camera.getPicture(options).then((imageData) => {
@@ -59,32 +61,39 @@ export class ContactPage {
       });
   }
 
-
-   ocrTest()
+   newContact()
    {
-
-       Tesseract
-           .recognize(this.base64Image)
-           .progress(console.log)
-           .then((res: any) => {
-               console.log(res);
-           })
-           .catch(console.error);
-   }
-
-   analyze() {
-       let loader = this.loadingCtrl.create({
-           content: 'Please wait...'
+       let actionSheet = this.actionCtrl.create({
+           title: 'Add Contact',
+           buttons: [
+               {
+                   text: 'Take Photo',
+                   role: 'Take  Photo',
+                   handler: () => {
+                      this.gotoCamera();
+                   }
+               }, {
+                   text: 'Choose Photo',
+                   handler: () => {
+                       this.choosePhoto();
+                   }
+               }, {
+                   text: 'Cancel',
+                   role: 'cancel',
+                   handler: () => {
+                     
+                   }
+               }
+           ]
        });
-       loader.present();
-       (<any>window).OCRAD(document.getElementById('image'), text => {
-           loader.dismissAll();
-           alert(text);
-           console.log(text);
-       });
+       actionSheet.present();
    }
+   }
+  
 
-   }
+   
+
+   
 
  
   

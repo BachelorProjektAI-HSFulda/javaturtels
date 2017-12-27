@@ -7,18 +7,7 @@
 <ion-header>
 
   <ion-navbar color="primary">
-      <ion-buttons left>
-          <button ion-button (click)="goBack()">
-              <ion-icon name="arrow-back"></ion-icon>
-          </button>
-      </ion-buttons>
       <ion-title class="titel"> New Contact</ion-title>
-      <ion-buttons right>
-          <button ion-button (click)="getPicture()">
-              <ion-icon name="camera"></ion-icon>
-          </button>
-      </ion-buttons>
-
   </ion-navbar>
 
 </ion-header>
@@ -28,8 +17,8 @@
 
 
     <div *ngIf="base64Image" class="image-wrapper">
-        <img id="image" [src]="base64Image" />
-        <button ion-button icon-left block (click)="ocrTest()" color="light"> Read</button>
+        <img id="image" [src]="base64Image" div class="imag" />
+        <button ion-button icon-left block (click)="gotoNewContact()" color="primary">Submit</button>
     </div>
 
    

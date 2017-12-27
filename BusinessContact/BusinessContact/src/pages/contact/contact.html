@@ -1,7 +1,7 @@
 <ion-header>
     <ion-navbar color="primary">
         <ion-buttons left>
-            <button ion-button (click)="takePicture()">
+            <button ion-button (click)="newContact()">
                 <ion-icon name="add"></ion-icon>
             </button>
         </ion-buttons>
@@ -23,9 +23,9 @@
 
 <ion-content padding>
 
-    <div *ngIf="base64Image" class="image-wrapper">
+    <div id="myImage" *ngIf="base64Image"    class="image-wrapper">
         <img id="image" [src]="base64Image" class="imag"/>
-        <button ion-button icon-left block (click)="analyse()" color="light"> Read</button>
+        <button ion-button icon-left block (click)="analyze()" color="primary">Submit</button>
     </div>
 
 
