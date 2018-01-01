@@ -22,14 +22,15 @@
 </ion-header>
 
 <ion-content padding>
-    <ion-list>
+    <ion-list class="manual-list-fullwidth">
         <ion-list-header>Overview</ion-list-header>
         <ion-item-sliding *ngFor="let item of items">
-            <ion-item class="custom-font-size">
+            <ion-item class="custom-font-size" (click)="onItemSelected()">
                 <ion-icon name="ios-folder-open" item-left color="dark"></ion-icon>
                 <h2>{{ item.title }}</h2>
                 <p><small>Date TT-MM-YYYY</small></p>
-                <button ion-button clear item-right>View</button>
+                <ion-icon name="ios-arrow-forward" item-right color="light"></ion-icon>
+                <!-->button ion-button clear item-right >View</button-->
             </ion-item>
             <ion-item-options>
                 <button ion-button color="primary" icon-left (click)="editKampagne()">

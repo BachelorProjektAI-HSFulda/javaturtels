@@ -18,6 +18,7 @@ import { contactProfilePage } from '../pages/contactProfile/contactProfile';
 import { Camera } from '@ionic-native/camera';
 import { NeueKampagnePage } from '../pages/neueKampagne/neueKampagne';
 import { KampagneService } from '../services/kampagne.service';
+import { contactsOfKampagnePage } from '../pages/contactsOfKampagne/contactsOfKampagne';
 import { camerSeitePage } from '../pages/camerSeite/camerSeite'; 
 import { imgWahlPage } from '../pages/imgWahl/imgWahl';
      
@@ -41,7 +42,8 @@ import { imgWahlPage } from '../pages/imgWahl/imgWahl';
         contactProfilePage,
         NeueKampagnePage,
         camerSeitePage,
-        imgWahlPage
+        imgWahlPage,
+        contactsOfKampagnePage
     ],
     imports: [
         IonicModule.forRoot(MyApp)
@@ -65,7 +67,8 @@ import { imgWahlPage } from '../pages/imgWahl/imgWahl';
         contactProfilePage,
         NeueKampagnePage,
         camerSeitePage,
-        imgWahlPage
+        imgWahlPage,
+        contactsOfKampagnePage
     ],
     providers: [
         Camera, KampagneService,
