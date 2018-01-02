@@ -29,8 +29,9 @@ export class KampagnePage {
       this.navCtrl.push(NeueKampagnePage);
   }
 
-  onItemSelected() {
-      this.navCtrl.push(contactsOfKampagnePage, { contact: this.items });
+  onItemSelected(item) {
+      let index = this.items.indexOf(item);
+      this.navCtrl.push(contactsOfKampagnePage, { item: this.items[index] });
   }
 
   editKampagne() {
@@ -49,7 +50,6 @@ export class KampagnePage {
       } else {
           // do nothing
       }
-      
   }
 
   search()

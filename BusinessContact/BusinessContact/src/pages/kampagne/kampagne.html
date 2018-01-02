@@ -25,7 +25,7 @@
     <ion-list class="manual-list-fullwidth">
         <ion-list-header>Overview</ion-list-header>
         <ion-item-sliding *ngFor="let item of items">
-            <ion-item class="custom-font-size" (click)="onItemSelected()">
+            <ion-item class="custom-font-size" (click)="onItemSelected(item)">
                 <ion-icon name="ios-folder-open" item-left color="dark"></ion-icon>
                 <h2>{{ item.title }}</h2>
                 <p><small>Date TT-MM-YYYY</small></p>
