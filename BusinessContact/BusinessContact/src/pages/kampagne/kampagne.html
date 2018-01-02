@@ -25,12 +25,16 @@
     <ion-list class="manual-list-fullwidth">
         <ion-list-header>Overview</ion-list-header>
         <ion-item-sliding *ngFor="let item of items">
-            <ion-item class="custom-font-size" (click)="onItemSelected(item)">
-                <ion-icon name="ios-folder-open" item-left color="dark"></ion-icon>
+            <ion-item class="item-thumbnail">
+                <ion-thumbnail item-left>
+                    <!-->img *ngIf="imageAvailable" src="assets/placeholder.png"-->
+                    <img *ngIf="!imageAvailable" src="assets/placeholder.png">
+                </ion-thumbnail>
                 <h2>{{ item.title }}</h2>
-                <p><small>Date TT-MM-YYYY</small></p>
-                <ion-icon name="ios-arrow-forward" item-right color="light"></ion-icon>
-                <!-->button ion-button clear item-right >View</button-->
+                <p><small><ion-icon name="md-contacts" item-start> 0 </ion-icon></small></p>
+                <!-->p><small><ion-icon name="ios-locate">{{item.location}}</ion-icon></small></!--p-->
+                <!-->ion-icon name="ios-arrow-forward" item-right color="light"></!--ion-icon-->
+                <button ion-button clear item-right (click)="onItemSelected(item)">View</button>
             </ion-item>
             <ion-item-options>
                 <button ion-button color="primary" icon-left (click)="editKampagne()">
