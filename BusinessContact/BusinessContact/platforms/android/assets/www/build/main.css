@@ -33051,6 +33051,10 @@ page-contact .image-wrapper .imag {
   height: 100%;
 }
 
+page-contactsOfKampagne .custom-font-size .icon {
+  font-size: 32px;
+}
+
 page-groups .titre {
   text-align: center;
 }
@@ -33074,7 +33078,7 @@ page-kampagne .titre {
 }
 
 page-kampagne .custom-font-size .icon {
-  font-size: 32px;
+  font-size: 24px;
 }
 
 page-search .nav {
