@@ -21,6 +21,7 @@ import { KampagneService } from '../services/kampagne.service';
 import { contactsOfKampagnePage } from '../pages/contactsOfKampagne/contactsOfKampagne';
 import { camerSeitePage } from '../pages/camerSeite/camerSeite'; 
 import { imgWahlPage } from '../pages/imgWahl/imgWahl';
+import { ReaderPage } from '../pages/reader-page/reader-page';
      
 
 @NgModule({
@@ -43,7 +44,8 @@ import { imgWahlPage } from '../pages/imgWahl/imgWahl';
         NeueKampagnePage,
         camerSeitePage,
         imgWahlPage,
-        contactsOfKampagnePage
+        contactsOfKampagnePage,
+        ReaderPage
     ],
     imports: [
         IonicModule.forRoot(MyApp)
@@ -68,7 +70,8 @@ import { imgWahlPage } from '../pages/imgWahl/imgWahl';
         NeueKampagnePage,
         camerSeitePage,
         imgWahlPage,
-        contactsOfKampagnePage
+        contactsOfKampagnePage,
+        ReaderPage
     ],
     providers: [
         Camera, KampagneService,
