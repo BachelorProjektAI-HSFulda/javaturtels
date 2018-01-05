@@ -24,20 +24,23 @@ export class contactsOfKampagnePage {
        const actionSheet = this.actionSheetCtrl.create({
             buttons: [
                 {
-                    text: 'Choose Photo',
+                    text: 'Take Photo',
+                    icon: 'camera',
                     handler: () => {
-                        this.getPicture(0); // 0 == Library
+                        this.getPicture(1); // 1 == Camera
                         this.pushPage();
                     }
                 }, {
-                    text: 'Take Photo',
+                    text: 'Choose Photo',
+                    icon: 'image',
                     handler: () => {
-                        this.getPicture(1); // 1 == Camera
+                        this.getPicture(0); // 0 == Libary
                         this.pushPage();
                         
                     }
                 }, {
                     text: 'Demo Photo',
+                    icon: 'attach',
                     handler: () => {
                         this.srcImage = 'assets/demo.png';
                         this.pushPage();
@@ -53,8 +56,10 @@ export class contactsOfKampagnePage {
 
     pushPage() {
         this.navCtrl.push(ReaderPage, {
-            img: this.srcImage
+            img: this.srcImage,
+            callback: this.presentActionSheet
         });
+
     }
 
     getPicture(sourceType: number) {

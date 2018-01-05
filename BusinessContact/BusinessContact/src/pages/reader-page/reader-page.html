@@ -1,14 +1,13 @@
 ﻿<ion-header>
-    <ion-navbar color="primary" hideBackButton *navbar>
-        <ion-title>Reader </ion-title>
+    <ion-navbar color="primary">
+        <ion-title class="titel">Image Preview</ion-title>
     </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-    <ion-list-header>Image Preview</ion-list-header>
-
     <div *ngIf="srcImage" class="image-wrapper">
         <img id="image" [src]="srcImage" />
+        <br /><br /><br /><br /><br /><br />
         <p>
             <button ion-button icon-left block (click)="analyze()" color="secondary">
                 <ion-icon name="search"></ion-icon>
@@ -21,11 +20,5 @@
                 Restart
             </button>
         </p>
-        <p>
-            <button ion-button icon-left block color="danger" (click)="back()">
-                <ion-icon name='close'></ion-icon>
-                 Cancel
-            </button>
-         </p>
     </div>
 </ion-content>

@@ -1,7 +1,8 @@
 ﻿import { Component } from '@angular/core';
-import { NavController, NavParams, ActionSheetController, LoadingController } from 'ionic-angular';
+import { NavController, NavParams, ActionSheetController, LoadingController, ViewController } from 'ionic-angular';
 
 import { Camera } from 'ionic-native';
+import { contactsOfKampagnePage } from '../contactsOfKampagne/contactsOfKampagne';
 
 @Component({
     selector: 'page-reader-page',
@@ -9,12 +10,28 @@ import { Camera } from 'ionic-native';
 })
 export class ReaderPage {
     srcImage: string;
+    callback: any;
     OCRAD: any;
+    tabBarElement: any;
 
-    constructor(public navCtrl: NavController, public navParams: NavParams,
-        public actionSheetCtrl: ActionSheetController, public loadingCtrl: LoadingController) {
+    constructor(public navCtrl: NavController, public navParams: NavParams,public loadingCtrl: LoadingController,
+        public viewCtrl: ViewController) {
 
         this.srcImage = navParams.get('img');
+        this.tabBarElement = document.querySelector('.tabbar.show-tabbar');
+    }
+
+    ionViewWillEnter() {
+        this.tabBarElement.style.display = 'none';
+        this.callback = this.navParams.get("callback")
+    }
+
+    ionViewDidLoad() {
+        this.viewCtrl.setBackButtonText('Cancel');
+    }
+
+    ionViewWillLeave() {
+        this.tabBarElement.style.display = 'flex';
     }
 
     analyze() {
@@ -31,7 +48,9 @@ export class ReaderPage {
 
     restart() {
         this.srcImage = '';
-        //this.presentActionSheet();
+        this.navCtrl.pop();
+        //this.callback(this);
+      
     }
 
     back() {
