@@ -54,6 +54,10 @@ export class contactsOfKampagnePage {
         actionSheet.present();
     }
 
+    ionViewWillLeave() {
+        this.srcImage = '';
+    }
+
     pushPage() {
         this.navCtrl.push(ReaderPage, {
             img: this.srcImage,
