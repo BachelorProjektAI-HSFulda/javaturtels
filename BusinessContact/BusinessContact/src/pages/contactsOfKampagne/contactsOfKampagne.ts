@@ -55,14 +55,16 @@ export class contactsOfKampagnePage {
     }
 
     ionViewWillLeave() {
-        this.srcImage = '';
+        this.srcImage = null;
     }
 
     pushPage() {
-        this.navCtrl.push(ReaderPage, {
-            img: this.srcImage,
-            callback: this.presentActionSheet
-        });
+        if (this.srcImage != null) {
+            this.navCtrl.push(ReaderPage, {
+                img: this.srcImage,
+                callback: this.presentActionSheet
+            });
+        }
 
     }
 
