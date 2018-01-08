@@ -18,8 +18,10 @@ import { contactProfilePage } from '../pages/contactProfile/contactProfile';
 import { Camera } from '@ionic-native/camera';
 import { NeueKampagnePage } from '../pages/neueKampagne/neueKampagne';
 import { KampagneService } from '../services/kampagne.service';
+import { contactsOfKampagnePage } from '../pages/contactsOfKampagne/contactsOfKampagne';
 import { camerSeitePage } from '../pages/camerSeite/camerSeite'; 
-
+import { imgWahlPage } from '../pages/imgWahl/imgWahl';
+import { ReaderPage } from '../pages/reader-page/reader-page';
      
 
 @NgModule({
@@ -40,7 +42,10 @@ import { camerSeitePage } from '../pages/camerSeite/camerSeite';
         groupsSearchPage,
         contactProfilePage,
         NeueKampagnePage,
-        camerSeitePage
+        camerSeitePage,
+        imgWahlPage,
+        contactsOfKampagnePage,
+        ReaderPage
     ],
     imports: [
         IonicModule.forRoot(MyApp)
@@ -63,7 +68,10 @@ import { camerSeitePage } from '../pages/camerSeite/camerSeite';
         groupsSearchPage,
         contactProfilePage,
         NeueKampagnePage,
-        camerSeitePage
+        camerSeitePage,
+        imgWahlPage,
+        contactsOfKampagnePage,
+        ReaderPage
     ],
     providers: [
         Camera, KampagneService,

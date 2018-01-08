@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { NavController, AlertController } from 'ionic-angular';
+import { NavController, AlertController , LoadingController, ActionSheetController} from 'ionic-angular';
 import { searchPage } from '../search/search';
 import { Camera, CameraOptions } from '@ionic-native/camera';
-import { contactProfilePage } from '../contactProfile/contactProfile'; 
+//import { contactProfilePage } from '../contactProfile/contactProfile'; 
 import { camerSeitePage } from '../camerSeite/camerSeite'; 
+import { imgWahlPage } from '../imgWahl/imgWahl'; 
 
 
 @Component({
@@ -12,18 +13,23 @@ import { camerSeitePage } from '../camerSeite/camerSeite';
 })
 export class ContactPage {
 
-   
-    public base64Image: any; 
+
+    public base64Image: string; 
+    public textOutput: any;
 
     constructor(public navCtrl: NavController, private alert: AlertController, 
-    private camera : Camera) {
+    private camera : Camera, public loadingCtrl : LoadingController, public actionCtrl : ActionSheetController) {
 
     }
 
+    choosePhoto()
+    {
+        this.navCtrl.push(imgWahlPage);
+    }
    
     gotoCamera()
     {
-        this.navCtrl.setRoot(camerSeitePage); 
+        this.navCtrl.push(camerSeitePage); 
     }
   
 
@@ -33,18 +39,16 @@ export class ContactPage {
 
   }
 
-  newContact()
-  {
-      this.navCtrl.push(contactProfilePage); 
-  }
+  
 
    takePicture()
   {
       const options: CameraOptions = {
           quality: 50,
           destinationType: this.camera.DestinationType.DATA_URL,
-          encodingType: this.camera.EncodingType.JPEG,
-          mediaType: this.camera.MediaType.PICTURE
+          encodingType: this.camera.EncodingType.PNG,
+          mediaType: this.camera.MediaType.PICTURE,
+          sourceType: this.camera.PictureSourceType.SAVEDPHOTOALBUM
       }
 
       this.camera.getPicture(options).then((imageData) => {
@@ -57,6 +61,40 @@ export class ContactPage {
       });
   }
 
+   newContact()
+   {
+       let actionSheet = this.actionCtrl.create({
+           title: 'Add Contact',
+           buttons: [
+               {
+                   text: 'Take Photo',
+                   role: 'Take  Photo',
+                   handler: () => {
+                      this.gotoCamera();
+                   }
+               }, {
+                   text: 'Choose Photo',
+                   handler: () => {
+                       this.choosePhoto();
+                   }
+               }, {
+                   text: 'Cancel',
+                   role: 'cancel',
+                   handler: () => {
+                     
+                   }
+               }
+           ]
+       });
+       actionSheet.present();
+   }
+   }
+  
+
+   
+
+   
+
  
-  }
+  
 
