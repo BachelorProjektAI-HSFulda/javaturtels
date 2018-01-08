@@ -20,6 +20,18 @@ import { NeueKampagnePage } from '../pages/neueKampagne/neueKampagne';
 import { KampagneService } from '../services/kampagne.service';
 import { camerSeitePage } from '../pages/camerSeite/camerSeite'; 
 import { imgWahlPage } from '../pages/imgWahl/imgWahl';
+import { AngularFireModule } from 'angularfire';
+
+
+export const firebaseConfig = 
+    {
+        apiKey: "AIzaSyAEhGZgjmBLTY3G73qbiYukmVumLTkBZnM",
+        authDomain: "businesscontact-6261c.firebaseapp.com",
+        databaseURL: "https://businesscontact-6261c.firebaseio.com",
+        projectId: "businesscontact-6261c",
+        storageBucket: "businesscontact-6261c.appspot.com",
+        messagingSenderId: "647127270024"
+}
      
 
 @NgModule({
