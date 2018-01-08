@@ -18,20 +18,9 @@ import { contactProfilePage } from '../pages/contactProfile/contactProfile';
 import { Camera } from '@ionic-native/camera';
 import { NeueKampagnePage } from '../pages/neueKampagne/neueKampagne';
 import { KampagneService } from '../services/kampagne.service';
+import { contactsOfKampagnePage } from '../pages/contactsOfKampagne/contactsOfKampagne';
 import { camerSeitePage } from '../pages/camerSeite/camerSeite'; 
 import { imgWahlPage } from '../pages/imgWahl/imgWahl';
-import { AngularFireModule } from 'angularfire';
-
-
-export const firebaseConfig = 
-    {
-        apiKey: "AIzaSyAEhGZgjmBLTY3G73qbiYukmVumLTkBZnM",
-        authDomain: "businesscontact-6261c.firebaseapp.com",
-        databaseURL: "https://businesscontact-6261c.firebaseio.com",
-        projectId: "businesscontact-6261c",
-        storageBucket: "businesscontact-6261c.appspot.com",
-        messagingSenderId: "647127270024"
-}
      
 
 @NgModule({
@@ -53,7 +42,9 @@ export const firebaseConfig =
         contactProfilePage,
         NeueKampagnePage,
         camerSeitePage,
-        imgWahlPage
+        imgWahlPage,
+        contactsOfKampagnePage,
+        ReaderPage
     ],
     imports: [
         IonicModule.forRoot(MyApp)
@@ -77,7 +68,9 @@ export const firebaseConfig =
         contactProfilePage,
         NeueKampagnePage,
         camerSeitePage,
-        imgWahlPage
+        imgWahlPage,
+        contactsOfKampagnePage,
+        ReaderPage
     ],
     providers: [
         Camera, KampagneService,

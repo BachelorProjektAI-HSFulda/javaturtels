@@ -3,6 +3,7 @@ import { kampagneSearchPage } from '../kampagneSearch/kampagneSearch';
 
 import { NavController, ActionSheetController } from 'ionic-angular';
 import { NeueKampagnePage } from "../neueKampagne/neueKampagne";
+import { contactsOfKampagnePage } from "../contactsOfKampagne/contactsOfKampagne"
 import { KampagneService } from "../../services/kampagne.service";
 
 @Component({
@@ -24,9 +25,13 @@ export class KampagnePage {
       this.items = this.kampagneService.getKampagne();
   }
 
-  newCampaign()
-  {
+  newCampaign() {
       this.navCtrl.push(NeueKampagnePage);
+  }
+
+  onItemSelected(item) {
+      let index = this.items.indexOf(item);
+      this.navCtrl.push(contactsOfKampagnePage, { item: this.items[index] });
   }
 
   editKampagne() {
@@ -45,7 +50,6 @@ export class KampagnePage {
       } else {
           // do nothing
       }
-      
   }
 
   search()
