@@ -43,8 +43,8 @@ import { imgWahlPage } from '../pages/imgWahl/imgWahl';
         NeueKampagnePage,
         camerSeitePage,
         imgWahlPage,
-        contactsOfKampagnePage,
-        ReaderPage
+        contactsOfKampagnePage
+      
     ],
     imports: [
         IonicModule.forRoot(MyApp)
@@ -69,8 +69,8 @@ import { imgWahlPage } from '../pages/imgWahl/imgWahl';
         NeueKampagnePage,
         camerSeitePage,
         imgWahlPage,
-        contactsOfKampagnePage,
-        ReaderPage
+        contactsOfKampagnePage
+      
     ],
     providers: [
         Camera, KampagneService,
