@@ -21,7 +21,6 @@ import { KampagneService } from '../services/kampagne.service';
 import { contactsOfKampagnePage } from '../pages/contactsOfKampagne/contactsOfKampagne';
 import { camerSeitePage } from '../pages/camerSeite/camerSeite'; 
 import { imgWahlPage } from '../pages/imgWahl/imgWahl';
-import { ReaderPage } from '../pages/reader-page/reader-page';
      
 
 @NgModule({
