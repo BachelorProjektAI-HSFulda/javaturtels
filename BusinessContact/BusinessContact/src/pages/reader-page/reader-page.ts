@@ -44,15 +44,6 @@ export class ReaderPage {
             alert(text);
             console.log(text);
         });
-        // Tesseract OCR - liest text samt bild, ocrad ist bsiher noch mein favorit.
-        /*(<any>window).Tesseract.recognize(document.getElementById('image'))
-            .then((tesseractResult) => {
-                loader.dismissAll();
-                alert(tesseractResult.text);
-                console.log(tesseractResult);
-                //console.log("this is the data we collected from image");
-                //console.log(this.recognizedText);
-            });*/
     }
 
     restart() {
