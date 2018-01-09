@@ -52,12 +52,12 @@ export class contactsOfKampagnePage {
         actionSheet.present();
     }
 
-    ionViewWillLeave() {
+    ionViewWillEnter() {
         this.srcImage = null;
     }
 
     pushPage() {
-        if (this.srcImage != null) {
+        if (this.srcImage !== null) {
             this.navCtrl.push(ReaderPage, {
                 img: this.srcImage,
                 callback: this.presentActionSheet
