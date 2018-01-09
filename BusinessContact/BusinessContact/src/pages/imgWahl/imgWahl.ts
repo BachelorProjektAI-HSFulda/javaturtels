@@ -22,11 +22,12 @@ export class imgWahlPage {
     , public loadingCtrl : LoadingController)
     {
         const options: CameraOptions = {
-            quality: 50,
+            quality: 100,
             destinationType: this.camera.DestinationType.DATA_URL,
             encodingType: this.camera.EncodingType.PNG,
             mediaType: this.camera.MediaType.PICTURE,
-            sourceType: this.camera.PictureSourceType.SAVEDPHOTOALBUM
+            sourceType: this.camera.PictureSourceType.SAVEDPHOTOALBUM,
+            
         }
 
         this.camera.getPicture(options).then((imageData) => {
