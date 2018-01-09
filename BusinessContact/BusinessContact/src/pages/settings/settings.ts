@@ -15,6 +15,8 @@ export class settingsPage {
 
     constructor(public navCtrl: NavController, public navParams: NavParams) { }
 
+    public rangeObject: any = { lower: 0, upper: 100 };
+
     ionViewDidLoad() {
         console.log('ionViewDidLoad settingsPage');
     }
