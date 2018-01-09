@@ -7,12 +7,42 @@
 <ion-header>
 
   <ion-navbar color="primary">
-    <ion-title>settings</ion-title>
+    <ion-title>Settings</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+    
+    <ion-list>
+        <ion-item>
+            <ion-range [(ngModel)]="Parameter" color="danger" pin="true"></ion-range>
+        </ion-item>
+
+        <ion-item>
+            <ion-range min="0" max="100" [(ngModel)]="Parameter" color="secondary">
+                <ion-label range-left>0</ion-label>
+                <ion-label range-right>100</ion-label>
+            </ion-range>
+        </ion-item>
+
+        <ion-item>
+            <ion-range min="0" max="100" step="10" [(ngModel)]="primary">
+                <ion-icon small range-left name="sunny"></ion-icon>
+                <ion-icon range-right name="sunny"></ion-icon>
+            </ion-range>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>step=100, snaps, </ion-label>
+            <ion-range min="1000" max="2000" step="100" snaps="true" color="secondary" [(ngModel)]="singleValue4"></ion-range>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>dual, step=3, snaps, </ion-label>
+            <ion-range dualKnobs="true" [(ngModel)]="dualValue2" min="21" max="72" step="3" snaps="true"></ion-range>
+        </ion-item>
+    </ion-list>
 
 </ion-content>
