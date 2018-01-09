@@ -83,7 +83,7 @@
   </Target>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties />
+      <UserProperties tsconfig_1json__JSONSchema="" />
     </VisualStudio>
   </ProjectExtensions>
   <ItemGroup>

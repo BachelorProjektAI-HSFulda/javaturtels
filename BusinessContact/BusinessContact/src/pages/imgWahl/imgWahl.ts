@@ -1,5 +1,5 @@
 ﻿import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, LoadingController } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { contactProfilePage } from '../contactProfile/contactProfile';
 
@@ -16,15 +16,18 @@ import { contactProfilePage } from '../contactProfile/contactProfile';
 export class imgWahlPage {
 
     public base64Image: any; 
+    OCRAD: any;
 
-    constructor(public navCtrl: NavController, public navParams: NavParams, private camera: Camera)
+    constructor(public navCtrl: NavController, public navParams: NavParams, private camera: Camera
+    , public loadingCtrl : LoadingController)
     {
         const options: CameraOptions = {
-            quality: 50,
+            quality: 100,
             destinationType: this.camera.DestinationType.DATA_URL,
             encodingType: this.camera.EncodingType.PNG,
             mediaType: this.camera.MediaType.PICTURE,
-            sourceType: this.camera.PictureSourceType.SAVEDPHOTOALBUM
+            sourceType: this.camera.PictureSourceType.SAVEDPHOTOALBUM,
+            
         }
 
         this.camera.getPicture(options).then((imageData) => {
@@ -46,5 +49,30 @@ export class imgWahlPage {
     {
         this.navCtrl.setRoot(contactProfilePage);
     }
+
+
+ analyze()
+ {
+
+     let loader = this.loadingCtrl.create({
+         content: 'Please wait...'
+     });
+     loader.present();
+     (<any>window).OCRAD(document.getElementById('image'), text => {
+         loader.dismissAll();
+         alert(text);
+         console.log(text);
+     });
+        // Tesseract OCR - liest text samt bild, ocrad ist bsiher noch mein favorit.
+        /*(<any>window).Tesseract.recognize(document.getElementById('image'))
+            .then((tesseractResult) => {
+                loader.dismissAll();
+                alert(tesseractResult.text);
+                console.log(tesseractResult);
+                //console.log("this is the data we collected from image");
+                //console.log(this.recognizedText);
+            });*/
+
+  }
 
 }
