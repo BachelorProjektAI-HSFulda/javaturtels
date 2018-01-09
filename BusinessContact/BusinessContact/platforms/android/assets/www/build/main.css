@@ -33012,6 +33012,20 @@ page-anmeldung .image .imageBlock {
   position: center;
 }
 
+page-camerSeite .titel {
+  text-align: center;
+}
+
+page-camerSeite .image-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+page-camerSeite .image-wrapper .imag {
+  width: 100%;
+  height: 100%;
+}
+
 page-contact .block {
   position: relative;
 }

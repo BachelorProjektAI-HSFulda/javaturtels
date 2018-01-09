@@ -1,8 +1,6 @@
 ﻿import { Component } from '@angular/core';
 import { NavController, NavParams, ActionSheetController, LoadingController } from 'ionic-angular';
-
 import { Camera } from 'ionic-native';
-
 import { KampagnePage } from '../kampagne/kampagne'
 import { ReaderPage } from '../reader-page/reader-page';
 

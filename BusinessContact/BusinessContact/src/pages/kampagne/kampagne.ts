@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { kampagneSearchPage } from '../kampagneSearch/kampagneSearch';
-
 import { NavController, ActionSheetController } from 'ionic-angular';
 import { NeueKampagnePage } from "../neueKampagne/neueKampagne";
 import { contactsOfKampagnePage } from "../contactsOfKampagne/contactsOfKampagne"
@@ -15,7 +14,7 @@ export class KampagnePage {
 
     constructor(public navCtrl: NavController, private kampagneService: KampagneService) {
 
-  }
+    }
   
   onLink(url: string) {
       window.open(url);
