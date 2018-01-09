@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar color="primary">
-    <ion-title class="titel">New Contact</ion-title>
+    <ion-title class="titel">Image Preview</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -17,7 +17,10 @@
 
     <div id="myImage" *ngIf="base64Image" class="image-wrapper">
         <img id="image" [src]="base64Image" class="imag" />
-        <button ion-button icon-left block (click)="analyze()" color="primary"> submit</button>
+        <ion-buttons class="bouton-bloc">
+            <button ion-button icon-left (click)="gotoNewContact()" color="primary"> submit </button>
+            <button ion-button icon-right (click)="analyze()" color="primary"> preview </button>
+        </ion-buttons>
     </div>
 
 
