@@ -26,6 +26,8 @@
     "@ionic-native/media": "^4.5.2",
     "@ionic-native/media-capture": "^4.5.2",
     "@ionic/storage": "1.1.7",
+    "@types/request": "^2.0.9",
+    "angularfire": "^2.3.0",
     "cordova-plugin-media": "^2.4.1",
     "cordova-plugin-media-capture": "^2.0.0",
     "ionic-angular": "2.0.1",
