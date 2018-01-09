@@ -1,8 +1,8 @@
 ﻿import { Component } from '@angular/core';
 import { NavController, NavParams, ActionSheetController, LoadingController, ViewController } from 'ionic-angular';
-
-import { Camera } from 'ionic-native';
+import { Camera, Crop } from 'ionic-native';
 import { contactsOfKampagnePage } from '../contactsOfKampagne/contactsOfKampagne';
+import Tesseract from 'tesseract.js';
 
 @Component({
     selector: 'page-reader-page',
@@ -44,6 +44,15 @@ export class ReaderPage {
             alert(text);
             console.log(text);
         });
+        // Tesseract OCR - liest text samt bild, ocrad ist bsiher noch mein favorit.
+        /*(<any>window).Tesseract.recognize(document.getElementById('image'))
+            .then((tesseractResult) => {
+                loader.dismissAll();
+                alert(tesseractResult.text);
+                console.log(tesseractResult);
+                //console.log("this is the data we collected from image");
+                //console.log(this.recognizedText);
+            });*/
     }
 
     restart() {
