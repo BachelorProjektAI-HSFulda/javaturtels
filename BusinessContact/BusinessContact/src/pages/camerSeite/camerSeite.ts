@@ -4,7 +4,6 @@ import { Camera, CameraOptions } from '@ionic-native/camera';
 import { TabsPage } from '../tabs/tabs';
 import { contactProfilePage } from '../contactProfile/contactProfile';
 
-
 /*
   Generated class for the camerSeite page.
 
@@ -16,13 +15,14 @@ import { contactProfilePage } from '../contactProfile/contactProfile';
     templateUrl: 'camerSeite.html'
 })
 export class camerSeitePage {
-     
-    public base64Image: any; 
-    public textOutput: any; 
+
+    public base64Image: any;
+    public textOutput: any;
+    OCRAD: any;
+
 
     constructor(public navCtrl: NavController, public navParams: NavParams,
-    private camera: Camera , public loadingCtrl: LoadingController)
-    { 
+        private camera: Camera, public loadingCtrl: LoadingController) {
         const options: CameraOptions = {
             quality: 100,
             destinationType: this.camera.DestinationType.DATA_URL,
@@ -41,18 +41,33 @@ export class camerSeitePage {
     }
 
 
-    goBack()
-    {
+    goBack() {
         this.navCtrl.setRoot(TabsPage);
     }
 
-    gotoNewContact()
-    {
+    gotoNewContact() {
         this.navCtrl.setRoot(contactProfilePage);
     }
-    
-}
 
-    
-
-
+    analyze()
+    {
+        let loader = this.loadingCtrl.create({
+            content: 'Please wait...'
+        });
+        loader.present();
+        (<any>window).OCRAD(document.getElementById('image'), text => {
+            loader.dismissAll();
+            alert(text);
+            console.log(text);
+        });
+        // Tesseract OCR - liest text samt bild, ocrad ist bsiher noch mein favorit.
+        /*(<any>window).Tesseract.recognize(document.getElementById('image'))
+            .then((tesseractResult) => {
+                loader.dismissAll();
+                alert(tesseractResult.text);
+                console.log(tesseractResult);
+                //console.log("this is the data we collected from image");
+                //console.log(this.recognizedText);
+            });*/
+    }
+}       
