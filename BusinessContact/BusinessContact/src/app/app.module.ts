@@ -51,7 +51,9 @@ import { accountInformationPage } from '../pages/accountInformation/accountInfor
         camerSeitePage,
         imgWahlPage,
         contactsOfKampagnePage,
-        audioPage
+        audioPage,
+        synchronisationPage,
+        accountInformationPage 
       
     ],
     imports: [
@@ -79,7 +81,9 @@ import { accountInformationPage } from '../pages/accountInformation/accountInfor
         camerSeitePage,
         imgWahlPage,
         contactsOfKampagnePage,
-        audioPage
+        audioPage,
+        synchronisationPage,
+        accountInformationPage 
       
     ],
     providers: [
