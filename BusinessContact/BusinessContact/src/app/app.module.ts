@@ -28,6 +28,7 @@ import { synchronisationPage } from '../pages/synchronisation/synchronisation';
 import { accountInformationPage } from '../pages/accountInformation/accountInformation';
 
 
+
 @NgModule({
     declarations: [
         MyApp,
@@ -50,10 +51,7 @@ import { accountInformationPage } from '../pages/accountInformation/accountInfor
         camerSeitePage,
         imgWahlPage,
         contactsOfKampagnePage,
-        audioPage, 
-        synchronisationPage,
-        accountInformationPage
-
+        audioPage
       
     ],
     imports: [
@@ -81,9 +79,7 @@ import { accountInformationPage } from '../pages/accountInformation/accountInfor
         camerSeitePage,
         imgWahlPage,
         contactsOfKampagnePage,
-        audioPage,
-        synchronisationPage,
-        accountInformationPage
+        audioPage
       
     ],
     providers: [

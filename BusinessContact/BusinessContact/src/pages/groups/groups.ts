@@ -2,6 +2,7 @@
 import { NavController, NavParams } from 'ionic-angular';
 import { groupsSearchPage } from '../groupsSearch/groupsSearch';
 import { Todo } from "./groups.model";
+import { groupsContactPage } from '../groupsContact/groupsContact'; 
 /*
   Generated class for the groups page.
 
@@ -26,20 +27,25 @@ export class groupsPage implements OnInit {
     }
 
     add() {
-        let title = prompt("Criar novo lembrete");
+        let title = prompt("Create a New Group");
         if (title) {
             this.todoList.push(new Todo(title));
             this.save();
         }
+
+        this.navCtrl.push(groupsContactPage, {Title : title}); 
     }
 
 
-    edit(todo: Todo) {
-        let title = prompt("Editar lembrete", todo.title);
+    edit(todo: Todo)
+    {
+        let title = prompt("Edit ", todo.title);
         if (title && title != todo.title) {
             todo.title = title;
             this.save();
         }
+
+        this.navCtrl.push(groupsContactPage, {Title : title}); 
     }
 
     delete(index: number) {
