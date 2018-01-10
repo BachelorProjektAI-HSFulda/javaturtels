@@ -1,9 +1,14 @@
 ﻿import { NavController, Platform } from 'ionic-angular';
 import { Media, MediaObject } from '@ionic-native/media';
 import { File } from '@ionic-native/file';
+import { Component, NgModule } from '@angular/core';
 
 
 
+@Component({
+    selector: 'page-audio',
+    templateUrl: 'audioPage.html'
+})
 
 
 

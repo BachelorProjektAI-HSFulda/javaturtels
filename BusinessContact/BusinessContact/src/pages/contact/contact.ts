@@ -5,7 +5,8 @@ import { Camera, CameraOptions } from '@ionic-native/camera';
 //import { contactProfilePage } from '../contactProfile/contactProfile'; 
 import { camerSeitePage } from '../camerSeite/camerSeite'; 
 import { imgWahlPage } from '../imgWahl/imgWahl'; 
-
+import { audioPage } from '../audioPage/audioPage';
+import { Media, MediaObject } from '@ionic-native/media';
 
 @Component({
   selector: 'page-contact',
@@ -18,13 +19,19 @@ export class ContactPage {
     public textOutput: any;
 
     constructor(public navCtrl: NavController, private alert: AlertController, 
-    private camera : Camera, public loadingCtrl : LoadingController, public actionCtrl : ActionSheetController) {
+        private camera: Camera, public loadingCtrl: LoadingController, public actionCtrl: ActionSheetController, private media: Media) {
 
     }
 
     choosePhoto()
     {
         this.navCtrl.push(imgWahlPage);
+    }
+
+    goToRecorder() {
+
+        this.navCtrl.push(audioPage);
+
     }
    
     gotoCamera()
