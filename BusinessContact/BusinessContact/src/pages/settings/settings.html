@@ -20,7 +20,7 @@
             Account
         </ion-list-header>
 
-        <ion-item>
+        <ion-item (click)="goToInfo()">
             <ion-icon name='person' item-start></ion-icon>
             account information
         </ion-item>
@@ -32,8 +32,13 @@
          </ion-list-header>
 
          <ion-item>
-             <ion-icon name='home' item-start></ion-icon>
-             Homepage
+             <ion-label>
+                 <ion-icon name='home' item-start>&nbsp;&nbsp;Homepage</ion-icon>
+             </ion-label>
+             <ion-select [(ngModel)]="homepage">
+                 <ion-option value="f">contactpage</ion-option>
+                 <ion-option value="m">cameraPage</ion-option>
+             </ion-select>
          </ion-item>
      </ion-list>
      
@@ -42,17 +47,17 @@
               Contact
           </ion-list-header>
           
-          <ion-item>
+          <ion-item (click) ="goToSynchronisation()">
               <ion-icon name='sync' item-start></ion-icon>
               synchronise
           </ion-item>
 
-          <ion-item>
+          <ion-item (click) ="shareContact()">
               <ion-icon name='share' item-start></ion-icon>  
               Share contact
           </ion-item>
 
-          <ion-item>
+          <ion-item (click) ="deleteAll()">
               <ion-icon name='trash' item-start></ion-icon>
               Delete all contact
           </ion-item>

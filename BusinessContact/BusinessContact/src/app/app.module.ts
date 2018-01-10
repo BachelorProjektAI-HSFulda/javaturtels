@@ -24,6 +24,8 @@ import { camerSeitePage } from '../pages/camerSeite/camerSeite';
 import { imgWahlPage } from '../pages/imgWahl/imgWahl';
 import { audioPage } from '../pages/audioPage/audioPage';
 import { Media } from '@ionic-native/media';
+import { synchronisationPage } from '../pages/synchronisation/synchronisation';
+import { accountInformationPage } from '../pages/accountInformation/accountInformation';
 
 
 @NgModule({
@@ -48,7 +50,10 @@ import { Media } from '@ionic-native/media';
         camerSeitePage,
         imgWahlPage,
         contactsOfKampagnePage,
-        audioPage
+        audioPage, 
+        synchronisationPage,
+        accountInformationPage
+
       
     ],
     imports: [
@@ -76,7 +81,9 @@ import { Media } from '@ionic-native/media';
         camerSeitePage,
         imgWahlPage,
         contactsOfKampagnePage,
-        audioPage
+        audioPage,
+        synchronisationPage,
+        accountInformationPage
       
     ],
     providers: [
