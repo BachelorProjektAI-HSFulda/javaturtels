@@ -7,42 +7,57 @@
 <ion-header>
 
   <ion-navbar color="primary">
-    <ion-title>Settings</ion-title>
+    <ion-title>settings</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-    
+<ion-content >
+
     <ion-list>
-        <ion-item>
-            <ion-range [(ngModel)]="Parameter" color="danger" pin="true"></ion-range>
-        </ion-item>
+        <ion-list-header>
+            Account
+        </ion-list-header>
 
         <ion-item>
-            <ion-range min="0" max="100" [(ngModel)]="Parameter" color="secondary">
-                <ion-label range-left>0</ion-label>
-                <ion-label range-right>100</ion-label>
-            </ion-range>
-        </ion-item>
-
-        <ion-item>
-            <ion-range min="0" max="100" step="10" [(ngModel)]="primary">
-                <ion-icon small range-left name="sunny"></ion-icon>
-                <ion-icon range-right name="sunny"></ion-icon>
-            </ion-range>
-        </ion-item>
-
-        <ion-item>
-            <ion-label>step=100, snaps, </ion-label>
-            <ion-range min="1000" max="2000" step="100" snaps="true" color="secondary" [(ngModel)]="singleValue4"></ion-range>
-        </ion-item>
-
-        <ion-item>
-            <ion-label>dual, step=3, snaps, </ion-label>
-            <ion-range dualKnobs="true" [(ngModel)]="dualValue2" min="21" max="72" step="3" snaps="true"></ion-range>
+            <ion-icon name='person' item-start></ion-icon>
+            account information
         </ion-item>
     </ion-list>
+
+     <ion-list>
+         <ion-list-header>
+             startpage
+         </ion-list-header>
+
+         <ion-item>
+             <ion-icon name='home' item-start></ion-icon>
+             Homepage
+         </ion-item>
+     </ion-list>
+     
+      <ion-list>
+          <ion-list-header>
+              Contact
+          </ion-list-header>
+          
+          <ion-item>
+              <ion-icon name='sync' item-start></ion-icon>
+              synchronise
+          </ion-item>
+
+          <ion-item>
+              <ion-icon name='share' item-start></ion-icon>  
+              Share contact
+          </ion-item>
+
+          <ion-item>
+              <ion-icon name='trash' item-start></ion-icon>
+              Delete all contact
+          </ion-item>
+          </ion-list>
+     
+
 
 </ion-content>
