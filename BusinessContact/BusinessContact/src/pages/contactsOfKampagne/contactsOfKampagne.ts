@@ -1,8 +1,6 @@
 ﻿import { Component } from '@angular/core';
 import { NavController, NavParams, ActionSheetController, LoadingController } from 'ionic-angular';
-
 import { Camera } from 'ionic-native';
-
 import { KampagnePage } from '../kampagne/kampagne'
 import { ReaderPage } from '../reader-page/reader-page';
 
@@ -54,12 +52,12 @@ export class contactsOfKampagnePage {
         actionSheet.present();
     }
 
-    ionViewWillLeave() {
+    ionViewWillEnter() {
         this.srcImage = null;
     }
 
     pushPage() {
-        if (this.srcImage != null) {
+        if (this.srcImage !== null) {
             this.navCtrl.push(ReaderPage, {
                 img: this.srcImage,
                 callback: this.presentActionSheet

@@ -1,8 +1,8 @@
 ﻿import { Component } from '@angular/core';
 import { NavController, NavParams, ActionSheetController, LoadingController, ViewController } from 'ionic-angular';
-
-import { Camera } from 'ionic-native';
+import { Camera, Crop } from 'ionic-native';
 import { contactsOfKampagnePage } from '../contactsOfKampagne/contactsOfKampagne';
+import Tesseract from 'tesseract.js';
 
 @Component({
     selector: 'page-reader-page',
