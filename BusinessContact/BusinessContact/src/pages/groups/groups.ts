@@ -1,6 +1,7 @@
-﻿import { Component } from '@angular/core';
+﻿import { Component, OnInit} from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { groupsSearchPage } from '../groupsSearch/groupsSearch';
+import { Todo } from "./groups.model";
 /*
   Generated class for the groups page.
 
@@ -12,36 +13,50 @@ import { groupsSearchPage } from '../groupsSearch/groupsSearch';
 	templateUrl: 'groups.html'
 })
 
-export class groupsPage {
+export class groupsPage implements OnInit {
+    todoList: Array<Todo> = new Array<Todo>();
 
 	constructor(public navCtrl: NavController, public navParams: NavParams) { }
 
-	items = [
+    ngOnInit() {
+        let savedTodos = localStorage.getItem("todos-list");
+        if (savedTodos) {
+            this.todoList = JSON.parse(savedTodos);
+        }
+    }
 
-		'Messen',
-
-		'Meetings',
-
-		'Bla',
-
-		'Bla',
-	]
-
-	itemSelected(item: string) {
-
-		console.log("Selected Item", item);
-
-	}
-
-    ionViewDidLoad() {
-        console.log('ionViewDidLoad groupsPage');
+    add() {
+        let title = prompt("Criar novo lembrete");
+        if (title) {
+            this.todoList.push(new Todo(title));
+            this.save();
+        }
     }
 
 
-    newGroup()
-    {
-        alert("Create a new Group"); 
+    edit(todo: Todo) {
+        let title = prompt("Editar lembrete", todo.title);
+        if (title && title != todo.title) {
+            todo.title = title;
+            this.save();
+        }
     }
+
+    delete(index: number) {
+        this.todoList.splice(index, 1);
+        this.save();
+    }
+
+    toggleStatus(todo: Todo) {
+        todo.completed = !todo.completed;
+        this.save();
+    }
+
+    save() {
+        localStorage.setItem("todos-list", JSON.stringify(this.todoList));
+    }
+
+	
 
     search()
     {
