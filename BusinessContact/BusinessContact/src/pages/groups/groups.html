@@ -1,12 +1,12 @@
 <ion-header>
     <ion-navbar color="primary">
-        <ion-buttons left>
-            <button ion-button (click)="newGroup()">
-                <ion-icon name="add"></ion-icon>
-            </button>
-        </ion-buttons>
-
-        <ion-title class="titre">Groups</ion-title>
+        
+        <ion-navbar>
+            <ion-title>Add a Group</ion-title>
+            <ion-buttons end>
+                <button (click)="add()"><ion-icon name="add"></ion-icon></button>
+            </ion-buttons>
+        </ion-navbar>
 
         <ion-buttons end>
             <button ion-button (click)="search()">
@@ -22,17 +22,20 @@
 </ion-header>
 
 
-<ion-content>
+<ion-content class="groupsPage" padding >
 
     <ion-list>
-
-        <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">
-
-            {{ items }}
-
-        </button>
-
+        <ion-item-sliding *ngFor="let todo of todoList; let i = index;" (click)="toggleStatus(todo)">
+            <ion-item>
+                <h2>{{ todo.title }}</h2>
+            </ion-item>
+            <ion-item-options>
+                <button (click)="edit(todo)">Rename</button>
+                <button (click)="delete(i)">Remove</button>
+            </ion-item-options>
+        </ion-item-sliding>
     </ion-list>
+
 
 </ion-content>
 
