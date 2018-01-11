@@ -22,6 +22,16 @@ import { ReaderPage } from '../pages/reader-page/reader-page';
 import { contactsOfKampagnePage } from '../pages/contactsOfKampagne/contactsOfKampagne';
 import { camerSeitePage } from '../pages/camerSeite/camerSeite'; 
 import { imgWahlPage } from '../pages/imgWahl/imgWahl';
+import { audioPage } from '../pages/audioPage/audioPage';
+import { Media } from '@ionic-native/media';
+import { File } from '@ionic-native/file';
+import { StatusBar, Splashscreen } from 'ionic-native';
+import { synchronisationPage } from '../pages/synchronisation/synchronisation';
+import { accountInformationPage } from '../pages/accountInformation/accountInformation';
+import { groupsContactPage } from '../pages/groupsContact/groupsContact';
+
+
+
 
 @NgModule({
     declarations: [
@@ -44,7 +54,11 @@ import { imgWahlPage } from '../pages/imgWahl/imgWahl';
         NeueKampagnePage,
         camerSeitePage,
         imgWahlPage,
-        contactsOfKampagnePage
+        contactsOfKampagnePage,
+        audioPage,
+        synchronisationPage,
+        accountInformationPage, 
+        groupsContactPage
       
     ],
     imports: [
@@ -71,11 +85,16 @@ import { imgWahlPage } from '../pages/imgWahl/imgWahl';
         ReaderPage,
         camerSeitePage,
         imgWahlPage,
-        contactsOfKampagnePage
+        contactsOfKampagnePage,
+        audioPage,
+        synchronisationPage,
+        accountInformationPage, 
+        groupsContactPage
       
     ],
     providers: [
-        Camera, KampagneService,
+        Camera, KampagneService, Media, File, StatusBar, Splashscreen,
+
         { provide: ErrorHandler, useClass: IonicErrorHandler }]
 })
 export class AppModule { }

@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
-import { MediaPlugin } from 'ionic-native';
+import { MediaPlugin} from 'ionic-native';
 import { KampagnePage } from '../kampagne/kampagne';
 import { ContactPage } from '../contact/contact';
 import { groupsPage } from '../groups/groups';
+
+
 
 @Component({
     templateUrl: 'tabs.html'

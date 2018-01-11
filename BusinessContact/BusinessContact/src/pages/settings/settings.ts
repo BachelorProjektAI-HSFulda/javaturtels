@@ -1,5 +1,9 @@
 ﻿import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, AlertController } from 'ionic-angular';
+import { synchronisationPage } from '../synchronisation/synchronisation';
+
+
+import { accountInformationPage } from '../accountInformation/accountInformation';
 
 /*
   Generated class for the settings page.
@@ -13,10 +17,53 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class settingsPage {
 
-    constructor(public navCtrl: NavController, public navParams: NavParams) { }
+    constructor(public navCtrl: NavController, public navParams: NavParams,
+        public alertCtrl: AlertController){}
+    
+    public rangeObject: any = { lower: 0, upper: 100 };
 
     ionViewDidLoad() {
         console.log('ionViewDidLoad settingsPage');
     }
 
-}
+
+
+    deleteAll() {
+
+        let confirm = this.alertCtrl.create({
+            title: 'delete all?',
+            message: 'Are you sure you want to delete all your contact?',
+            buttons: [
+                {
+                    text: 'No',
+                    handler: () => {
+                        alert('No clicked');
+                    }
+                },
+                {
+                    text: 'Yes',
+                    handler: () => {
+                        alert('Yes clicked');
+                    }
+                }
+            ]
+        });
+        confirm.present();
+    }
+
+    shareContact() {
+
+        alert('share contact');
+    }
+
+    goToSynchronisation() {
+        this.navCtrl.push(synchronisationPage);
+    }
+
+    goToInfo()
+    {
+        this.navCtrl.push(accountInformationPage); 
+    }
+
+   }
+
