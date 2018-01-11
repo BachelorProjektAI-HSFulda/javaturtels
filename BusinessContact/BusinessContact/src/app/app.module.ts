@@ -24,6 +24,10 @@ import { camerSeitePage } from '../pages/camerSeite/camerSeite';
 import { imgWahlPage } from '../pages/imgWahl/imgWahl';
 import { audioPage } from '../pages/audioPage/audioPage';
 import { Media } from '@ionic-native/media';
+import { File } from '@ionic-native/file';
+import { StatusBar, Splashscreen } from 'ionic-native';
+
+
 
 
 @NgModule({
@@ -80,7 +84,8 @@ import { Media } from '@ionic-native/media';
       
     ],
     providers: [
-        Camera, KampagneService, Media,
+        Camera, KampagneService, Media, File, StatusBar, Splashscreen,
+
         { provide: ErrorHandler, useClass: IonicErrorHandler }]
 })
 export class AppModule { }
