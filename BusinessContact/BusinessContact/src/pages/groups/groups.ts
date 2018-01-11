@@ -1,6 +1,8 @@
-﻿import { Component } from '@angular/core';
+﻿import { Component, OnInit} from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { groupsSearchPage } from '../groupsSearch/groupsSearch';
+import { Todo } from "./groups.model";
+import { groupsContactPage } from '../groupsContact/groupsContact'; 
 /*
   Generated class for the groups page.
 
@@ -12,36 +14,55 @@ import { groupsSearchPage } from '../groupsSearch/groupsSearch';
 	templateUrl: 'groups.html'
 })
 
-export class groupsPage {
+export class groupsPage implements OnInit {
+    todoList: Array<Todo> = new Array<Todo>();
 
 	constructor(public navCtrl: NavController, public navParams: NavParams) { }
 
-	items = [
+    ngOnInit() {
+        let savedTodos = localStorage.getItem("todos-list");
+        if (savedTodos) {
+            this.todoList = JSON.parse(savedTodos);
+        }
+    }
 
-		'Messen',
+    add() {
+        let title = prompt("Create a New Group");
+        if (title) {
+            this.todoList.push(new Todo(title));
+            this.save();
+        }
 
-		'Meetings',
-
-		'Bla',
-
-		'Bla',
-	]
-
-	itemSelected(item: string) {
-
-		console.log("Selected Item", item);
-
-	}
-
-    ionViewDidLoad() {
-        console.log('ionViewDidLoad groupsPage');
+        this.navCtrl.push(groupsContactPage, {Title : title}); 
     }
 
 
-    newGroup()
+    edit(todo: Todo)
     {
-        alert("Create a new Group"); 
+        let title = prompt("Edit ", todo.title);
+        if (title && title != todo.title) {
+            todo.title = title;
+            this.save();
+        }
+
+        this.navCtrl.push(groupsContactPage, {Title : title}); 
     }
+
+    delete(index: number) {
+        this.todoList.splice(index, 1);
+        this.save();
+    }
+
+    toggleStatus(todo: Todo) {
+        todo.completed = !todo.completed;
+        this.save();
+    }
+
+    save() {
+        localStorage.setItem("todos-list", JSON.stringify(this.todoList));
+    }
+
+	
 
     search()
     {

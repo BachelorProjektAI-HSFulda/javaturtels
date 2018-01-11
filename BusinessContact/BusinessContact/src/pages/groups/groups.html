@@ -1,38 +1,50 @@
 <ion-header>
     <ion-navbar color="primary">
-        <ion-buttons left>
-            <button ion-button (click)="newGroup()">
-                <ion-icon name="add"></ion-icon>
-            </button>
-        </ion-buttons>
+          <ion-buttons left>
+                <button ion-button (click)="add()">
+                     <ion-icon name="add"></ion-icon>
+                </button>
+          </ion-buttons>
 
-        <ion-title class="titre">Groups</ion-title>
+           <ion-title class="titre">Groups</ion-title>
 
-        <ion-buttons end>
+         <ion-buttons end>
             <button ion-button (click)="search()">
                 <ion-icon name="search"></ion-icon>
             </button>
         </ion-buttons>
+       
         <ion-buttons end>
             <button ion-button menuToggle>
                 <ion-icon right name="more"></ion-icon>
             </button>
         </ion-buttons>
+
     </ion-navbar>
+
 </ion-header>
 
 
-<ion-content>
+<ion-content class="groupsPage" >
 
     <ion-list>
-
-        <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">
-
-            {{ items }}
-
-        </button>
-
+        <ion-card>
+            <ion-item-sliding *ngFor="let todo of todoList; let i = index;" (click)="toggleStatus(todo)">
+                <ion-item>
+                    <h2>{{ todo.title }}</h2>
+                </ion-item>
+                <ion-item-options>
+                    <button ion-button (click)="edit(todo)">
+                        <ion-icon name="create">&nbsp;&nbsp;Edit</ion-icon>
+                    </button>
+                    <button ion-button (click)="delete(i)">
+                        <ion-icon name="trash">&nbsp;&nbsp;Delete</ion-icon>
+                    </button>
+                </ion-item-options>
+            </ion-item-sliding>
+        </ion-card>
     </ion-list>
+
 
 </ion-content>
 

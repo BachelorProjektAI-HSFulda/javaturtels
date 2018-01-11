@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { NavController, AlertController , LoadingController, ActionSheetController} from 'ionic-angular';
 import { searchPage } from '../search/search';
 import { Camera, CameraOptions } from '@ionic-native/camera';
-//import { contactProfilePage } from '../contactProfile/contactProfile'; 
 import { camerSeitePage } from '../camerSeite/camerSeite'; 
 import { imgWahlPage } from '../imgWahl/imgWahl'; 
 
@@ -18,7 +17,7 @@ export class ContactPage {
     public textOutput: any;
 
     constructor(public navCtrl: NavController, private alert: AlertController, 
-    private camera : Camera, public loadingCtrl : LoadingController, public actionCtrl : ActionSheetController) {
+        private camera: Camera, public loadingCtrl: LoadingController, public actionCtrl: ActionSheetController) {
 
     }
 
@@ -26,6 +25,8 @@ export class ContactPage {
     {
         this.navCtrl.push(imgWahlPage);
     }
+
+   
    
     gotoCamera()
     {

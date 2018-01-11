@@ -35,10 +35,6 @@
         },
         "ionic-plugin-keyboard": {
             "PACKAGE_NAME": "io.cordova.myapp2d678f"
-        },
-        "cordova-plugin-contacts": {
-            "CONTACTS_USAGE_DESCRIPTION": " ",
-            "PACKAGE_NAME": "io.cordova.myapp2d678f"
         }
     },
     "dependent_plugins": {
