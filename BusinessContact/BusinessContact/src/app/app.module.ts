@@ -24,7 +24,14 @@ import { camerSeitePage } from '../pages/camerSeite/camerSeite';
 import { imgWahlPage } from '../pages/imgWahl/imgWahl';
 import { audioPage } from '../pages/audioPage/audioPage';
 import { Media } from '@ionic-native/media';
-import { groupsContactPage } from '../pages/groupsContact/groupsContact'; 
+<<<<<<< HEAD
+import { File } from '@ionic-native/file';
+import { StatusBar, Splashscreen } from 'ionic-native';
+
+=======
+import { synchronisationPage } from '../pages/synchronisation/synchronisation';
+import { accountInformationPage } from '../pages/accountInformation/accountInformation';
+>>>>>>> 7eaa2cc5fb165db4bccea8553b784b4221c2e331
 
 
 
@@ -51,7 +58,8 @@ import { groupsContactPage } from '../pages/groupsContact/groupsContact';
         imgWahlPage,
         contactsOfKampagnePage,
         audioPage,
-        groupsContactPage
+        synchronisationPage,
+        accountInformationPage 
       
     ],
     imports: [
@@ -80,11 +88,13 @@ import { groupsContactPage } from '../pages/groupsContact/groupsContact';
         imgWahlPage,
         contactsOfKampagnePage,
         audioPage,
-        groupsContactPage
+        synchronisationPage,
+        accountInformationPage 
       
     ],
     providers: [
-        Camera, KampagneService, Media,
+        Camera, KampagneService, Media, File, StatusBar, Splashscreen,
+
         { provide: ErrorHandler, useClass: IonicErrorHandler }]
 })
 export class AppModule { }

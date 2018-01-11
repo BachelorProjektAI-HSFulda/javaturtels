@@ -1,11 +1,11 @@
 import { Component, ViewChild } from '@angular/core';
 import { Platform, Nav} from 'ionic-angular';
-import { StatusBar, Splashscreen } from 'ionic-native';
 import { anmeldungPage } from '../pages/anmeldung/anmeldung';
 import { profilePage } from '../pages/profile/profile';
 import { TabsPage } from '../pages/tabs/tabs';
 import { helpPage } from '../pages/help/help'; 
 import { settingsPage}from'../pages/settings/settings'; 
+import { StatusBar, Splashscreen } from 'ionic-native';
 
 @Component({
   templateUrl: 'app.html'
