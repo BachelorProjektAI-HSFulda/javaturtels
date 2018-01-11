@@ -24,14 +24,12 @@ import { camerSeitePage } from '../pages/camerSeite/camerSeite';
 import { imgWahlPage } from '../pages/imgWahl/imgWahl';
 import { audioPage } from '../pages/audioPage/audioPage';
 import { Media } from '@ionic-native/media';
-<<<<<<< HEAD
 import { File } from '@ionic-native/file';
 import { StatusBar, Splashscreen } from 'ionic-native';
-
-=======
 import { synchronisationPage } from '../pages/synchronisation/synchronisation';
 import { accountInformationPage } from '../pages/accountInformation/accountInformation';
->>>>>>> 7eaa2cc5fb165db4bccea8553b784b4221c2e331
+import { groupsContactPage } from '../pages/groupsContact/groupsContact';
+
 
 
 
@@ -59,7 +57,8 @@ import { accountInformationPage } from '../pages/accountInformation/accountInfor
         contactsOfKampagnePage,
         audioPage,
         synchronisationPage,
-        accountInformationPage 
+        accountInformationPage, 
+        groupsContactPage
       
     ],
     imports: [
@@ -89,7 +88,8 @@ import { accountInformationPage } from '../pages/accountInformation/accountInfor
         contactsOfKampagnePage,
         audioPage,
         synchronisationPage,
-        accountInformationPage 
+        accountInformationPage, 
+        groupsContactPage
       
     ],
     providers: [
