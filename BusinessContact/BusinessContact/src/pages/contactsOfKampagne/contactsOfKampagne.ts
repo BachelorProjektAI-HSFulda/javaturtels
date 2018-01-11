@@ -57,13 +57,10 @@ export class contactsOfKampagnePage {
     }
 
     pushPage() {
-        if (this.srcImage !== null) {
-            this.navCtrl.push(ReaderPage, {
-                img: this.srcImage,
-                callback: this.presentActionSheet
-            });
-        }
-
+        this.navCtrl.push(ReaderPage, {
+            img: this.srcImage,
+            callback: this.presentActionSheet
+        })
     }
 
     getPicture(sourceType: number) {
