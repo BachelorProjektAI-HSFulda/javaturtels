@@ -6,7 +6,7 @@
             </button>
         </ion-buttons>
 
-        <ion-title class="titre">Campaign</ion-title>
+        <ion-title>Campaign</ion-title>
 
         <ion-buttons end>
             <button ion-button (click)="search()">
@@ -21,7 +21,7 @@
 <ion-content padding>
     <ion-list class="manual-list-fullwidth">
         <ion-list-header>Overview</ion-list-header>
-        <ion-item-sliding *ngFor="let item of items">
+        <ion-item-sliding *ngFor="let item of items" [animateItemSliding]="shouldAnimate">
             <ion-item class="item-thumbnail">
                 <ion-thumbnail item-left>
                     <!-->img *ngIf="imageAvailable" src="assets/placeholder.png"-->

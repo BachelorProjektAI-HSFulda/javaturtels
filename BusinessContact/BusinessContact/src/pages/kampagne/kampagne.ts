@@ -11,6 +11,7 @@ import { KampagneService } from "../../services/kampagne.service";
 })
 export class KampagnePage {
     items: { title: string }[] = [];
+    shouldAnimate: boolean = true;
 
     constructor(public navCtrl: NavController, private kampagneService: KampagneService) {
 
