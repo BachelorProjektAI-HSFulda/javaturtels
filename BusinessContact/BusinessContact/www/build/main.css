@@ -32972,6 +32972,50 @@ sub {
   }
 }
 
+.custom-width {
+  width: 30%;
+  height: auto;
+  margin: auto;
+}
+
+.img-circle {
+  border-radius: 50%;
+  overflow: hidden;
+  -webkit-perspective: 1px;
+  perspective: 1px;
+}
+
+.position {
+  text-align: center;
+}
+
+.background-color {
+  background-color: #488aff;
+  color: white;
+}
+
+@-webkit-keyframes slidingAnimation {
+  0% {
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(-70px, 0, 0);
+    -webkit-transform: translate3d(-70px, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+}
+
+.itemSlidingAnimation {
+  -webkit-animation: slidingAnimation;
+  animation: slidingAnimation;
+  -webkit-animation-duration: 1000ms;
+  animation-duration: 1000ms;
+}
+
 page-anmeldung .buttonBlock {
   background-color: #0A203F;
 }
@@ -33051,6 +33095,10 @@ page-contact .image-wrapper .imag {
   height: 100%;
 }
 
+page-contact .btn {
+  font-size: 20px;
+}
+
 page-contactsOfKampagne .titel {
   text-align: center;
 }
@@ -33061,6 +33109,10 @@ page-contactsOfKampagne .custom-font-size .icon {
 
 page-groups .titre {
   text-align: center;
+}
+
+page-groups .btn {
+  font-size: 20px;
 }
 
 page-imgWahl .titel {
@@ -33083,6 +33135,10 @@ page-kampagne .titre {
 
 page-kampagne .custom-font-size .icon {
   font-size: 24px;
+}
+
+page-kampagne .btn {
+  font-size: 20px;
 }
 
 page-reader-page .titel {
@@ -33220,4 +33276,8 @@ page-sign_up .signUpText .texT {
   text-align: center;
   font-size: 12px;
   color: grey;
+}
+
+page-tabs .custom-icon .icon {
+  font-size: 24px;
 }

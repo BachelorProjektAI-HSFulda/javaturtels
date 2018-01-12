@@ -29,6 +29,7 @@ import { StatusBar, Splashscreen } from 'ionic-native';
 import { synchronisationPage } from '../pages/synchronisation/synchronisation';
 import { accountInformationPage } from '../pages/accountInformation/accountInformation';
 import { groupsContactPage } from '../pages/groupsContact/groupsContact';
+import { AnimateItemSliding } from '../components/animate-item-sliding.module';
 
 
 
@@ -58,7 +59,8 @@ import { groupsContactPage } from '../pages/groupsContact/groupsContact';
         audioPage,
         synchronisationPage,
         accountInformationPage, 
-        groupsContactPage
+        groupsContactPage,
+        AnimateItemSliding
       
     ],
     imports: [

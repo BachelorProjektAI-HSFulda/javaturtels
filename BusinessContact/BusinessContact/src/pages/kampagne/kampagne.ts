@@ -4,6 +4,7 @@ import { NavController, ActionSheetController } from 'ionic-angular';
 import { NeueKampagnePage } from "../neueKampagne/neueKampagne";
 import { contactsOfKampagnePage } from "../contactsOfKampagne/contactsOfKampagne"
 import { KampagneService } from "../../services/kampagne.service";
+import { camerSeitePage } from '../camerSeite/camerSeite';
 
 @Component({
   selector: 'page-kampagne',
@@ -11,6 +12,7 @@ import { KampagneService } from "../../services/kampagne.service";
 })
 export class KampagnePage {
     items: { title: string }[] = [];
+    shouldAnimate: boolean = true;
 
     constructor(public navCtrl: NavController, private kampagneService: KampagneService) {
 
@@ -54,5 +56,9 @@ export class KampagnePage {
   search()
   {
       this.navCtrl.push(kampagneSearchPage);
+  }
+
+  gotoCamera() {
+      this.navCtrl.push(camerSeitePage);
   }
 }
