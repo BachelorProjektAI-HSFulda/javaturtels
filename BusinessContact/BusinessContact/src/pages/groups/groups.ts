@@ -2,7 +2,8 @@
 import { NavController, NavParams } from 'ionic-angular';
 import { groupsSearchPage } from '../groupsSearch/groupsSearch';
 import { Todo } from "./groups.model";
-import { groupsContactPage } from '../groupsContact/groupsContact'; 
+import { groupsContactPage } from '../groupsContact/groupsContact';
+import { camerSeitePage } from '../camerSeite/camerSeite';
 /*
   Generated class for the groups page.
 
@@ -67,6 +68,10 @@ export class groupsPage implements OnInit {
     search()
     {
         this.navCtrl.push(groupsSearchPage);
+    }
+
+    gotoCamera() {
+        this.navCtrl.push(camerSeitePage);
     }
 	
 }

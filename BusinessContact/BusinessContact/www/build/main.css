@@ -33013,7 +33013,7 @@ sub {
   -webkit-animation: slidingAnimation;
   animation: slidingAnimation;
   -webkit-animation-duration: 1000ms;
-  animation-duraton: 1000ms;
+  animation-duration: 1000ms;
 }
 
 page-anmeldung .buttonBlock {
@@ -33095,6 +33095,10 @@ page-contact .image-wrapper .imag {
   height: 100%;
 }
 
+page-contact .btn {
+  font-size: 20px;
+}
+
 page-contactsOfKampagne .titel {
   text-align: center;
 }
@@ -33105,6 +33109,10 @@ page-contactsOfKampagne .custom-font-size .icon {
 
 page-groups .titre {
   text-align: center;
+}
+
+page-groups .btn {
+  font-size: 20px;
 }
 
 page-imgWahl .titel {
@@ -33127,6 +33135,10 @@ page-kampagne .titre {
 
 page-kampagne .custom-font-size .icon {
   font-size: 24px;
+}
+
+page-kampagne .btn {
+  font-size: 20px;
 }
 
 page-reader-page .titel {
@@ -33264,4 +33276,8 @@ page-sign_up .signUpText .texT {
   text-align: center;
   font-size: 12px;
   color: grey;
+}
+
+page-tabs .custom-icon .icon {
+  font-size: 24px;
 }
