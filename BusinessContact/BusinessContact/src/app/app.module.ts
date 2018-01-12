@@ -30,6 +30,7 @@ import { synchronisationPage } from '../pages/synchronisation/synchronisation';
 import { accountInformationPage } from '../pages/accountInformation/accountInformation';
 import { groupsContactPage } from '../pages/groupsContact/groupsContact';
 import { AnimateItemSliding } from '../components/animate-item-sliding.module';
+import {cameraOfcampagnePage} from'../pages/cameraOfcampagne/cameraOfcampagne'; 
 
 
 
@@ -60,7 +61,8 @@ import { AnimateItemSliding } from '../components/animate-item-sliding.module';
         synchronisationPage,
         accountInformationPage, 
         groupsContactPage,
-        AnimateItemSliding
+        AnimateItemSliding,
+        cameraOfcampagnePage
       
     ],
     imports: [
@@ -91,7 +93,8 @@ import { AnimateItemSliding } from '../components/animate-item-sliding.module';
         audioPage,
         synchronisationPage,
         accountInformationPage, 
-        groupsContactPage
+        groupsContactPage,
+        cameraOfcampagnePage
       
     ],
     providers: [

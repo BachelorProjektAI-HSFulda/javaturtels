@@ -17,6 +17,7 @@ import { camerSeitePage } from '../camerSeite/camerSeite';
 
 export class groupsPage implements OnInit {
     todoList: Array<Todo> = new Array<Todo>();
+    title: any; 
 
 	constructor(public navCtrl: NavController, public navParams: NavParams) { }
 
@@ -28,25 +29,23 @@ export class groupsPage implements OnInit {
     }
 
     add() {
-        let title = prompt("Create a New Group");
-        if (title) {
-            this.todoList.push(new Todo(title));
+        this.title = prompt("Create a New Group");
+        if (this.title) {
+            this.todoList.push(new Todo(this.title));
             this.save();
         }
 
-        this.navCtrl.push(groupsContactPage, {Title : title}); 
+         
     }
 
 
     edit(todo: Todo)
     {
-        let title = prompt("Edit ", todo.title);
-        if (title && title != todo.title) {
-            todo.title = title;
+         this.title = prompt("Edit ", todo.title);
+        if (this.title && this.title != todo.title) {
+            todo.title = this.title;
             this.save();
         }
-
-        this.navCtrl.push(groupsContactPage, {Title : title}); 
     }
 
     delete(index: number) {
@@ -70,10 +69,22 @@ export class groupsPage implements OnInit {
         this.navCtrl.push(groupsSearchPage);
     }
 
-    gotoCamera() {
+    gotoCamera()
+    {
         this.navCtrl.push(camerSeitePage);
     }
-	
+
+
+    editList()
+    {
+        this.navCtrl.push(groupsContactPage, { Title: this.title }); 
+    }
+
+
+    test()
+    {
+        alert("test clicked"); 
+    }
 }
 
 
