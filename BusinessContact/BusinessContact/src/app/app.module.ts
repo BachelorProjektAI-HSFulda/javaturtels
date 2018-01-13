@@ -1,6 +1,7 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
+import { Storage } from '@ionic/storage';
 import { ContactPage } from '../pages/contact/contact';
 import { KampagnePage } from '../pages/kampagne/kampagne';
 import { TabsPage } from '../pages/tabs/tabs';
@@ -29,6 +30,9 @@ import { StatusBar, Splashscreen } from 'ionic-native';
 import { synchronisationPage } from '../pages/synchronisation/synchronisation';
 import { accountInformationPage } from '../pages/accountInformation/accountInformation';
 import { groupsContactPage } from '../pages/groupsContact/groupsContact';
+import { AnimateItemSliding } from '../components/animate-item-sliding.module';
+import { cameraOfcampagnePage } from '../pages/cameraOfcampagne/cameraOfcampagne'; 
+
 
 
 
@@ -58,7 +62,9 @@ import { groupsContactPage } from '../pages/groupsContact/groupsContact';
         audioPage,
         synchronisationPage,
         accountInformationPage, 
-        groupsContactPage
+        groupsContactPage,
+        AnimateItemSliding,
+        cameraOfcampagnePage
       
     ],
     imports: [
@@ -89,11 +95,12 @@ import { groupsContactPage } from '../pages/groupsContact/groupsContact';
         audioPage,
         synchronisationPage,
         accountInformationPage, 
-        groupsContactPage
+        groupsContactPage,
+        cameraOfcampagnePage
       
     ],
     providers: [
-        Camera, KampagneService, Media, File, StatusBar, Splashscreen,
+        Camera, KampagneService, Media, File, StatusBar, Splashscreen, Storage,
 
         { provide: ErrorHandler, useClass: IonicErrorHandler }]
 })

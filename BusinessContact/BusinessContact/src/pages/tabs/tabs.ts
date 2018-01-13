@@ -7,6 +7,7 @@ import { groupsPage } from '../groups/groups';
 
 
 @Component({
+    selector: 'page-tabs',
     templateUrl: 'tabs.html'
 })
 export class TabsPage {

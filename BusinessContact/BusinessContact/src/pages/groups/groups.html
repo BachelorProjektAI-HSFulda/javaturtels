@@ -6,16 +6,19 @@
               </button>
           </ion-buttons>
 
-           <ion-title class="titre">Groups</ion-title>
+           <ion-title>Groups</ion-title>
 
          <ion-buttons end>
-            <button ion-button (click)="search()">
+            <button ion-button class="btn" (click)="search()">
                 <ion-icon name="search"></ion-icon>
             </button>
         </ion-buttons>
        
-        <!-->ion-buttons end>
-        </!--ion-buttons-->
+         <ion-buttons end>
+             <button ion-button class="btn" (click)="gotoCamera()">
+                 <ion-icon name="camera"></ion-icon>
+             </button>
+         </ion-buttons>
 
     </ion-navbar>
 
@@ -25,24 +28,26 @@
 <ion-content class="groupsPage">
 
     <ion-list>
-        <ion-card>
-            <ion-item-sliding *ngFor="let todo of todoList; let i = index;" (click)="toggleStatus(todo)">
-                <ion-item>
-                    <h2>{{ todo.title }}</h2>
-                </ion-item>
-                <ion-item-options>
-                    <button ion-button (click)="edit(todo)">
-                        <ion-icon name="create">&nbsp;&nbsp;Edit</ion-icon>
-                    </button>
-                    <button ion-button (click)="delete(i)">
-                        <ion-icon name="trash">&nbsp;&nbsp;Delete</ion-icon>
-                    </button>
-                </ion-item-options>
-            </ion-item-sliding>
-        </ion-card>
+        <ion-item-sliding *ngFor="let todo of todoList; let i = index;" (click)="toggleStatus(todo)" [animateItemSliding]="shouldAnimate">
+            <ion-item (click)="editList()">
+                <ion-thumbnail item-left (click)="test()">
+                    <img src="assets/group.png" />
+                </ion-thumbnail>
+                <h2 class="groups-name">{{ todo.title }}</h2>
+                <p><small><ion-icon name="md-contacts" item-start> 0 </ion-icon></small></p>
+            </ion-item>
+            <ion-item-options>
+                <button ion-button (click)="edit(todo)">
+                    <ion-icon name="create">&nbsp;&nbsp;Edit</ion-icon>
+                </button>
+                <button ion-button (click)="delete(i)" color="danger">
+                    <ion-icon name="trash">&nbsp;&nbsp;Delete</ion-icon>
+                </button>
+            </ion-item-options>
+        </ion-item-sliding>
     </ion-list>
     <ion-fab right bottom (click)="add()">
-        <button ion-fab color="light"><ion-icon name="add"></ion-icon></button>
+        <button ion-fab color="primary"><ion-icon name="people"></ion-icon></button>
     </ion-fab>
 
 </ion-content>
