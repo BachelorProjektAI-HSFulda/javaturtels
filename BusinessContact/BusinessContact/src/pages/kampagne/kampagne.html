@@ -9,44 +9,42 @@
         <ion-title>Campaign</ion-title>
 
         <ion-buttons end>
-            <button ion-button class="btn" (click)="search()">
-                <ion-icon name="search"></ion-icon>
-            </button>
-        </ion-buttons>
-        <ion-buttons end>
             <button ion-button class="btn" (click)="gotoCamera()">
                 <ion-icon name="camera"></ion-icon>
             </button>
         </ion-buttons>
+        <ion-buttons end>
+            <button ion-button class="btn" (click)="newCampaign()">
+                <ion-icon name="add"></ion-icon>
+            </button>
+        </ion-buttons>
     </ion-navbar>
+    <ion-toolbar no-border-top color="primary">
+        <ion-searchbar placeholder="Search" (ionInput)="filterItems($event)"></ion-searchbar>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-    <ion-list class="manual-list-fullwidth">
+    <ion-list>
         <ion-list-header>Overview</ion-list-header>
-        <ion-item-sliding *ngFor="let item of items" [animateItemSliding]="shouldAnimate">
-            <ion-item class="item-thumbnail">
+        <ion-item-sliding *ngFor="let item of items; let i = index" [animateItemSliding]="shouldAnimate &amp;&amp; i === 0">
+            <ion-item class="bottom-border">
                 <ion-thumbnail item-left>
-                    <!-->img *ngIf="imageAvailable" src="assets/placeholder.png"-->
                     <img *ngIf="!imageAvailable" src="assets/placeholder.png">
                 </ion-thumbnail>
                 <h2>{{ item.title }}</h2>
                 <p><small><ion-icon name="md-contacts" item-start> 0 </ion-icon></small></p>
                 <!-->p><small><ion-icon name="ios-locate">{{item.location}}</ion-icon></small></!--p-->
-                <!-->ion-icon name="ios-arrow-forward" item-right color="light"></!--ion-icon-->
                 <button ion-button clear item-right (click)="onItemSelected(item)">View</button>
             </ion-item>
             <ion-item-options>
                 <button ion-button color="primary" icon-left (click)="editKampagne()">
-                    <ion-icon name="create"><small><small> Edit</small></small></ion-icon>
+                    <ion-icon name="create"><small> Edit</small></ion-icon>
                 </button>
                 <button ion-button color="danger" icon-left (click)="deleteKampagne(item)">
-                    <ion-icon name="trash"><small><small> Delete</small></small></ion-icon>
+                    <ion-icon name="trash"><small> Delete</small></ion-icon>
                 </button>
             </ion-item-options>
         </ion-item-sliding>
     </ion-list>
-    <ion-fab right bottom (click)="newCampaign()">
-        <button ion-fab color="primary"><ion-icon name="contacts"></ion-icon></button>
-    </ion-fab>
 </ion-content>

@@ -33141,6 +33141,10 @@ page-kampagne .btn {
   font-size: 20px;
 }
 
+page-kampagne .item[no-lines].bottom-border {
+  border-bottom: 1px solid grey;
+}
+
 page-reader-page .titel {
   text-align: center;
 }

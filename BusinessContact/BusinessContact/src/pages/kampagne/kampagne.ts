@@ -17,48 +17,71 @@ export class KampagnePage {
     constructor(public navCtrl: NavController, private kampagneService: KampagneService) {
 
     }
-  
-  onLink(url: string) {
-      window.open(url);
+
+    ngOnInit() {
+        this.setItems();
     }
 
-  ionViewWillEnter() {
-      this.items = this.kampagneService.getKampagne();
-  }
+    setItems() {
+        this.items = this.kampagneService.showKampagne();
+    }
+  
+    onLink(url: string) {
+        window.open(url);
+    }
 
-  newCampaign() {
-      this.navCtrl.push(NeueKampagnePage);
-  }
+    ionViewWillEnter() {
+        
+        this.kampagneService.getKampagne()
+          .then(
+           (items) =>  this.items = items
+        );    
+    }
 
-  onItemSelected(item) {
-      let index = this.items.indexOf(item);
-      this.navCtrl.push(contactsOfKampagnePage, { item: this.items[index] });
-  }
+    ionViewDidLeave() {
+        this.shouldAnimate = false;
+    }
 
-  editKampagne() {
-      alert("Edited!")
-  }
+    newCampaign() {
+        this.navCtrl.push(NeueKampagnePage);
+    }
 
-  deleteKampagne(item) {
-      let index = this.items.indexOf(item);
+    onItemSelected(item) {
+        let index = this.items.indexOf(item);
+        this.navCtrl.push(contactsOfKampagnePage, { item: this.items[index] });
+    }
 
-      if (confirm("Are you sure, this Campaign will be deleted?") == true) {
-          if (index > -1) {
-              this.items.splice(index, 1);
-              // remove also from service
-              this.kampagneService.removeKampagne(item);
+    editKampagne() {
+        alert("Edited!")
+    }
+
+    deleteKampagne(item) {
+          let index = this.items.indexOf(item);
+
+          if (confirm("Are you sure, this Campaign will be deleted?") == true) {
+              if (index > -1) {
+                  this.items.splice(index, 1);
+                  // remove from service
+                  this.kampagneService.removeKampagne(item);
+              }
+          } else {
+              // do nothing
           }
-      } else {
-          // do nothing
-      }
-  }
+    }
 
-  search()
-  {
-      this.navCtrl.push(kampagneSearchPage);
-  }
+    filterItems(ev: any) {
+          this.shouldAnimate = false;
+          this.setItems();
+          let val = ev.target.value;
 
-  gotoCamera() {
-      this.navCtrl.push(camerSeitePage);
-  }
+          if (val && val.trim() !== '') {
+              this.items = this.items.filter(function (item) {
+                  return item.title.toLowerCase().includes(val.toLowerCase());
+              });
+          }
+    }
+
+    gotoCamera() {
+        this.navCtrl.push(camerSeitePage);
+    }
 }
