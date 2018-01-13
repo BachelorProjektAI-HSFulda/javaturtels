@@ -2,6 +2,7 @@
 import { NavController, NavParams, AlertController } from 'ionic-angular';
 import { anmeldungPage } from '../anmeldung/anmeldung';
 import { TabsPage } from '../tabs/tabs';
+import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook';
 
 
 /*
@@ -15,9 +16,19 @@ import { TabsPage } from '../tabs/tabs';
     templateUrl: 'sign-in.html'
 })
 export class sign_inPage {
+    userData: any;
+
 
     constructor(public navCtrl: NavController, public navParams: NavParams,
-    public alertCtrl: AlertController) { }
+        public alertCtrl: AlertController, private facebook: Facebook) { }
+
+    loginWithFB() {
+        this.facebook.login(['email', 'public_profile']).then((response: FacebookLoginResponse) => {
+            this.facebook.api('me?fields=id,name,email,first_name,picture.width(720).height(720).as(picture_large)', []).then(profile => {
+                this.userData = { email: profile['email'], first_name: profile['first_name'], picture: profile['picture_large']['data']['url'], username: profile['name'] }
+            });
+        });
+    }
 
     ionViewDidLoad() {
         console.log('ionViewDidLoad sign_inPage');
@@ -28,9 +39,7 @@ export class sign_inPage {
         this.navCtrl.setRoot(anmeldungPage);
     }
 
-    goToFace() {
-        alert("connect with FaceBook");
-    }
+    
 
     goToGoo() {
         alert("connect with Google");
@@ -44,9 +53,7 @@ export class sign_inPage {
         alert("connect with windows");
     }
 
-    signIn() {
-        this.navCtrl.setRoot(TabsPage);
-    }
+    
 
     alerPassVerg()
     {

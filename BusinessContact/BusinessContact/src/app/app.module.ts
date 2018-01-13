@@ -32,8 +32,8 @@ import { accountInformationPage } from '../pages/accountInformation/accountInfor
 import { groupsContactPage } from '../pages/groupsContact/groupsContact';
 import { AnimateItemSliding } from '../components/animate-item-sliding.module';
 import { cameraOfcampagnePage } from '../pages/cameraOfcampagne/cameraOfcampagne'; 
-
-
+import { Facebook } from '@ionic-native/facebook';
+import { BrowserModule } from '@angular/platform-browser';
 
 
 
@@ -68,6 +68,7 @@ import { cameraOfcampagnePage } from '../pages/cameraOfcampagne/cameraOfcampagne
       
     ],
     imports: [
+        BrowserModule,
         IonicModule.forRoot(MyApp)
     ],
     bootstrap: [IonicApp],
@@ -100,7 +101,7 @@ import { cameraOfcampagnePage } from '../pages/cameraOfcampagne/cameraOfcampagne
       
     ],
     providers: [
-        Camera, KampagneService, Media, File, StatusBar, Splashscreen, Storage,
+        Camera, KampagneService, Media, File, StatusBar, Splashscreen, Storage, Facebook,
 
         { provide: ErrorHandler, useClass: IonicErrorHandler }]
 })
