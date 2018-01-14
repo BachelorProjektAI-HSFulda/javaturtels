@@ -13,13 +13,13 @@
                 <ion-icon name="camera"></ion-icon>
             </button>
         </ion-buttons>
-        <ion-buttons end>
+        <!-->ion-buttons end>
             <button ion-button class="btn" (click)="newCampaign()">
                 <ion-icon name="add"></ion-icon>
             </button>
-        </ion-buttons>
+        </ion-buttons-->
     </ion-navbar>
-    <ion-toolbar no-border-top color="primary">
+    <ion-toolbar no-border-top color="light">
         <ion-searchbar placeholder="Search" (ionInput)="filterItems($event)"></ion-searchbar>
     </ion-toolbar>
 </ion-header>
@@ -47,4 +47,7 @@
             </ion-item-options>
         </ion-item-sliding>
     </ion-list>
+    <ion-fab right bottom (click)="newCampaign()">
+        <button ion-fab color="primary"><ion-icon name="add"></ion-icon></button>
+    </ion-fab>
 </ion-content>
