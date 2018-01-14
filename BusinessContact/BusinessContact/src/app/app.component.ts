@@ -12,7 +12,7 @@ import { MenuController } from 'ionic-angular';
   templateUrl: 'app.html'
 })
 export class MyApp {
-    rootPage: any = TabsPage;
+    rootPage: any = anmeldungPage;
     @ViewChild(Nav) nav: Nav;
 
     constructor(platform: Platform, public menuCtrl: MenuController) {
