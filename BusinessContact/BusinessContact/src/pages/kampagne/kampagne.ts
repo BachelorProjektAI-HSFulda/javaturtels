@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+//import { Keyboard } from '@ionic-native/keyboard';
 import { kampagneSearchPage } from '../kampagneSearch/kampagneSearch';
-import { NavController, ActionSheetController } from 'ionic-angular';
+import { NavController, ActionSheetController, Content, Keyboard } from 'ionic-angular';
 import { NeueKampagnePage } from "../neueKampagne/neueKampagne";
 import { contactsOfKampagnePage } from "../contactsOfKampagne/contactsOfKampagne"
 import { KampagneService } from "../../services/kampagne.service";
@@ -13,8 +14,11 @@ import { camerSeitePage } from '../camerSeite/camerSeite';
 export class KampagnePage {
     items: { title: string }[] = [];
     shouldAnimate: boolean = true;
-
-    constructor(public navCtrl: NavController, private kampagneService: KampagneService) {
+    showSearchbar: boolean = false;
+    @ViewChild('content') content: Content;
+ 
+    constructor(public navCtrl: NavController, private kampagneService: KampagneService, private keyboard: Keyboard,
+                public actionSheetCtrl: ActionSheetController) {
 
     }
 
@@ -36,6 +40,20 @@ export class KampagnePage {
           .then(
            (items) =>  this.items = items
         );    
+    }
+
+    toggleSearchbar() {
+            this.showSearchbar = !this.showSearchbar;
+            this.content.resize();
+
+            if (this.showSearchbar === false) {
+                this.keyboard.close();
+            }
+        
+    }
+
+    imageOptions() {
+        alert("Image Clicked!");
     }
 
     ionViewDidLeave() {
