@@ -4,7 +4,9 @@ import { searchPage } from '../search/search';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { camerSeitePage } from '../camerSeite/camerSeite'; 
 import { imgWahlPage } from '../imgWahl/imgWahl'; 
-import { contactProfilePage } from '../contactProfile/contactProfile'; 
+import { contactProfilePage } from '../contactProfile/contactProfile';
+import { AddcontactPage } from '../addContact/addContact';
+
 
 
 @Component({
@@ -94,7 +96,7 @@ export class ContactPage {
 
    gotoCreateContact()
    {
-       this.navCtrl.push(contactProfilePage); 
+       this.navCtrl.push(AddcontactPage); 
    }
 
 

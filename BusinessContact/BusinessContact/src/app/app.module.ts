@@ -34,6 +34,7 @@ import { AnimateItemSliding } from '../components/animate-item-sliding.module';
 import { cameraOfcampagnePage } from '../pages/cameraOfcampagne/cameraOfcampagne'; 
 import { Facebook } from '@ionic-native/facebook';
 import { BrowserModule } from '@angular/platform-browser';
+import { AddcontactPage } from '../pages/addContact/addContact';
 
 
 
@@ -64,7 +65,8 @@ import { BrowserModule } from '@angular/platform-browser';
         accountInformationPage, 
         groupsContactPage,
         AnimateItemSliding,
-        cameraOfcampagnePage
+        cameraOfcampagnePage,
+        AddcontactPage
       
     ],
     imports: [
@@ -97,7 +99,8 @@ import { BrowserModule } from '@angular/platform-browser';
         synchronisationPage,
         accountInformationPage, 
         groupsContactPage,
-        cameraOfcampagnePage
+        cameraOfcampagnePage,
+        AddcontactPage
       
     ],
     providers: [
