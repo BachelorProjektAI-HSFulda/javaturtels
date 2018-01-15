@@ -4,6 +4,7 @@ import { searchPage } from '../search/search';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { camerSeitePage } from '../camerSeite/camerSeite'; 
 import { imgWahlPage } from '../imgWahl/imgWahl'; 
+import { contactProfilePage } from '../contactProfile/contactProfile'; 
 
 
 @Component({
@@ -89,6 +90,14 @@ export class ContactPage {
        });
        actionSheet.present();
    }
+
+
+   gotoCreateContact()
+   {
+       this.navCtrl.push(contactProfilePage); 
+   }
+
+
    }
   
 
