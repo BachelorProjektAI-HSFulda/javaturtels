@@ -1,6 +1,6 @@
 <ion-header>
 
-    <ion-navbar>
+    <ion-navbar color="primary">
         <ion-title>addcontact</ion-title>
     </ion-navbar>
 
@@ -8,21 +8,34 @@
 
 
 <ion-content padding>
-    <ion-input type="text" [(ngModel)]="newcontact.displayName"
-               placeholder="Enter Display Name"></ion-input>
-    <ion-input type="text" [(ngModel)]="newcontact.nickname"
-               placeholder="Enter Nick Name"></ion-input>
-    <ion-input type="text" [(ngModel)]="newcontact.phnumber"
-               placeholder="Enter Phone number"></ion-input>
-    <ion-list>
+    <ion-item>
+        <ion-label color="primary">Display name:</ion-label>
+        <ion-input type="text" [(ngModel)]="newcontact.displayName"
+                   placeholder="Enter Display Name"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label color="primary">Nickname:</ion-label>
+        <ion-input type="text" [(ngModel)]="newcontact.nickname"
+                   placeholder="Enter Nick Name"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label color="primary">Tel:</ion-label>
+        <ion-input type="text" [(ngModel)]="newcontact.phnumber"
+                   placeholder="Enter Phone number"></ion-input>
+    </ion-item>
         <ion-item>
-            <ion-label>Type</ion-label>
-            <ion-select [(ngModel)]="newcontact.phtype">
-                <ion-option value="home">Home</ion-option>
-                <ion-option value="work">Work</ion-option>
-                <ion-option value="other">Other</ion-option>
-            </ion-select>
+            <ion-label color="primary">E-mail :</ion-label>
+            <ion-input type="email" placeholder="email Input"></ion-input>
         </ion-item>
-    </ion-list>
-    <button ion-button (click)="addcontact(newcontact)">Save</button>
+
+        <ion-item>
+            <ion-label color="primary">Adress :</ion-label>
+            <ion-input type="adress" placeholder="Adress Input"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label color="primary">Profession :</ion-label>
+            <ion-input type="text" placeholder="Profession Input"></ion-input>
+        </ion-item>
+
+        <button ion-button (click)="addcontact(newcontact)">Save</button>
 </ion-content>
