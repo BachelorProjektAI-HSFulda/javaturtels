@@ -3,16 +3,16 @@ import { NavController, NavParams } from 'ionic-angular';
 import { Contacts, ContactField } from 'ionic-native';
 
 /*
-  Generated class for the Addcontact page.
+  Generated class for the addContact page.
+
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
 @Component({
-    selector: 'page-addcontact',
-    templateUrl: 'addcontact.html'
+    selector: 'page-addContact',
+    templateUrl: 'addContact.html'
 })
-export class AddcontactPage {
-
+export class addContactPage {
     newcontact = {
         displayName: '',
         nickname: '',
@@ -23,7 +23,7 @@ export class AddcontactPage {
     constructor(public navCtrl: NavController, public navParams: NavParams) { }
 
     ionViewDidLoad() {
-        console.log('ionViewDidLoad AddcontactPage');
+        console.log('ionViewDidLoad addContactPage');
     }
 
     addcontact(newct) {
