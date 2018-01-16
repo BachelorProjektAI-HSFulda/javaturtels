@@ -17,7 +17,8 @@ export class addContactPage {
         displayName: '',
         nickname: '',
         phnumber: '',
-        phtype: ''
+        phtype: '',
+        email: ''
     }
 
     constructor(public navCtrl: NavController, public navParams: NavParams) { }
@@ -30,6 +31,7 @@ export class addContactPage {
         var contact = Contacts.create();
         contact.displayName = newct.displayName;
         contact.nickname = newct.nickname;
+      
 
         var contactfield = new ContactField();
         contactfield.type = newct.phtype;
@@ -40,6 +42,17 @@ export class addContactPage {
         numbersection.push(contactfield);
         contact.phoneNumbers = numbersection;
 
+
+        var contactfield2 = new ContactField();
+        contactfield2.type = newct.phtype; 
+        contactfield2.value = newct.email;
+        contactfield2.pref = true; 
+
+        var emailsection = [];
+        emailsection.push(contactfield2);
+        contact.emails = emailsection;
+        
+            
         contact.save().then((contact) => {
             alert('saved');
         }, (error) => {
