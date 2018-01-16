@@ -2,15 +2,10 @@
 import { NavController, NavParams, AlertController } from 'ionic-angular';
 import { anmeldungPage } from '../anmeldung/anmeldung';
 import { TabsPage } from '../tabs/tabs';
+import { Facebook } from '@ionic-native/facebook'
 
 
 
-/*
-  Generated class for the sign_in page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
     selector: 'page-sign_in',
     templateUrl: 'sign-in.html'
@@ -24,7 +19,7 @@ export class sign_inPage {
 
     gotoFace()
     {
-        alert("go to Face"); 
+        alert("go to Facebook"); 
     }
 
     ionViewDidLoad() {
