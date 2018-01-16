@@ -1,7 +1,0 @@
-{
-    "ImageIO.framework": 2,
-    "CoreLocation.framework": 2,
-    "AVFoundation.framework": 2,
-    "AddressBook.framework": 1,
-    "AddressBookUI.framework": 1
-}
