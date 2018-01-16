@@ -6,6 +6,7 @@ import { camerSeitePage } from '../camerSeite/camerSeite';
 import { imgWahlPage } from '../imgWahl/imgWahl'; 
 import { contactProfilePage } from '../contactProfile/contactProfile';
 import { AddcontactPage } from '../addContact/addContact';
+import { audioPage } from '../audioPage/audioPage';
 
 
 
@@ -29,7 +30,10 @@ export class ContactPage {
         this.navCtrl.push(imgWahlPage);
     }
 
-   
+    gotoAudio()
+    {
+        this.navCtrl.push(audioPage);
+    }
    
     gotoCamera()
     {

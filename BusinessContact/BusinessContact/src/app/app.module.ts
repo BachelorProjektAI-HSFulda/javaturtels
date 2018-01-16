@@ -35,6 +35,7 @@ import { cameraOfcampagnePage } from '../pages/cameraOfcampagne/cameraOfcampagne
 import { Facebook } from '@ionic-native/facebook';
 import { BrowserModule } from '@angular/platform-browser';
 import { AddcontactPage } from '../pages/addContact/addContact';
+import { CommonModule } from '@angular/common';
 
 
 
