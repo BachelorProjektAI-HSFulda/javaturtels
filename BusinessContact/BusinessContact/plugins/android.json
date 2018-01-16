@@ -27,9 +27,6 @@
         },
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "io.cordova.myapp2d678f"
-        },
-        "ionic-plugin-keyboard": {
-            "PACKAGE_NAME": "io.cordova.myapp2d678f"
         }
     },
     "dependent_plugins": {

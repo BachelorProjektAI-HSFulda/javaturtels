@@ -1,6 +1,6 @@
 ﻿import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { Contacts, ContactField } from 'ionic-native';
+import { Contacts, ContactField, ContactAddress, ContactOrganization } from 'ionic-native';
 
 /*
   Generated class for the addContact page.
@@ -18,7 +18,14 @@ export class addContactPage {
         nickname: '',
         phnumber: '',
         phtype: '',
-        email: ''
+        email: '',
+        address: '',
+        profession: '',
+        orgaName: '',
+        street: '', 
+        persPost: '',
+        local : ''
+
     }
 
     constructor(public navCtrl: NavController, public navParams: NavParams) { }
@@ -31,7 +38,7 @@ export class addContactPage {
         var contact = Contacts.create();
         contact.displayName = newct.displayName;
         contact.nickname = newct.nickname;
-      
+        
 
         var contactfield = new ContactField();
         contactfield.type = newct.phtype;
@@ -51,6 +58,22 @@ export class addContactPage {
         var emailsection = [];
         emailsection.push(contactfield2);
         contact.emails = emailsection;
+
+
+        var contactAdress = new ContactAddress(); 
+        contactAdress.streetAddress = newct.street; 
+        contactAdress.postalCode = newct.persPostal; 
+        contactAdress.locality = newct.local; 
+        contactAdress.pref = true; 
+        ContactAddress.bind(newct.street, newct.persPostal, newct.local); 
+
+
+
+        var organisation = new ContactOrganization()
+        organisation.name = newct.orgaName; 
+        organisation.title = newct.profession; 
+        organisation.pref = true; 
+        ContactOrganization.bind(newct.orgaName, newct.profession); 
         
             
         contact.save().then((contact) => {
