@@ -3,7 +3,7 @@ import { NavController, NavParams, AlertController } from 'ionic-angular';
 import { anmeldungPage } from '../anmeldung/anmeldung';
 import { TabsPage } from '../tabs/tabs';
 import { Facebook } from '@ionic-native/facebook'
-
+import { NgModule } from '@angular/core';
 
 
 @Component({
