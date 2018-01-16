@@ -25,7 +25,6 @@ export class addContactPage {
         street: '', 
         persPost: '',
         local : ''
-
     }
 
     constructor(public navCtrl: NavController, public navParams: NavParams) { }
@@ -60,20 +59,33 @@ export class addContactPage {
         contact.emails = emailsection;
 
 
-        var contactAdress = new ContactAddress(); 
-        contactAdress.streetAddress = newct.street; 
-        contactAdress.postalCode = newct.persPostal; 
-        contactAdress.locality = newct.local; 
-        contactAdress.pref = true; 
-        ContactAddress.bind(newct.street, newct.persPostal, newct.local); 
+        //var contactAdress = new ContactAddress(); 
+        //contactAdress.streetAddress = newct.street; 
+        ////contactAdress.postalCode = newct.persPostal; 
+        ////contactAdress.locality = newct.local; 
+        //contactAdress.pref = true; 
+        ////ContactAddress.bind(newct.street, newct.persPostal, newct.local); 
+
+        //var addresSection = [];
+        //addresSection.push(contactAdress.streetAddress); 
+        ////addresSection.push(contactAdress.postalCode); 
+        ////addresSection.push(contactAdress.locality); 
+        //contact.addresses = addresSection; 
 
 
+        //var organisation = new ContactOrganization()
+        //organisation.name = newct.orgaName; 
+        //organisation.title = newct.profession; 
+        //organisation.pref = true; 
+        ////ContactOrganization.bind(newct.orgaName, newct.profession); 
 
-        var organisation = new ContactOrganization()
-        organisation.name = newct.orgaName; 
-        organisation.title = newct.profession; 
-        organisation.pref = true; 
-        ContactOrganization.bind(newct.orgaName, newct.profession); 
+
+        //var organisationSection = []; 
+        //organisationSection.push(organisation.name);
+        //organisationSection.push(organisation.title);
+
+        //contact.organizations = organisationSection; 
+
         
             
         contact.save().then((contact) => {
