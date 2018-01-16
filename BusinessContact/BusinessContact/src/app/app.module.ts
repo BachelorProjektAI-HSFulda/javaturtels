@@ -32,9 +32,8 @@ import { accountInformationPage } from '../pages/accountInformation/accountInfor
 import { groupsContactPage } from '../pages/groupsContact/groupsContact';
 import { AnimateItemSliding } from '../components/animate-item-sliding.module';
 import { cameraOfcampagnePage } from '../pages/cameraOfcampagne/cameraOfcampagne'; 
-import { Facebook } from '@ionic-native/facebook';
 import { BrowserModule } from '@angular/platform-browser';
-import { AddcontactPage } from '../pages/addContact/addContact';
+import { addContactPage } from '../pages/addContact/addContact';
 import { CommonModule } from '@angular/common';
 
 
@@ -67,7 +66,7 @@ import { CommonModule } from '@angular/common';
         groupsContactPage,
         AnimateItemSliding,
         cameraOfcampagnePage,
-        AddcontactPage
+        addContactPage
       
     ],
     imports: [
@@ -101,11 +100,11 @@ import { CommonModule } from '@angular/common';
         accountInformationPage, 
         groupsContactPage,
         cameraOfcampagnePage,
-        AddcontactPage
+        addContactPage
       
     ],
     providers: [
-        Camera, KampagneService, Media, File, StatusBar, Splashscreen, Storage, Facebook,
+        Camera, KampagneService, Media, File, StatusBar, Splashscreen, Storage,
 
         { provide: ErrorHandler, useClass: IonicErrorHandler }]
 })
