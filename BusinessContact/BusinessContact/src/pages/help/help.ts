@@ -12,13 +12,14 @@ import { NavController, NavParams } from 'ionic-angular';
     templateUrl: 'help.html'
 })
 export class helpPage {
+    
 
-    constructor(public navCtrl: NavController, public navParams: NavParams) { }
-
-    ionViewDidLoad() {
-        console.log('ionViewDidLoad helpPage');
-    }
+    constructor(public navCtrl: NavController, public navParams: NavParams) {  }
 
    
-
+    
+    
 }
+   
+
+

@@ -4,6 +4,7 @@ import { anmeldungPage } from '../anmeldung/anmeldung';
 import { TabsPage } from '../tabs/tabs';
 
 
+
 /*
   Generated class for the sign_in page.
 
@@ -15,9 +16,16 @@ import { TabsPage } from '../tabs/tabs';
     templateUrl: 'sign-in.html'
 })
 export class sign_inPage {
+  
+
 
     constructor(public navCtrl: NavController, public navParams: NavParams,
-    public alertCtrl: AlertController) { }
+        public alertCtrl: AlertController) { }
+
+    gotoFace()
+    {
+        alert("go to Face"); 
+    }
 
     ionViewDidLoad() {
         console.log('ionViewDidLoad sign_inPage');
@@ -28,9 +36,7 @@ export class sign_inPage {
         this.navCtrl.setRoot(anmeldungPage);
     }
 
-    goToFace() {
-        alert("connect with FaceBook");
-    }
+    
 
     goToGoo() {
         alert("connect with Google");
@@ -44,9 +50,7 @@ export class sign_inPage {
         alert("connect with windows");
     }
 
-    signIn() {
-        this.navCtrl.setRoot(TabsPage);
-    }
+    
 
     alerPassVerg()
     {
@@ -89,6 +93,10 @@ export class sign_inPage {
         alert.present();
     }
 
+    signIn()
+    {
+        this.navCtrl.setRoot(TabsPage); 
+    }
 
 }
 

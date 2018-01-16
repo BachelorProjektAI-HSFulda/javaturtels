@@ -1,7 +1,8 @@
-﻿import { NavController, Platform } from 'ionic-angular';
+﻿import { NavController, Platform, Content, Keyboard } from 'ionic-angular';
 import { Media, MediaObject } from '@ionic-native/media';
 import { File } from '@ionic-native/file';
-import { Component, NgModule } from '@angular/core';
+import { Component, NgModule, ViewChild } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 
 

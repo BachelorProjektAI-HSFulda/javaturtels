@@ -1,22 +1,44 @@
-<ion-menu side= "right" [content] ="content">
+<ion-menu id="menu" [content]="content">
+
     <ion-content>
+        <ion-list class="background-color">
+            <br />
+            <ion-avatar class="custom-width">
+                <div class="img-circle">
+                    <img src="assets/profileplaceholder.png">
+                </div>
+            </ion-avatar>
+            <h2 class="position">Max Mustermann</h2><br />   <!--Später, (get) Anmeldename und zeige ihn hier an-->
+        </ion-list>
         <ion-list>
-            <ion-item (click)=" goToprofil()">
-                <ion-icon name ="person">   profile</ion-icon>
+            <ion-item (click)="goToprofil()">
+                <ion-icon name="person" item-left></ion-icon>
+                <h2>Profile</h2>
             </ion-item>
             <ion-item (click)="goToSettings()">
-                <ion-icon name ="settings">   settings</ion-icon>
+                <ion-icon name="settings" item-left></ion-icon>
+                <h2>Settings</h2>
             </ion-item>
             <ion-item (click)="goToShare()">
-                <ion-icon name ="share">   share</ion-icon>
+                <ion-icon name="share" item-left></ion-icon>
+                <h2>Share</h2>
             </ion-item>
             <ion-item (click)="gotoHelp()">
-                <ion-icon name ="help">   help</ion-icon>
+                <ion-icon name="help" item-left></ion-icon>
+                <h2>Help</h2>
             </ion-item>
-            <ion-item (click)="signOut()">
-                        <ion-icon name="log-out">   log-out</ion-icon>
+            <ion-item (click)="signOut()" color="danger">
+                <ion-icon name="log-out" item-left></ion-icon>
+                <h2>Logout</h2>
             </ion-item>
         </ion-list>
+        <ion-footer>
+            <ion-list>
+                <button color="secondary" ion-item menuClose="menu" detail-none>
+                    Close Menu
+                </button>
+            </ion-list>
+       </ion-footer>
     </ion-content>
 </ion-menu>
 
