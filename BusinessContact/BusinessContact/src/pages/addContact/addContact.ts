@@ -24,7 +24,10 @@ export class addContactPage {
         orgaName: '',
         street: '', 
         persPost: '',
-        local : ''
+        local: '',
+        pays: '',
+        etat: '', 
+        url:''
     }
 
     constructor(public navCtrl: NavController, public navParams: NavParams) { }
@@ -37,7 +40,6 @@ export class addContactPage {
         var contact = Contacts.create();
         contact.displayName = newct.displayName;
         contact.nickname = newct.nickname;
-        
 
         var contactfield = new ContactField();
         contactfield.type = newct.phtype;
@@ -53,39 +55,26 @@ export class addContactPage {
         contactfield2.type = newct.phtype; 
         contactfield2.value = newct.email;
         contactfield2.pref = true; 
+     
 
         var emailsection = [];
         emailsection.push(contactfield2);
         contact.emails = emailsection;
 
+        
 
-        //var contactAdress = new ContactAddress(); 
-        //contactAdress.streetAddress = newct.street; 
-        ////contactAdress.postalCode = newct.persPostal; 
-        ////contactAdress.locality = newct.local; 
-        //contactAdress.pref = true; 
-        ////ContactAddress.bind(newct.street, newct.persPostal, newct.local); 
+        contact.addresses = [new ContactAddress(
+            true, null, null, newct.street, newct.local,
+            newct.etat, newct.persPost,newct.pays)]; 
 
-        //var addresSection = [];
-        //addresSection.push(contactAdress.streetAddress); 
-        ////addresSection.push(contactAdress.postalCode); 
-        ////addresSection.push(contactAdress.locality); 
-        //contact.addresses = addresSection; 
+        
 
-
-        //var organisation = new ContactOrganization()
-        //organisation.name = newct.orgaName; 
-        //organisation.title = newct.profession; 
-        //organisation.pref = true; 
-        ////ContactOrganization.bind(newct.orgaName, newct.profession); 
-
-
-        //var organisationSection = []; 
-        //organisationSection.push(organisation.name);
-        //organisationSection.push(organisation.title);
-
-        //contact.organizations = organisationSection; 
-
+        contact.urls = [new ContactField(null,
+            newct.url, true)]; 
+        
+       
+        contact.organizations = [new ContactOrganization(
+            null, newct.orgaName, null, newct.profession, true)]; 
         
             
         contact.save().then((contact) => {
