@@ -44,7 +44,7 @@
     
     <div class="iconBlock">
         <ion-buttons>
-            <button ion-button outline color="facebook" class="iconLogo" (click)="loginWithFB()">
+            <button ion-button outline color="facebook" class="iconLogo" (click)="gotoFace()">
                 <ion-icon name="logo-facebook" ></ion-icon>
             </button>
             <button ion-button outline color="google" class="iconLogo" (click)="goToGoo()">
@@ -59,14 +59,7 @@
         </ion-buttons>
     </div>
 
-    <ion-card *ngIf="userData">
-        <ion-card-header>{{ userData.username }}</ion-card-header>
-        <img [src]="userData.picture" />
-        <ion-card-content>
-            <p>Email: {{ userData.email }}</p>
-            <p>First Name: {{ userData.first_name }}</p>
-        </ion-card-content>
-    </ion-card>
+   
 
 
 </ion-content>

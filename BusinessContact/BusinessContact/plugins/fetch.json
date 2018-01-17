@@ -86,32 +86,5 @@
         },
         "is_top_level": true,
         "variables": {}
-    },
-    "cordova-plugin-ms-azure-mobile-apps": {
-        "source": {
-            "type": "registry",
-            "id": "cordova-plugin-ms-azure-mobile-apps"
-        },
-        "is_top_level": true,
-        "variables": {}
-    },
-    "cordova-sqlite-storage": {
-        "source": {
-            "type": "registry",
-            "id": "cordova-sqlite-storage@1.4.8"
-        },
-        "is_top_level": false,
-        "variables": {}
-    },
-    "cordova-plugin-facebook4": {
-        "source": {
-            "type": "registry",
-            "id": "cordova-plugin-facebook4"
-        },
-        "is_top_level": true,
-        "variables": {
-            "APP_ID": "509903826061164",
-            "APP_NAME": "auth"
-        }
     }
 }

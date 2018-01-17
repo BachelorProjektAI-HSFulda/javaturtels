@@ -4,7 +4,10 @@ import { searchPage } from '../search/search';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { camerSeitePage } from '../camerSeite/camerSeite'; 
 import { imgWahlPage } from '../imgWahl/imgWahl'; 
-import { contactProfilePage } from '../contactProfile/contactProfile'; 
+import { contactProfilePage } from '../contactProfile/contactProfile';
+import { addContactPage } from '../addContact/addContact';
+import { audioPage } from '../audioPage/audioPage';
+
 
 
 @Component({
@@ -27,7 +30,10 @@ export class ContactPage {
         this.navCtrl.push(imgWahlPage);
     }
 
-   
+    gotoAudio()
+    {
+        this.navCtrl.push(audioPage);
+    }
    
     gotoCamera()
     {
@@ -94,7 +100,7 @@ export class ContactPage {
 
    gotoCreateContact()
    {
-       this.navCtrl.push(contactProfilePage); 
+       this.navCtrl.push(addContactPage); 
    }
 
 
