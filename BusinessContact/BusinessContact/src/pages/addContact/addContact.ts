@@ -44,7 +44,7 @@ export class addContactPage {
 
 
         var contactfield2 = new ContactField();
-        contactfield2.type = newct.phtype; 
+        contactfield2.type = newct.phtype;
         contactfield2.value = newct.email;
         contactfield2.pref = true; 
 
