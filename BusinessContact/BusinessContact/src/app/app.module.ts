@@ -71,7 +71,8 @@ import { MScomputerService } from '../pages/provider/MScomputerService';
     ],
     imports: [
         BrowserModule,
-        IonicModule.forRoot(MyApp)
+        IonicModule.forRoot(MyApp),
+        CommonModule
     ],
     bootstrap: [IonicApp],
     entryComponents: [
