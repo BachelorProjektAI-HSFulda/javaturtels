@@ -20,22 +20,54 @@
     </ion-item>
     <ion-item>
         <ion-label color="primary">Tel:</ion-label>
-        <ion-input type="text" [(ngModel)]="newcontact.phnumber"
+        <ion-input type="number" [(ngModel)]="newcontact.phnumber"
                    placeholder="Enter Phone number"></ion-input>
     </ion-item>
-        <ion-item>
-            <ion-label color="primary">E-mail :</ion-label>
-            <ion-input type="email" [(ngModel)]="newcontact.email" placeholder="email Input"></ion-input>
-        </ion-item>
+    <ion-item>
+        <ion-label color="primary">E-mail :</ion-label>
+        <ion-input type="email" [(ngModel)]="newcontact.email" placeholder="email Input"></ion-input>
+    </ion-item>
 
-        <ion-item>
-            <ion-label color="primary">Adress :</ion-label>
-            <ion-input type="adress" placeholder="Adress Input"></ion-input>
-        </ion-item>
-        <ion-item>
-            <ion-label color="primary">Profession :</ion-label>
-            <ion-input type="text" placeholder="Profession Input"></ion-input>
-        </ion-item>
+    <ion-item>
+        <ion-label color="primary"> Street :</ion-label>
+        <ion-input type="adress" [(ngModel)]="newcontact.street" placeholder="Street Input"></ion-input>
+    </ion-item>
 
-        <button ion-button (click)="addcontact(newcontact)">Save</button>
+    <ion-item>
+        <ion-label color="primary"> Postal Code :</ion-label>
+        <ion-input type="adress" [(ngModel)]="newcontact.persPost" placeholder="Postal Code Input"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label color="primary"> Locality  :</ion-label>
+        <ion-input type="adress" [(ngModel)]="newcontact.local" placeholder="locality Input"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label color="primary"> Country  :</ion-label>
+        <ion-input type="adress" [(ngModel)]="newcontact.pays" placeholder="Country Input"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label color="primary"> Region :</ion-label>
+        <ion-input type="adress" [(ngModel)]="newcontact.etat" placeholder="Region Input"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label color="primary"> Link :</ion-label>
+        <ion-input type="url" [(ngModel)]="newcontact.url" placeholder="url Input"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label color="primary"> Organisation :</ion-label>
+        <ion-input type="text" [(ngModel)]="newcontact.orgaName" placeholder="Organisation Input"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label color="primary"> Profession :</ion-label>
+        <ion-input type="text" [(ngModel)]="newcontact.profession" placeholder="profession Input"></ion-input>
+    </ion-item>
+
+
+    <button ion-button (click)="addcontact(newcontact)">Save</button>
 </ion-content>
