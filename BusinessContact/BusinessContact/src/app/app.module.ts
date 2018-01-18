@@ -71,7 +71,8 @@ import { CommonModule } from '@angular/common';
     ],
     imports: [
         BrowserModule,
-        IonicModule.forRoot(MyApp)
+        IonicModule.forRoot(MyApp),
+        CommonModule
     ],
     bootstrap: [IonicApp],
     entryComponents: [
