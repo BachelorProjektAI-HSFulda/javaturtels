@@ -35,7 +35,7 @@ import { cameraOfcampagnePage } from '../pages/cameraOfcampagne/cameraOfcampagne
 import { BrowserModule } from '@angular/platform-browser';
 import { addContactPage } from '../pages/addContact/addContact';
 import { CommonModule } from '@angular/common';
-
+import { MScomputerService } from '../pages/provider/MScomputerService'; 
 
 
 @NgModule({
@@ -71,7 +71,8 @@ import { CommonModule } from '@angular/common';
     ],
     imports: [
         BrowserModule,
-        IonicModule.forRoot(MyApp)
+        IonicModule.forRoot(MyApp),
+        CommonModule
     ],
     bootstrap: [IonicApp],
     entryComponents: [
@@ -105,7 +106,7 @@ import { CommonModule } from '@angular/common';
     ],
     providers: [
         Camera, KampagneService, Media, File, StatusBar, Splashscreen, Storage,
-
+        MScomputerService,
         { provide: ErrorHandler, useClass: IonicErrorHandler }]
 })
 export class AppModule { }

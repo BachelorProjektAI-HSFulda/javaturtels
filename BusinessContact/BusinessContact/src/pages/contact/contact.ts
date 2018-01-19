@@ -103,7 +103,9 @@ export class ContactPage {
        this.navCtrl.push(addContactPage); 
    }
 
+  
 
+   
    }
   
 
