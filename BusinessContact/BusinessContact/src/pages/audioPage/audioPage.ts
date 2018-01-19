@@ -50,7 +50,7 @@ export class audioPage {
             this.audio = this.media.create(this.filePath);
         } else if (this.platform.is('android')) {
             this.fileName = 'record' + new Date().getDate() + new Date().getMonth() + new Date().getFullYear() + new Date().getHours() + new Date().getMinutes() + new Date().getSeconds() + '.3gp';
-            this.filePath = this.file.externalDataDirectory.replace(/file:\/\//g, '') + this.fileName;
+            this.filePath = this.file.dataDirectory + this.fileName;
             this.audio = this.media.create(this.filePath);
         }
         this.audio.startRecord();
