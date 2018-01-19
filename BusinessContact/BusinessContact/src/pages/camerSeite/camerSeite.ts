@@ -94,4 +94,6 @@ export class camerSeitePage {
             () => console.log('Computer Vision Service Call Complete')
         )
     }
+
+   
 }       
