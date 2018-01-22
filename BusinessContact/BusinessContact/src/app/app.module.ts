@@ -13,9 +13,7 @@ import { searchPage } from '../pages/search/search';
 import { sign_upPage } from '../pages/sign-up/sign-up';
 import { sign_inPage } from '../pages/sign-in/sign-in';
 import { settingsPage } from '../pages/settings/settings';
-import { kampagneSearchPage } from '../pages/kampagneSearch/kampagneSearch';
 import { groupsSearchPage } from '../pages/groupsSearch/groupsSearch';
-import { contactProfilePage } from '../pages/contactProfile/contactProfile';
 import { Camera } from '@ionic-native/camera';
 import { NeueKampagnePage } from '../pages/neueKampagne/neueKampagne';
 import { KampagneService } from '../services/kampagne.service';
@@ -54,9 +52,7 @@ import { MScomputerService } from '../pages/provider/MScomputerService';
         sign_upPage,
         sign_inPage,
         settingsPage,
-        kampagneSearchPage,
         groupsSearchPage,
-        contactProfilePage,
         ReaderPage,
         NeueKampagnePage,
         camerSeitePage,
@@ -90,9 +86,7 @@ import { MScomputerService } from '../pages/provider/MScomputerService';
         sign_upPage,
         sign_inPage,
         settingsPage,
-        kampagneSearchPage,
         groupsSearchPage,
-        contactProfilePage,
         NeueKampagnePage,
         ReaderPage,
         camerSeitePage,
