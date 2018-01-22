@@ -12,18 +12,6 @@
     <feature name="InAppBrowser">
         <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
     </feature>
-    <feature name="SplashScreen">
-        <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
-        <param name="onload" value="true" />
-    </feature>
-    <feature name="StatusBar">
-        <param name="android-package" value="org.apache.cordova.statusbar.StatusBar" />
-        <param name="onload" value="true" />
-    </feature>
-    <feature name="Whitelist">
-        <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
-        <param name="onload" value="true" />
-    </feature>
     <name>BusinessContact</name>
     <description>An Ionic Framework and Cordova project for Visual Studio</description>
     <author email="vscordovatools@microsoft.com" href="http://taco.visualstudio.com">Visual Studio JS Mobile Tooling</author>
