@@ -1,14 +1,35 @@
 ﻿<ion-header class="custom-font-size">
     <ion-navbar color="primary">
-        <ion-title class="titel">{{ item.title }}</ion-title>
+        <ion-title>{{ item.title }}</ion-title>
         <ion-buttons end>
-            <button class="select-image" ion-button block (click)="takePicture()" color="light">
+            <button class="btn" ion-button block (click)="takePicture()" color="light">
                 <ion-icon name="camera"></ion-icon>
             </button>
         </ion-buttons>
+        <ion-buttons end>
+            <button ion-button class="btn" (click)="newContact()">
+                <ion-icon name="person-add"></ion-icon>
+            </button>
+        </ion-buttons>
     </ion-navbar>
+    
 </ion-header>
 
 <ion-content padding>
-    <ion-list-header>Contacts</ion-list-header>
+    <ion-list>
+
+        <ion-list-header>
+            Contacts
+        </ion-list-header>
+
+        <ion-item (click)="onItemSelected()">
+            <ion-avatar item-left>
+                <img src="assets/placeholder.png" />
+            </ion-avatar>
+            <h2>Max Mustermann</h2>
+            <p>Informatiker</p>
+        </ion-item>
+
+    </ion-list>
+
 </ion-content>
