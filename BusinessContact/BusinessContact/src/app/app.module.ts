@@ -19,6 +19,7 @@ import { contactProfilePage } from '../pages/contactProfile/contactProfile';
 import { Camera } from '@ionic-native/camera';
 import { NeueKampagnePage } from '../pages/neueKampagne/neueKampagne';
 import { KampagneService } from '../services/kampagne.service';
+import { MsComputerVision } from '../services/MsComputerVision' ;
 import { ReaderPage } from '../pages/reader-page/reader-page';
 import { contactsOfKampagnePage } from '../pages/contactsOfKampagne/contactsOfKampagne';
 import { camerSeitePage } from '../pages/camerSeite/camerSeite'; 
@@ -66,7 +67,8 @@ import { CommonModule } from '@angular/common';
         groupsContactPage,
         AnimateItemSliding,
         cameraOfcampagnePage,
-        addContactPage
+        addContactPage, 
+        MsComputerVision
       
     ],
     imports: [
@@ -100,7 +102,8 @@ import { CommonModule } from '@angular/common';
         accountInformationPage, 
         groupsContactPage,
         cameraOfcampagnePage,
-        addContactPage
+        addContactPage, 
+        MsComputerVision
       
     ],
     providers: [
