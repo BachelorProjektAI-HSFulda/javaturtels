@@ -18,7 +18,7 @@ export class MScomputerService {
     constructor(public http: Http) {
         this.data = null; 
         this.url = 'https://northeurope.api.cognitive.microsoft.com/vision/v1.0/ocr?language=unk&detectOrientation%20=true%20HTTP/1.1'; 
-        this.apiKey = 'a39be47aa5494f2cab8ad473449be605'; 
+        this.apiKey = 'e6b72954725b4d24bee20f0807152ec3'; 
         this.contentType = 'application/octet-stream';
     }
 

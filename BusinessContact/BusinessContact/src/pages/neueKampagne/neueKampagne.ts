@@ -11,7 +11,7 @@ export class NeueKampagnePage {
     constructor(private kampagneService: KampagneService, private navCtrl: NavController) {
     }
 
-    onAddKampagne(value: { title: string }) {
+    onAddKampagne(value: { title: string } ) {
         this.kampagneService.addKampagne(value);
         this.navCtrl.pop();
     }

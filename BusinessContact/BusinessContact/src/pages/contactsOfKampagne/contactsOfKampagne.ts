@@ -19,8 +19,6 @@ export class contactsOfKampagnePage {
 
         this.item = navParams.get('item');
     }
-    
-   
 
     ionViewWillEnter() {
         this.srcImage = null;
@@ -29,6 +27,10 @@ export class contactsOfKampagnePage {
     takePicture()
     {
         this.navCtrl.push(cameraOfcampagnePage); 
+    }
+
+    newContact() {
+        alert("new contact");
     }
 
  }
