@@ -18,6 +18,9 @@
         },
         "cordova-plugin-inappbrowser": {
             "PACKAGE_NAME": "io.cordova.myapp2d678f"
+        },
+        "cordova-plugin-media": {
+            "PACKAGE_NAME": "io.cordova.myapp2d678f"
         }
     },
     "dependent_plugins": {
