@@ -50,7 +50,7 @@ export class audioPage {
             this.audio = this.media.create(this.filePath);
         } else if (this.platform.is('android')) {
             this.fileName = 'record' + new Date().getDate() + new Date().getMonth() + new Date().getFullYear() + new Date().getHours() + new Date().getMinutes() + new Date().getSeconds() + '.3gp';
-            this.filePath = this.file.externalDataDirectory.replace(/file:\/\//g, '') + this.fileName;
+            this.filePath = this.file.dataDirectory + this.fileName;
             this.audio = this.media.create(this.filePath);
         }
         this.audio.startRecord();
@@ -62,7 +62,7 @@ export class audioPage {
             this.filePath = this.file.documentsDirectory.replace(/file:\/\//g, '') + file;
             this.audio = this.media.create(this.filePath);
         } else if (this.platform.is('android')) {
-            this.filePath = this.file.externalDataDirectory.replace(/file:\/\//g, '') + file;
+            this.filePath = this.file.dataDirectory + file;
             this.audio = this.media.create(this.filePath);
         }
         this.audio.play();
@@ -78,10 +78,13 @@ export class audioPage {
         this.getAudioList();
     }
 
+    deleteRecord() {
+        if (confirm("Are you sure, this Audiorecord will be deleted?") == true) {
 
-    /* <ion-item *ngFor="let audio of audioList; index as i;"> gehört noch zu AudioPage.html Zeile 19, ist aber wegen eines Fehlers raus genommen worden 
-       bis das Problem beseitigt wurde!*/
+            //this.audio = removeFile(this.filePath, this.fileName);
+        }
 
+    }
 
 
 

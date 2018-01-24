@@ -3,7 +3,7 @@ import { NavController, NavParams , LoadingController } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera'; 
 import { TabsPage } from '../tabs/tabs';
 import { contactProfilePage } from '../contactProfile/contactProfile';
-
+import { MScomputerService } from '../provider/MScomputerService'; 
 /*
   Generated class for the camerSeite page.
 
@@ -16,13 +16,14 @@ import { contactProfilePage } from '../contactProfile/contactProfile';
 })
 export class camerSeitePage {
 
-    public base64Image: any;
-    public textOutput: any;
+    response: any; 
+     base64Image: string;
     OCRAD: any;
 
 
     constructor(public navCtrl: NavController, public navParams: NavParams,
-        private camera: Camera, public loadingCtrl: LoadingController) {
+        private camera: Camera, public loadingCtrl: LoadingController,
+        private ocr: MScomputerService) {
         const options: CameraOptions = {
             quality: 100,
             destinationType: this.camera.DestinationType.DATA_URL,
@@ -73,4 +74,26 @@ export class camerSeitePage {
                 //console.log(this.recognizedText);
             });*/
     }
+
+
+    callOcr()
+    {
+        this.ocr.getOCRFromImageBase64Data(this.base64Image).subscribe(
+            data => {
+                console.log(data); //comment
+                this.response = JSON.stringify(data.json());
+                let resp = data.json();
+                alert(this.response); 
+
+            },
+            err => {
+                console.log(err);
+                this.response = err;
+                 console.log('Error', err);
+            },
+            () => console.log('Computer Vision Service Call Complete')
+        )
+    }
+
+   
 }       

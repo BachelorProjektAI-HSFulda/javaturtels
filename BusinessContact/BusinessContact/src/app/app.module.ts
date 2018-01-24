@@ -13,9 +13,7 @@ import { searchPage } from '../pages/search/search';
 import { sign_upPage } from '../pages/sign-up/sign-up';
 import { sign_inPage } from '../pages/sign-in/sign-in';
 import { settingsPage } from '../pages/settings/settings';
-import { kampagneSearchPage } from '../pages/kampagneSearch/kampagneSearch';
 import { groupsSearchPage } from '../pages/groupsSearch/groupsSearch';
-import { contactProfilePage } from '../pages/contactProfile/contactProfile';
 import { Camera } from '@ionic-native/camera';
 import { NeueKampagnePage } from '../pages/neueKampagne/neueKampagne';
 import { KampagneService } from '../services/kampagne.service';
@@ -35,6 +33,8 @@ import { cameraOfcampagnePage } from '../pages/cameraOfcampagne/cameraOfcampagne
 import { BrowserModule } from '@angular/platform-browser';
 import { addContactPage } from '../pages/addContact/addContact';
 import { CommonModule } from '@angular/common';
+import { MScomputerService } from '../pages/provider/MScomputerService'; 
+
 
 
 
@@ -52,9 +52,7 @@ import { CommonModule } from '@angular/common';
         sign_upPage,
         sign_inPage,
         settingsPage,
-        kampagneSearchPage,
         groupsSearchPage,
-        contactProfilePage,
         ReaderPage,
         NeueKampagnePage,
         camerSeitePage,
@@ -88,9 +86,7 @@ import { CommonModule } from '@angular/common';
         sign_upPage,
         sign_inPage,
         settingsPage,
-        kampagneSearchPage,
         groupsSearchPage,
-        contactProfilePage,
         NeueKampagnePage,
         ReaderPage,
         camerSeitePage,
@@ -106,7 +102,7 @@ import { CommonModule } from '@angular/common';
     ],
     providers: [
         Camera, KampagneService, Media, File, StatusBar, Splashscreen, Storage,
-
+        MScomputerService,
         { provide: ErrorHandler, useClass: IonicErrorHandler }]
 })
 export class AppModule { }
