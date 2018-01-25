@@ -125,22 +125,6 @@ module.exports = [
             "cordova.InAppBrowser.open",
             "window.open"
         ]
-    },
-    {
-        "file": "plugins/cordova-plugin-media/www/MediaError.js",
-        "id": "cordova-plugin-media.MediaError",
-        "pluginId": "cordova-plugin-media",
-        "clobbers": [
-            "window.MediaError"
-        ]
-    },
-    {
-        "file": "plugins/cordova-plugin-media/www/Media.js",
-        "id": "cordova-plugin-media.Media",
-        "pluginId": "cordova-plugin-media",
-        "clobbers": [
-            "window.Media"
-        ]
     }
 ];
 module.exports.metadata = 
@@ -151,8 +135,7 @@ module.exports.metadata =
     "cordova-plugin-console": "1.0.5",
     "cordova-plugin-contacts": "2.3.1",
     "cordova-plugin-device": "1.1.4",
-    "cordova-plugin-inappbrowser": "1.7.2",
-    "cordova-plugin-media": "2.4.1"
-}
+    "cordova-plugin-inappbrowser": "1.7.2"
+};
 // BOTTOM OF METADATA
 });
