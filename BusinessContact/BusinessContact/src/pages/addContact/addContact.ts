@@ -1,6 +1,6 @@
 ﻿import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-
+import { contactData } from '../provider/contactData'; 
 
 /*
   Generated class for the addContact page.
@@ -15,12 +15,19 @@ import { NavController, NavParams } from 'ionic-angular';
 export class addContactPage {
    
 
-    constructor(public navCtrl: NavController, public navParams: NavParams) { }
+    constructor(public navCtrl: NavController, public navParams: NavParams, 
+private cntData : contactData) { }
 
     ionViewDidLoad() {
         console.log('ionViewDidLoad addContactPage');
     }
 
+
+    addcontact(name, number)
+    {
+        this.cntData.addContact(name, number); 
+        this.navCtrl.pop(); 
+    }
     
 
 }

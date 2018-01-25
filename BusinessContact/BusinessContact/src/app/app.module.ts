@@ -34,7 +34,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { addContactPage } from '../pages/addContact/addContact';
 import { CommonModule } from '@angular/common';
 import { MScomputerService } from '../pages/provider/MScomputerService'; 
-
+import { contactclass } from '../pages/provider/contactclass'; 
+import { contactData } from '../pages/provider/contactData'; 
 
 
 
@@ -102,7 +103,7 @@ import { MScomputerService } from '../pages/provider/MScomputerService';
     ],
     providers: [
         Camera, KampagneService, Media, File, StatusBar, Splashscreen, Storage,
-        MScomputerService,
+        MScomputerService, contactData, contactclass,
         { provide: ErrorHandler, useClass: IonicErrorHandler }]
 })
 export class AppModule { }
