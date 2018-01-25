@@ -1,6 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
 //import { Keyboard } from '@ionic-native/keyboard';
-import { kampagneSearchPage } from '../kampagneSearch/kampagneSearch';
 import { NavController, ActionSheetController, Content, Keyboard } from 'ionic-angular';
 import { NeueKampagnePage } from "../neueKampagne/neueKampagne";
 import { contactsOfKampagnePage } from "../contactsOfKampagne/contactsOfKampagne"

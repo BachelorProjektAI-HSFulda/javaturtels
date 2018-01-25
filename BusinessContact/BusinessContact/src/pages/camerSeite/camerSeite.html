@@ -20,10 +20,10 @@
         <img id="image" [src]="base64Image" div class="imag" />
         <ion-buttons class="bouton-block">
             <button ion-button icon-left (click)="gotoNewContact()" color="primary">Submit</button>
-            <button ion-button icon-left (click)="analyze()" color="primary"> preview</button>
+            <button ion-button icon-left (click)="callOcr()" color="primary"> preview</button>
         </ion-buttons>
     </div>
 
-   
+  {{response | json }} 
 
 </ion-content>

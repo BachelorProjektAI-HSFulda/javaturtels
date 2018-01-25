@@ -4,7 +4,6 @@ import { searchPage } from '../search/search';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { camerSeitePage } from '../camerSeite/camerSeite'; 
 import { imgWahlPage } from '../imgWahl/imgWahl'; 
-import { contactProfilePage } from '../contactProfile/contactProfile';
 import { addContactPage } from '../addContact/addContact';
 import { audioPage } from '../audioPage/audioPage';
 
@@ -104,6 +103,7 @@ export class ContactPage {
    }
 
 
+   
    }
   
 

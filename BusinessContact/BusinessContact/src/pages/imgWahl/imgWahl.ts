@@ -2,7 +2,7 @@
 import { NavController, NavParams, LoadingController } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { contactProfilePage } from '../contactProfile/contactProfile';
-
+import { MScomputerService } from '../provider/MScomputerService';
 /*
   Generated class for the imgWahl page.
 
@@ -15,11 +15,12 @@ import { contactProfilePage } from '../contactProfile/contactProfile';
 })
 export class imgWahlPage {
 
-    public base64Image: any; 
+    base64Image: string; 
+    response; any; 
     OCRAD: any;
 
     constructor(public navCtrl: NavController, public navParams: NavParams, private camera: Camera
-    , public loadingCtrl : LoadingController)
+        , public loadingCtrl: LoadingController, private ocr: MScomputerService)
     {
         const options: CameraOptions = {
             quality: 100,
@@ -73,6 +74,29 @@ export class imgWahlPage {
                 //console.log(this.recognizedText);
             });*/
 
-  }
+    }
 
-}
+
+ getOcr()
+ {
+
+     this.ocr.getOCRFromImageBase64Data(this.base64Image).subscribe(
+         data => {
+             console.log(data); //comment
+             this.response = JSON.stringify(data.json());
+             let resp = data.json();
+             alert(this.response);
+
+         },
+         err => {
+             console.log(err);
+             this.response = err;
+             console.log('Error', err);
+         },
+         () => console.log('Computer Vision Service Call Complete')
+     )
+ }
+
+ }
+
+
