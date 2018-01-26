@@ -33,11 +33,13 @@
 <ion-content padding>
     <ion-list>
         <ion-list-header>My Contacts</ion-list-header>
-        <ion-item *ngFor="let contact of contactList">
-            <ion-icon name="book" danger item-left></ion-icon>
-            <h2>{{contact.name}}</h2>
-            <p>Phone: {{contact.number}}</p>
-        </ion-item>
+            <ion-item *ngFor="let contact of contactList">
+                <ion-card>
+                    <ion-icon name="book" danger item-left></ion-icon>
+                    <h2>{{contact.name}}</h2>
+                    <p>Phone: {{contact.number}}</p>
+                </ion-card>
+            </ion-item>
     </ion-list>
 
     <ion-fab right bottom (click)="newContact()">
