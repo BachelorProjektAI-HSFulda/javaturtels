@@ -34,11 +34,11 @@
     <ion-list>
         <ion-list-header>My Contacts</ion-list-header>
             <ion-item *ngFor="let contact of contactList">
-                <ion-card>
                     <ion-icon name="book" danger item-left></ion-icon>
                     <h2>{{contact.name}}</h2>
-                    <p>Phone: {{contact.number}}</p>
-                </ion-card>
+                    <h3>{{contact.email}}</h3>
+                    <h4>{{contact.address}},&nbsp;{{contact.postalCode}},&nbsp;{{contact.ville}}</h4>
+                    <p>{{contact.number}}</p>
             </ion-item>
     </ion-list>
 

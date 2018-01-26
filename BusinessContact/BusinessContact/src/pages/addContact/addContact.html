@@ -12,60 +12,37 @@
         <ion-item>
             <ion-input #name type="text" placeholder="name"></ion-input>
         </ion-item>
-        <!--<ion-item>
-        <ion-label color="primary">Nickname:</ion-label>
-        <ion-input type="text"
-                   placeholder="Enter Nick Name"></ion-input>
-    </ion-item>-->
-        <ion-item>
+        
+
+       <ion-item>
             <ion-input #number type="number" placeholder=" Phone number"></ion-input>
+       </ion-item>
+
+     <ion-item>
+        <ion-input #email type="email"  placeholder="email"></ion-input>
+    </ion-item>
+
+        <ion-item>
+            <ion-input #address type="address" placeholder="address"></ion-input>
         </ion-item>
-        <!--<ion-item>
-        <ion-label color="primary">E-mail :</ion-label>
-        <ion-input type="email"  placeholder="email Input"></ion-input>
-    </ion-item>-->
-        <!--<ion-item>
-        <ion-label color="primary"> Street :</ion-label>
-        <ion-input type="adress"  placeholder="Street Input"></ion-input>
-    </ion-item>
 
-    <ion-item>
-        <ion-label color="primary"> Postal Code :</ion-label>
-        <ion-input type="adress"  placeholder="Postal Code Input"></ion-input>
-    </ion-item>
+        <ion-item>
+            <ion-input #postalCode type="number" placeholder="Postal Code "></ion-input>
+        </ion-item>
 
-    <ion-item>
-        <ion-label color="primary"> Locality  :</ion-label>
-        <ion-input type="adress"  placeholder="locality Input"></ion-input>
-    </ion-item>
+        <ion-item>
+            <ion-input #ville type="text" placeholder="city"></ion-input>
+        </ion-item>
 
-    <ion-item>
-        <ion-label color="primary"> Country  :</ion-label>
-        <ion-input type="adress"  placeholder="Country Input"></ion-input>
-    </ion-item>
+        <ion-item>
+            <ion-input #url type="url" placeholder="fill your website"></ion-input>
+        </ion-item>
 
-    <ion-item>
-        <ion-label color="primary"> Region :</ion-label>
-        <ion-input type="adress"  placeholder="Region Input"></ion-input>
-    </ion-item>
-
-    <ion-item>
-        <ion-label color="primary"> Link :</ion-label>
-        <ion-input type="url"  placeholder="url Input"></ion-input>
-    </ion-item>
-
-    <ion-item>
-        <ion-label color="primary"> Organisation :</ion-label>
-        <ion-input type="text"  placeholder="Organisation Input"></ion-input>
-    </ion-item>
-
-    <ion-item>
-        <ion-label color="primary"> Profession :</ion-label>
-        <ion-input type="text"  placeholder="profession Input"></ion-input>
-    </ion-item>-->
    </ion-list>
+
+
     <ion-buttons>
-        <button ion-button (click)="addcontact(name,number)">Save</button>
+        <button ion-button (click)="addcontact(name,number, email, address, postalCode, ville, url)">Save</button>
         <button ion-button>Cancel</button>
     </ion-buttons>
 

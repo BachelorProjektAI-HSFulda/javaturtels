@@ -1,6 +1,5 @@
 ﻿import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
-import { Facebook } from '@ionic-native/facebook';
+import { NavController, NavParams } from 'ionic-angular'
 
 
 
@@ -10,12 +9,10 @@ import { Facebook } from '@ionic-native/facebook';
 })
 export class facebookAuthPage {
 
-    constructor(public navCtrl: NavController, public navParams: NavParams, public facebook: Facebook) { }
+    constructor(public navCtrl: NavController, public navParams: NavParams) { }
 
     ionViewDidLoad() {
         console.log('ionViewDidLoad pagePage');
-    }
-    facebookLogin(): Promise < any > {
-         return this.facebook.login(['email']);
+
     }
 }

@@ -18,13 +18,19 @@ export class contactData
     }
 
 
-    addContact(name, number)
+    addContact(name, number, email, address, postalCode, ville, url)
     {
-        const contact = new contactclass(name.value, number.value);
+        const contact = new contactclass(name.value, number.value, email.value, address.value, postalCode.value, ville.value, url.value);
         this.contacts.push(contact);
         name.value = '';
         number.value = '';
+        email.value = ''; 
+        address.value = '';
+        postalCode.value = '';
+        ville.value = '';
+        url.value = ''; 
 
+        console.log(contact.url); 
     }
 
 }
