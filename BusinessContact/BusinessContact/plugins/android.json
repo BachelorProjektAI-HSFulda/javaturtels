@@ -18,6 +18,11 @@
         },
         "cordova-plugin-inappbrowser": {
             "PACKAGE_NAME": "io.cordova.myapp2d678f"
+        },
+        "cordova-plugin-facebook4": {
+            "APP_ID": "151946418848033",
+            "APP_NAME": "BachelorProject",
+            "PACKAGE_NAME": "io.cordova.myapp2d678f"
         }
     },
     "dependent_plugins": {

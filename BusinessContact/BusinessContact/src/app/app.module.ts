@@ -17,7 +17,7 @@ import { groupsSearchPage } from '../pages/groupsSearch/groupsSearch';
 import { Camera } from '@ionic-native/camera';
 import { NeueKampagnePage } from '../pages/neueKampagne/neueKampagne';
 import { KampagneService } from '../services/kampagne.service';
-import { MsComputerVision } from '../services/MsComputerVision' ;
+//import { MsComputerVision } from '../services/MsComputerVision' ;
 import { ReaderPage } from '../pages/reader-page/reader-page';
 import { contactsOfKampagnePage } from '../pages/contactsOfKampagne/contactsOfKampagne';
 import { camerSeitePage } from '../pages/camerSeite/camerSeite'; 
@@ -35,6 +35,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { addContactPage } from '../pages/addContact/addContact';
 import { CommonModule } from '@angular/common';
 import { MScomputerService } from '../pages/provider/MScomputerService'; 
+import { facebookAuthPage } from '../pages/facebookAuth/facebookauth';
 
 
 
@@ -65,8 +66,8 @@ import { MScomputerService } from '../pages/provider/MScomputerService';
         groupsContactPage,
         AnimateItemSliding,
         cameraOfcampagnePage,
-        addContactPage, 
-        MsComputerVision
+        addContactPage 
+        //MsComputerVision
       
     ],
     imports: [
@@ -99,8 +100,9 @@ import { MScomputerService } from '../pages/provider/MScomputerService';
         accountInformationPage, 
         groupsContactPage,
         cameraOfcampagnePage,
-        addContactPage, 
-        MsComputerVision
+        addContactPage
+        //MsComputerVision
+        
       
     ],
     providers: [
