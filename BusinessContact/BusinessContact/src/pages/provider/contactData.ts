@@ -18,9 +18,9 @@ export class contactData
     }
 
 
-    addContact(name, number, email, address, postalCode, ville, url)
+    addContact(name, number, email, address, postalCode, ville, url, organisation, role )
     {
-        const contact = new contactclass(name.value, number.value, email.value, address.value, postalCode.value, ville.value, url.value);
+        const contact = new contactclass(name.value, number.value, email.value, address.value, postalCode.value, ville.value, url.value, organisation.value, role.value);
         this.contacts.push(contact);
         name.value = '';
         number.value = '';
@@ -29,8 +29,12 @@ export class contactData
         postalCode.value = '';
         ville.value = '';
         url.value = ''; 
+        organisation.value = ''; 
+        role.value = ' '; 
 
         console.log(contact.url); 
+        console.log(contact.organisation); 
+        console.log(contact.role)
     }
 
 }

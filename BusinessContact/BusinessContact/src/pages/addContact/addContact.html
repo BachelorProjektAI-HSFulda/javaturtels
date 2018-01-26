@@ -38,11 +38,19 @@
             <ion-input #url type="url" placeholder="fill your website"></ion-input>
         </ion-item>
 
+        <ion-item>
+            <ion-input #organisation type="text" placeholder="your organisation"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-input #role type="text" placeholder="your role"></ion-input>
+        </ion-item>
+
    </ion-list>
 
 
     <ion-buttons>
-        <button ion-button (click)="addcontact(name,number, email, address, postalCode, ville, url)">Save</button>
+        <button ion-button (click)="addcontact(name,number, email, address, postalCode, ville, url, organisation, role)">Save</button>
         <button ion-button>Cancel</button>
     </ion-buttons>
 

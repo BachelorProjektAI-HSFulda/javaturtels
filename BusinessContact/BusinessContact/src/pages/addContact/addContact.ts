@@ -23,9 +23,9 @@ private cntData : contactData) { }
     }
 
 
-    addcontact(name, number, email, address, postalCode, ville, url)
+    addcontact(name, number, email, address, postalCode, ville, url, organisation, role)
     {
-        this.cntData.addContact(name, number, email, address, postalCode, ville, url); 
+        this.cntData.addContact(name, number, email, address, postalCode, ville, url, organisation, role); 
         this.navCtrl.pop(); 
     }
     
