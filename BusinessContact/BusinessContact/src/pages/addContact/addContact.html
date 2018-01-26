@@ -8,27 +8,23 @@
 
 
 <ion-content padding>
-    <ion-item>
-        <ion-label color="primary">Display name:</ion-label>
-        <ion-input type="text" 
-                   placeholder="Enter Display Name"></ion-input>
-    </ion-item>
-    <ion-item>
+    <ion-list>
+        <ion-item>
+            <ion-input #name type="text" placeholder="name"></ion-input>
+        </ion-item>
+        <!--<ion-item>
         <ion-label color="primary">Nickname:</ion-label>
-        <ion-input type="text" 
+        <ion-input type="text"
                    placeholder="Enter Nick Name"></ion-input>
-    </ion-item>
-    <ion-item>
-        <ion-label color="primary">Tel:</ion-label>
-        <ion-input type="number" 
-                   placeholder="Enter Phone number"></ion-input>
-    </ion-item>
-    <ion-item>
+    </ion-item>-->
+        <ion-item>
+            <ion-input #number type="number" placeholder=" Phone number"></ion-input>
+        </ion-item>
+        <!--<ion-item>
         <ion-label color="primary">E-mail :</ion-label>
         <ion-input type="email"  placeholder="email Input"></ion-input>
-    </ion-item>
-
-    <ion-item>
+    </ion-item>-->
+        <!--<ion-item>
         <ion-label color="primary"> Street :</ion-label>
         <ion-input type="adress"  placeholder="Street Input"></ion-input>
     </ion-item>
@@ -66,10 +62,10 @@
     <ion-item>
         <ion-label color="primary"> Profession :</ion-label>
         <ion-input type="text"  placeholder="profession Input"></ion-input>
-    </ion-item>
-
+    </ion-item>-->
+   </ion-list>
     <ion-buttons>
-        <button ion-button>Save</button>
+        <button ion-button (click)="addcontact(name,number)">Save</button>
         <button ion-button>Cancel</button>
     </ion-buttons>
 

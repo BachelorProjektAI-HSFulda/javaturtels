@@ -17,7 +17,10 @@ import { groupsSearchPage } from '../pages/groupsSearch/groupsSearch';
 import { Camera } from '@ionic-native/camera';
 import { NeueKampagnePage } from '../pages/neueKampagne/neueKampagne';
 import { KampagneService } from '../services/kampagne.service';
+<<<<<<< HEAD
 //import { MsComputerVision } from '../services/MsComputerVision' ;
+=======
+>>>>>>> cdedad1daeb6fe8205ec5c759b1f692cd00df778
 import { ReaderPage } from '../pages/reader-page/reader-page';
 import { contactsOfKampagnePage } from '../pages/contactsOfKampagne/contactsOfKampagne';
 import { camerSeitePage } from '../pages/camerSeite/camerSeite'; 
@@ -35,8 +38,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { addContactPage } from '../pages/addContact/addContact';
 import { CommonModule } from '@angular/common';
 import { MScomputerService } from '../pages/provider/MScomputerService'; 
+<<<<<<< HEAD
 import { facebookAuthPage } from '../pages/facebookAuth/facebookauth';
 
+=======
+import { contactclass } from '../pages/provider/contactclass'; 
+import { contactData } from '../pages/provider/contactData'; 
+>>>>>>> cdedad1daeb6fe8205ec5c759b1f692cd00df778
 
 
 
@@ -66,8 +74,12 @@ import { facebookAuthPage } from '../pages/facebookAuth/facebookauth';
         groupsContactPage,
         AnimateItemSliding,
         cameraOfcampagnePage,
+<<<<<<< HEAD
         addContactPage 
         //MsComputerVision
+=======
+        addContactPage
+>>>>>>> cdedad1daeb6fe8205ec5c759b1f692cd00df778
       
     ],
     imports: [
@@ -101,13 +113,16 @@ import { facebookAuthPage } from '../pages/facebookAuth/facebookauth';
         groupsContactPage,
         cameraOfcampagnePage,
         addContactPage
+<<<<<<< HEAD
         //MsComputerVision
         
+=======
+>>>>>>> cdedad1daeb6fe8205ec5c759b1f692cd00df778
       
     ],
     providers: [
         Camera, KampagneService, Media, File, StatusBar, Splashscreen, Storage,
-        MScomputerService,
+        MScomputerService, contactData, contactclass,
         { provide: ErrorHandler, useClass: IonicErrorHandler }]
 })
 export class AppModule { }
