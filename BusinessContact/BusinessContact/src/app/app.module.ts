@@ -34,8 +34,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { addContactPage } from '../pages/addContact/addContact';
 import { CommonModule } from '@angular/common';
 import { MScomputerService } from '../pages/provider/MScomputerService'; 
+import { facebookAuthPage } from '../pages/facebookAuth/facebookauth';
 import { contactclass } from '../pages/provider/contactclass'; 
 import { contactData } from '../pages/provider/contactData'; 
+
 
 
 
@@ -65,7 +67,9 @@ import { contactData } from '../pages/provider/contactData';
         groupsContactPage,
         AnimateItemSliding,
         cameraOfcampagnePage,
-        addContactPage
+        addContactPage 
+       
+
       
     ],
     imports: [
@@ -99,6 +103,7 @@ import { contactData } from '../pages/provider/contactData';
         groupsContactPage,
         cameraOfcampagnePage,
         addContactPage
+
       
     ],
     providers: [

@@ -11,7 +11,8 @@
 export class contactclass
 {
 
-    constructor(public name: string , public number : string)
+    constructor(public name: string, public number: string, public email: string, public address: string, public postalCode: string, public ville: string,
+    public url: string, public organisation: string  , public role : string)
     {
         console.log('Hello contactclass Provider');
     }
