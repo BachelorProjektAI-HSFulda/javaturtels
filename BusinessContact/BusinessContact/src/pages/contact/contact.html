@@ -40,13 +40,24 @@
                     <h4>{{contact.address}},&nbsp;{{contact.postalCode}},&nbsp;{{contact.ville}}</h4>
                     <p>{{contact.number}}</p>
 
-                <ion-buttons right>
-                     <ion-icon ios="ios-arrow-forward" md="md-arrow-forward"></ion-icon>
-                     <ion-icon ios="ios-create" md="md-create"></ion-icon>
-                     <ion-icon ios="ios-trash" md="md-trash"></ion-icon>
-                </ion-buttons>
+                    <ion-buttons class="contact-button-block"right>
+                        <button ion-button class="contact-button" outline (click)="goToEdit()">
+                            <ion-icon ios="ios-create" md="md-create"></ion-icon>
+                        </button>
 
-               
+                        <button ion-button class="contact-button" outline (click)="deleteContact()">
+                            <ion-icon ios="ios-trash" md="md-trash"></ion-icon>
+                        </button>
+
+                        <button ion-button class="contact-button" outline (click)="shaRe()">
+                            <ion-icon name ="share"></ion-icon>
+                        </button>
+
+                        <button ion-button class="contact-button" outline (click)="goToContactInfo()">
+                            <ion-icon ios="ios-arrow-forward" md="md-arrow-forward"></ion-icon>
+                        </button>
+
+                    </ion-buttons>
 
             </ion-item>
     </ion-list>

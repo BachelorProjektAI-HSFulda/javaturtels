@@ -30,7 +30,6 @@
     "@types/request": "^2.0.9",
     "angular2-jwt": "^0.1.12",
     "angularfire2": "^5.0.0-rc.4",
-    "cordova-plugin-facebook4": "^1.9.1",
     "cordova-plugin-media": "^2.4.1",
     "cordova-plugin-media-capture": "^2.0.0",
     "firebase": "^4.9.0",

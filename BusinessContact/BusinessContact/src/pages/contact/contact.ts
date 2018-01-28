@@ -109,8 +109,28 @@ export class ContactPage {
    }
 
 
-   
+   goToEdit()
+   {
+       alert('Edit clicked'); 
    }
+
+   deleteContact()
+   {
+       alert('Delete Clicked');
+   }
+
+   goToContactInfo()
+   {
+       alert('contact information clicked'); 
+   }
+
+  shaRe()
+{
+      alert('contact shared'); 
+}
+   
+
+}
   
 
    
