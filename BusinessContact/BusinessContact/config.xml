@@ -107,4 +107,5 @@
     <variable name="APP_ID" value="151946418848033" />
     <variable name="APP_NAME" value="BachelorProject" />
   </plugin>
+  <plugin name="cordova-sqlite-storage" spec="~2.2.0" />
 </widget>

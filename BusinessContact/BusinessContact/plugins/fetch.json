@@ -97,5 +97,13 @@
             "APP_ID": "151946418848033",
             "APP_NAME": "BachelorProject"
         }
+    },
+    "cordova-sqlite-storage": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-sqlite-storage"
+        },
+        "is_top_level": true,
+        "variables": {}
     }
 }

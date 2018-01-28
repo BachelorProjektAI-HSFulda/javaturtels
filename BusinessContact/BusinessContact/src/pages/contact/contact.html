@@ -5,7 +5,9 @@
                 <ion-icon right name="menu"></ion-icon>
             </button>
         </ion-buttons>
+
         
+
         <ion-title>Contact</ion-title>
         <ion-buttons end>
             <button ion-button (click)="gotoAudio()">
@@ -31,6 +33,14 @@
 </ion-header>
 
 <ion-content padding>
+    <ion-list>
+        <ion-item *ngFor="let person of people">
+            {{person.firstname}} {{person.lastname}}
+        </ion-item>
+    </ion-list>
+
+
+
     <ion-list>
         <ion-list-header>My Contacts</ion-list-header>
             <ion-item *ngFor="let contact of contactList">
