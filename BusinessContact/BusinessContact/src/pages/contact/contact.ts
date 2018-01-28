@@ -8,7 +8,7 @@ import { addContactPage } from '../addContact/addContact';
 import { audioPage } from '../audioPage/audioPage';
 import { contactclass } from '../provider/contactclass'; 
 import { contactData } from '../provider/contactData'; 
-
+import { SQLite } from "ionic-native";
 
 @Component({
   selector: 'page-contact',
@@ -16,7 +16,7 @@ import { contactData } from '../provider/contactData';
 })
 export class ContactPage {
 
-
+    
     contactList: Array<contactclass> = []; 
 
 
@@ -28,7 +28,11 @@ export class ContactPage {
         private cntData: contactData)
     {
         this.contactList = this.cntData.contacts; 
+        
     }
+
+    
+  
 
     choosePhoto()
     {
