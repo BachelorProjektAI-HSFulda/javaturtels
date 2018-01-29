@@ -102,7 +102,7 @@
       this.startNextTransaction();
     } else {
       if (this.dbname in this.openDBs) {
-        console.log('new transaction is queued, waiting for open operation to finish');
+        console.log('new transaction is waiting for open operation');
       } else {
         console.log('database is closed, new transaction is [stuck] waiting until db is opened again!');
       }
@@ -162,7 +162,7 @@
   };
 
   SQLitePlugin.prototype.open = function(success, error) {
-    var openerrorcb, opensuccesscb, step2;
+    var openerrorcb, opensuccesscb;
     if (this.dbname in this.openDBs) {
       console.log('database already open: ' + this.dbname);
       nextTick((function(_this) {
@@ -202,16 +202,7 @@
         };
       })(this);
       this.openDBs[this.dbname] = DB_STATE_INIT;
-      step2 = (function(_this) {
-        return function() {
-          cordova.exec(opensuccesscb, openerrorcb, "SQLitePlugin", "open", [_this.openargs]);
-        };
-      })(this);
-      cordova.exec(step2, step2, 'SQLitePlugin', 'close', [
-        {
-          path: this.dbname
-        }
-      ]);
+      cordova.exec(opensuccesscb, openerrorcb, "SQLitePlugin", "open", [this.openargs]);
     }
   };
 
@@ -325,7 +316,7 @@
   };
 
   SQLitePluginTransaction.prototype.start = function() {
-    var err;
+    var err, error1;
     try {
       this.fn(this);
       this.run();
@@ -364,7 +355,7 @@
       for (j = 0, len1 = values.length; j < len1; j++) {
         v = values[j];
         t = typeof v;
-        params.push((v === null || v === void 0 ? null : t === 'number' || t === 'string' ? v : v.toString()));
+        params.push((v === null || v === void 0 || t === 'number' || t === 'string' ? v : v.toString()));
       }
     }
     this.executes.push({
@@ -413,7 +404,7 @@
     tx = this;
     handlerFor = function(index, didSucceed) {
       return function(response) {
-        var err;
+        var err, error1;
         if (!txFailure) {
           try {
             if (didSucceed) {
@@ -486,15 +477,15 @@
     succeeded = function(tx) {
       txLocks[tx.db.dbname].inProgress = false;
       tx.db.startNextTransaction();
-      if (tx.error && typeof tx.error === 'function') {
+      if (tx.error) {
         tx.error(txFailure);
       }
     };
     failed = function(tx, err) {
       txLocks[tx.db.dbname].inProgress = false;
       tx.db.startNextTransaction();
-      if (tx.error && typeof tx.error === 'function') {
-        tx.error(newSQLError('error while trying to roll back: ' + err.message, err.code));
+      if (tx.error) {
+        tx.error(newSQLError("error while trying to roll back: " + err.message, err.code));
       }
     };
     this.finalized = true;
@@ -515,15 +506,15 @@
     succeeded = function(tx) {
       txLocks[tx.db.dbname].inProgress = false;
       tx.db.startNextTransaction();
-      if (tx.success && typeof tx.success === 'function') {
+      if (tx.success) {
         tx.success();
       }
     };
     failed = function(tx, err) {
       txLocks[tx.db.dbname].inProgress = false;
       tx.db.startNextTransaction();
-      if (tx.error && typeof tx.error === 'function') {
-        tx.error(newSQLError('error while trying to commit: ' + err.message, err.code));
+      if (tx.error) {
+        tx.error(newSQLError("error while trying to commit: " + err.message, err.code));
       }
     };
     this.finalized = true;
@@ -570,10 +561,10 @@
         throw newSQLError('Database name value is missing in openDatabase call');
       }
       if (!openargs.iosDatabaseLocation && !openargs.location && openargs.location !== 0) {
-        throw newSQLError('Database location or iosDatabaseLocation setting is now mandatory in openDatabase call.');
+        throw newSQLError('Database location or iosDatabaseLocation value is now mandatory in openDatabase call');
       }
       if (!!openargs.location && !!openargs.iosDatabaseLocation) {
-        throw newSQLError('AMBIGUOUS: both location and iosDatabaseLocation settings are present in openDatabase call. Please use either setting, not both.');
+        throw newSQLError('AMBIGUOUS: both location or iosDatabaseLocation values are present in openDatabase call');
       }
       dblocation = !!openargs.location && openargs.location === 'default' ? iosLocationMap['default'] : !!openargs.iosDatabaseLocation ? iosLocationMap[openargs.iosDatabaseLocation] : dblocations[openargs.location];
       if (!dblocation) {
@@ -615,10 +606,10 @@
         args.path = dbname;
       }
       if (!first.iosDatabaseLocation && !first.location && first.location !== 0) {
-        throw newSQLError('Database location or iosDatabaseLocation setting is now mandatory in deleteDatabase call.');
+        throw newSQLError('Database location or iosDatabaseLocation value is now mandatory in deleteDatabase call');
       }
       if (!!first.location && !!first.iosDatabaseLocation) {
-        throw newSQLError('AMBIGUOUS: both location and iosDatabaseLocation settings are present in deleteDatabase call. Please use either setting value, not both.');
+        throw newSQLError('AMBIGUOUS: both location or iosDatabaseLocation values are present in deleteDatabase call');
       }
       dblocation = !!first.location && first.location === 'default' ? iosLocationMap['default'] : !!first.iosDatabaseLocation ? iosLocationMap[first.iosDatabaseLocation] : dblocations[first.location];
       if (!dblocation) {
@@ -637,20 +628,20 @@
         name: SelfTest.DBNAME,
         location: 'default'
       }, (function() {
-        return SelfTest.step1(successcb, errorcb);
+        return SelfTest.start2(successcb, errorcb);
       }), (function() {
-        return SelfTest.step1(successcb, errorcb);
+        return SelfTest.start2(successcb, errorcb);
       }));
     },
-    step1: function(successcb, errorcb) {
+    start2: function(successcb, errorcb) {
       SQLiteFactory.openDatabase({
         name: SelfTest.DBNAME,
         location: 'default'
       }, function(db) {
         var check1;
         check1 = false;
-        db.transaction(function(tx) {
-          tx.executeSql('SELECT UPPER("Test") AS upperText', [], function(ignored, resutSet) {
+        return db.transaction(function(tx) {
+          return tx.executeSql('SELECT UPPER("Test") AS upperText', [], function(ignored, resutSet) {
             if (!resutSet.rows) {
               return SelfTest.finishWithError(errorcb, 'Missing resutSet.rows');
             }
@@ -664,67 +655,27 @@
               return SelfTest.finishWithError(errorcb, 'Missing resutSet.rows.item(0).upperText');
             }
             if (resutSet.rows.item(0).upperText !== 'TEST') {
-              return SelfTest.finishWithError(errorcb, "Incorrect resutSet.rows.item(0).upperText value: " + (resutSet.rows.item(0).upperText) + " (expected: 'TEST')");
+              return SelfTest.finishWithError(errorcb, "Incorrect resutSet.rows.item(0).upperText value: " + (resutSet.rows.item(0).data) + " (expected: 'TEST')");
             }
             check1 = true;
-          }, function(ignored, tx_sql_err) {
-            return SelfTest.finishWithError(errorcb, "TX SQL error: " + tx_sql_err);
+          }, function(sql_err) {
+            SelfTest.finishWithError(errorcb, "SQL error: " + sql_err);
           });
         }, function(tx_err) {
-          return SelfTest.finishWithError(errorcb, "TRANSACTION error: " + tx_err);
+          SelfTest.finishWithError(errorcb, "TRANSACTION error: " + tx_err);
         }, function() {
           if (!check1) {
             return SelfTest.finishWithError(errorcb, 'Did not get expected upperText result data');
           }
-          db.executeSql('BEGIN', null, function(ignored) {
-            return nextTick(function() {
-              delete db.openDBs[SelfTest.DBNAME];
-              delete txLocks[SelfTest.DBNAME];
-              nextTick(function() {
-                db.transaction(function(tx2) {
-                  tx2.executeSql('SELECT 1');
-                }, function(tx_err) {
-                  if (!tx_err) {
-                    return SelfTest.finishWithError(errorcb, 'Missing error object');
-                  }
-                  SelfTest.step2(successcb, errorcb);
-                }, function() {
-                  return SelfTest.finishWithError(errorcb, 'Missing error object');
-                });
-              });
-            });
-          });
+          delete db.openDBs[SelfTest.DBNAME];
+          delete txLocks[SelfTest.DBNAME];
+          SelfTest.start3(successcb, errorcb);
         });
       }, function(open_err) {
         return SelfTest.finishWithError(errorcb, "Open database error: " + open_err);
       });
     },
-    step2: function(successcb, errorcb) {
-      SQLiteFactory.openDatabase({
-        name: SelfTest.DBNAME,
-        location: 'default'
-      }, function(db) {
-        db.transaction(function(tx) {
-          tx.executeSql('SELECT ? AS myResult', [null], function(ignored, resutSet) {
-            if (!resutSet.rows) {
-              return SelfTest.finishWithError(errorcb, 'Missing resutSet.rows');
-            }
-            if (!resutSet.rows.length) {
-              return SelfTest.finishWithError(errorcb, 'Missing resutSet.rows.length');
-            }
-            if (resutSet.rows.length !== 1) {
-              return SelfTest.finishWithError(errorcb, "Incorrect resutSet.rows.length value: " + resutSet.rows.length + " (expected: 1)");
-            }
-            SelfTest.step3(successcb, errorcb);
-          });
-        }, function(txError) {
-          return SelfTest.finishWithError(errorcb, "UNEXPECTED TRANSACTION ERROR: " + txError);
-        });
-      }, function(open_err) {
-        return SelfTest.finishWithError(errorcb, "Open database error: " + open_err);
-      });
-    },
-    step3: function(successcb, errorcb) {
+    start3: function(successcb, errorcb) {
       SQLiteFactory.openDatabase({
         name: SelfTest.DBNAME,
         location: 'default'
@@ -837,10 +788,15 @@
                       SelfTest.finishWithError(errorcb, 'second readTransaction did not finish');
                       return;
                     }
-                    db.close(function() {
-                      SelfTest.cleanupAndFinish(successcb, errorcb);
+                    return db.close(function() {
+                      return SQLiteFactory.deleteDatabase({
+                        name: SelfTest.DBNAME,
+                        location: 'default'
+                      }, successcb, function(cleanup_err) {
+                        return SelfTest.finishWithError(errorcb, "Cleanup error: " + cleanup_err);
+                      });
                     }, function(close_err) {
-                      SelfTest.finishWithError(errorcb, "close error: " + close_err);
+                      return SelfTest.finishWithError(errorcb, "close error: " + close_err);
                     });
                   });
                 });
@@ -856,24 +812,14 @@
         return SelfTest.finishWithError(errorcb, "Open database error: " + open_err);
       });
     },
-    cleanupAndFinish: function(successcb, errorcb) {
-      SQLiteFactory.deleteDatabase({
-        name: SelfTest.DBNAME,
-        location: 'default'
-      }, successcb, function(cleanup_err) {
-        SelfTest.finishWithError(errorcb, "CLEANUP DELETE ERROR: " + cleanup_err);
-      });
-    },
     finishWithError: function(errorcb, message) {
-      console.log("selfTest ERROR with message: " + message);
       SQLiteFactory.deleteDatabase({
         name: SelfTest.DBNAME,
         location: 'default'
       }, function() {
-        errorcb(newSQLError(message));
+        return errorcb(newSQLError(message));
       }, function(err2) {
-        console.log("selfTest CLEANUP DELETE ERROR " + err2);
-        errorcb(newSQLError("CLEANUP DELETE ERROR: " + err2 + " for error: " + message));
+        return errorcb(newSQLError("Cleanup error: " + err2 + " for error: " + message));
       });
     }
   };
@@ -894,7 +840,7 @@
       error = function(e) {
         return errorcb(e);
       };
-      return cordova.exec(ok, error, "SQLitePlugin", "echoStringValue", [
+      return cordova.exec(okcb, errorcb, "SQLitePlugin", "echoStringValue", [
         {
           value: 'test-string'
         }

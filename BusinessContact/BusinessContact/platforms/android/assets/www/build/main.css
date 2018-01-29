@@ -33099,6 +33099,10 @@ page-contact .btn {
   font-size: 20px;
 }
 
+page-contact .contact-button-block .contact-button {
+  border: none;
+}
+
 page-contact-details .btn {
   font-size: 20px;
 }

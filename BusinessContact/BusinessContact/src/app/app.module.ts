@@ -37,7 +37,8 @@ import { CommonModule } from '@angular/common';
 import { MScomputerService } from '../pages/provider/MScomputerService';
 import { NewContactPage } from '../pages/newContact/newContact';
 import { ContactService } from '../services/contact.service';
-
+import { contactData } from '../pages/provider/contactData'; 
+import { contactclass } from '../pages/provider/contactclass'; 
 
 @NgModule({
     declarations: [
@@ -107,7 +108,7 @@ import { ContactService } from '../services/contact.service';
     ],
     providers: [
         Camera, KampagneService, Media, File, StatusBar, Splashscreen, Storage,
-        MScomputerService, ContactService, 
+        MScomputerService, ContactService, contactData, contactclass,
         { provide: ErrorHandler, useClass: IonicErrorHandler }]
 })
 export class AppModule { }
