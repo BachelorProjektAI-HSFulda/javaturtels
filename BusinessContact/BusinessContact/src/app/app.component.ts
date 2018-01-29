@@ -9,6 +9,8 @@ import { StatusBar, Splashscreen, SQLite } from 'ionic-native';
 import { MenuController } from 'ionic-angular';
 import { ContactPage } from '../pages/contact/contact';
 
+
+
 @Component({
   templateUrl: 'app.html'
 })
@@ -17,10 +19,14 @@ export class MyApp {
     @ViewChild(Nav) nav: Nav;
 
     constructor(platform: Platform, public menuCtrl: MenuController) {
-    platform.ready().then(() => {
-      StatusBar.styleDefault();
-      Splashscreen.hide();
-    }
+        platform.ready().then(() => {
+            StatusBar.styleDefault();
+            Splashscreen.hide();
+
+            
+
+
+            }
         )
     };
 

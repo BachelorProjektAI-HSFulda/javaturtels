@@ -125,6 +125,22 @@ module.exports = [
             "cordova.InAppBrowser.open",
             "window.open"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-safariviewcontroller/www/SafariViewController.js",
+        "id": "cordova-plugin-safariviewcontroller.SafariViewController",
+        "pluginId": "cordova-plugin-safariviewcontroller",
+        "clobbers": [
+            "SafariViewController"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-customurlscheme/www/android/LaunchMyApp.js",
+        "id": "cordova-plugin-customurlscheme.LaunchMyApp",
+        "pluginId": "cordova-plugin-customurlscheme",
+        "clobbers": [
+            "window.plugins.launchmyapp"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -135,7 +151,9 @@ module.exports.metadata =
     "cordova-plugin-console": "1.0.5",
     "cordova-plugin-contacts": "2.3.1",
     "cordova-plugin-device": "1.1.4",
-    "cordova-plugin-inappbrowser": "1.7.2"
-};
+    "cordova-plugin-inappbrowser": "1.7.2",
+    "cordova-plugin-safariviewcontroller": "1.5.2",
+    "cordova-plugin-customurlscheme": "4.3.0"
+}
 // BOTTOM OF METADATA
 });

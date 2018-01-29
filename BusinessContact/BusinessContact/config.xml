@@ -103,4 +103,13 @@
   <plugin name="cordova-plugin-inappbrowser" spec="~1.7.2" />
   <plugin name="cordova-plugin-contacts" spec="~2.3.1" />
   <plugin name="cordova-plugin-media" spec="~2.4.1" />
+  <plugin name="cordova-sqlite-storage" spec="~2.2.0" />
+  <plugin name="cordova-plugin-safariviewcontroller" spec="~1.5.2" />
+  <plugin name="cordova-plugin-customurlscheme" spec="~4.3.0">
+    <variable name="URL_SCHEME" value="{io.cordova.myapp2d678f}" />
+    <variable name="ANDROID_SCHEME" value="{io.cordova.myapp2d678f}" />
+    <variable name="ANDROID_HOST" value="javaturtles.eu.auth0.com" />
+    <variable name="ANDROID_PATHPREFIX" value="/cordova/{io.cordova.myapp2d678f}/callback" />
+    <preference name="AndroidLaunchMode" value="singleTask" />
+  </plugin>
 </widget>
