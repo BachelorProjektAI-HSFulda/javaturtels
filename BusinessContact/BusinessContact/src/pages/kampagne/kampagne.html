@@ -42,11 +42,11 @@
                 <button ion-button clear item-right (click)="onItemSelected(item)">View</button>
             </ion-item>
             <ion-item-options>
-                <button ion-button color="primary" icon-left (click)="editKampagne()">
-                    <ion-icon name="create"><small> Edit</small></ion-icon>
+                <button ion-button icon-only color="primary" icon-left (click)="editKampagne()">
+                    <ion-icon name="create"></ion-icon>
                 </button>
-                <button ion-button color="danger" icon-left (click)="deleteKampagne(item)">
-                    <ion-icon name="trash"><small> Delete</small></ion-icon>
+                <button ion-button icon-only color="danger" icon-left (click)="deleteKampagne(item)">
+                    <ion-icon name="trash"></ion-icon>
                 </button>
             </ion-item-options>
         </ion-item-sliding>
