@@ -7,6 +7,9 @@ import { helpPage } from '../pages/help/help';
 import { settingsPage}from'../pages/settings/settings'; 
 import { StatusBar, Splashscreen, SQLite } from 'ionic-native';
 import { MenuController } from 'ionic-angular';
+import { ContactPage } from '../pages/contact/contact';
+
+
 
 @Component({
   templateUrl: 'app.html'
@@ -17,11 +20,14 @@ export class MyApp {
 
     constructor(platform: Platform, public menuCtrl: MenuController) {
         platform.ready().then(() => {
-            // Okay, so the platform is ready and our plugins are available.
-            // Here you can do any higher level native things you might need.
             StatusBar.styleDefault();
             Splashscreen.hide();
-        })
+
+            
+
+
+            }
+        )
     };
 
   closeSideMenu() {

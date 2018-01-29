@@ -1,8 +1,9 @@
 ﻿import { Component } from '@angular/core';
 import { NavController, NavParams, LoadingController } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
-import { contactProfilePage } from '../contactProfile/contactProfile';
 import { MScomputerService } from '../provider/MScomputerService';
+import {addContactPage } from '../addContact/addContact'; 
+
 /*
   Generated class for the imgWahl page.
 
@@ -17,7 +18,7 @@ export class imgWahlPage {
 
     base64Image: string; 
     response; any; 
-    OCRAD: any;
+  
 
     constructor(public navCtrl: NavController, public navParams: NavParams, private camera: Camera
         , public loadingCtrl: LoadingController, private ocr: MScomputerService)
@@ -48,33 +49,33 @@ export class imgWahlPage {
 
     gotoNewContact()
     {
-        this.navCtrl.setRoot(contactProfilePage);
+        this.navCtrl.push(addContactPage);
     }
 
 
- analyze()
- {
+ //analyze()
+ //{
 
-     let loader = this.loadingCtrl.create({
-         content: 'Please wait...'
-     });
-     loader.present();
-     (<any>window).OCRAD(document.getElementById('image'), text => {
-         loader.dismissAll();
-         alert(text);
-         console.log(text);
-     });
-        // Tesseract OCR - liest text samt bild, ocrad ist bsiher noch mein favorit.
-        /*(<any>window).Tesseract.recognize(document.getElementById('image'))
-            .then((tesseractResult) => {
-                loader.dismissAll();
-                alert(tesseractResult.text);
-                console.log(tesseractResult);
-                //console.log("this is the data we collected from image");
-                //console.log(this.recognizedText);
-            });*/
+ //    let loader = this.loadingCtrl.create({
+ //        content: 'Please wait...'
+ //    });
+ //    loader.present();
+ //    (<any>window).OCRAD(document.getElementById('image'), text => {
+ //        loader.dismissAll();
+ //        alert(text);
+ //        console.log(text);
+ //    });
+ //       // Tesseract OCR - liest text samt bild, ocrad ist bsiher noch mein favorit.
+ //       /*(<any>window).Tesseract.recognize(document.getElementById('image'))
+ //           .then((tesseractResult) => {
+ //               loader.dismissAll();
+ //               alert(tesseractResult.text);
+ //               console.log(tesseractResult);
+ //               //console.log("this is the data we collected from image");
+ //               //console.log(this.recognizedText);
+ //           });*/
 
-    }
+ //   }
 
 
  getOcr()
