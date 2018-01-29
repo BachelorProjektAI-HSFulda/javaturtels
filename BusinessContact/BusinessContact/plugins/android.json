@@ -10,13 +10,7 @@
         "cordova-plugin-camera": {
             "PACKAGE_NAME": "io.cordova.myapp2d678f"
         },
-        "cordova-plugin-compat": {
-            "PACKAGE_NAME": "io.cordova.myapp2d678f"
-        },
         "cordova-plugin-console": {
-            "PACKAGE_NAME": "io.cordova.myapp2d678f"
-        },
-        "cordova-plugin-contacts": {
             "PACKAGE_NAME": "io.cordova.myapp2d678f"
         },
         "cordova-plugin-customurlscheme": {
@@ -35,9 +29,6 @@
         "cordova-plugin-media": {
             "PACKAGE_NAME": "io.cordova.myapp2d678f"
         },
-        "cordova-plugin-safariviewcontroller": {
-            "PACKAGE_NAME": "io.cordova.myapp2d678f"
-        },
         "cordova-plugin-splashscreen": {
             "PACKAGE_NAME": "io.cordova.myapp2d678f"
         },
@@ -47,15 +38,16 @@
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "io.cordova.myapp2d678f"
         },
-        "cordova-sqlite-storage": {
-            "PACKAGE_NAME": "io.cordova.myapp2d678f"
-        },
         "ionic-plugin-keyboard": {
-            "PACKAGE_NAME": "io.cordova.myapp2d678f"
-        },
-        "cordova-plugin-file": {
             "PACKAGE_NAME": "io.cordova.myapp2d678f"
         }
     },
-    "dependent_plugins": {}
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "io.cordova.myapp2d678f"
+        },
+        "cordova-plugin-contacts": {
+            "PACKAGE_NAME": "io.cordova.myapp2d678f"
+        }
+    }
 }
