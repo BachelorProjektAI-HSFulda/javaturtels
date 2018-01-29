@@ -40,6 +40,9 @@
         },
         "ionic-plugin-keyboard": {
             "PACKAGE_NAME": "io.cordova.myapp2d678f"
+        },
+        "cordova-plugin-ms-azure-mobile-apps": {
+            "PACKAGE_NAME": "io.cordova.myapp2d678f"
         }
     },
     "dependent_plugins": {
@@ -47,6 +50,9 @@
             "PACKAGE_NAME": "io.cordova.myapp2d678f"
         },
         "cordova-plugin-contacts": {
+            "PACKAGE_NAME": "io.cordova.myapp2d678f"
+        },
+        "cordova-sqlite-storage": {
             "PACKAGE_NAME": "io.cordova.myapp2d678f"
         }
     }
