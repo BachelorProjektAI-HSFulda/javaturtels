@@ -22,7 +22,7 @@ export class audioPage {
     recording: boolean = false;
     filePath: string;
     fileName: string;
-    audio: MediaObject;
+    audio: any;
     audioList: any[] = [];
    
 
