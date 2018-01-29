@@ -87,15 +87,25 @@
         "is_top_level": true,
         "variables": {}
     },
-    "cordova-plugin-facebook4": {
+    "cordova-plugin-safariviewcontroller": {
         "source": {
             "type": "registry",
-            "id": "cordova-plugin-facebook4@~1.9.1"
+            "id": "cordova-plugin-safariviewcontroller"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-customurlscheme": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-customurlscheme"
         },
         "is_top_level": true,
         "variables": {
-            "APP_ID": "151946418848033",
-            "APP_NAME": "BachelorProject"
+            "URL_SCHEME": "{io.cordova.myapp2d678f}",
+            "ANDROID_SCHEME": "{io.cordova.myapp2d678f}",
+            "ANDROID_HOST": "javaturtles.eu.auth0.com",
+            "ANDROID_PATHPREFIX": "/cordova/{io.cordova.myapp2d678f}/callback"
         }
     }
 }

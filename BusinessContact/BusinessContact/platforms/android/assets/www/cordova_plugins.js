@@ -127,11 +127,19 @@ module.exports = [
         ]
     },
     {
-        "file": "plugins/cordova-plugin-facebook4/www/facebook-native.js",
-        "id": "cordova-plugin-facebook4.FacebookConnectPlugin",
-        "pluginId": "cordova-plugin-facebook4",
+        "file": "plugins/cordova-plugin-safariviewcontroller/www/SafariViewController.js",
+        "id": "cordova-plugin-safariviewcontroller.SafariViewController",
+        "pluginId": "cordova-plugin-safariviewcontroller",
         "clobbers": [
-            "facebookConnectPlugin"
+            "SafariViewController"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-customurlscheme/www/android/LaunchMyApp.js",
+        "id": "cordova-plugin-customurlscheme.LaunchMyApp",
+        "pluginId": "cordova-plugin-customurlscheme",
+        "clobbers": [
+            "window.plugins.launchmyapp"
         ]
     }
 ];
@@ -144,7 +152,8 @@ module.exports.metadata =
     "cordova-plugin-contacts": "2.3.1",
     "cordova-plugin-device": "1.1.4",
     "cordova-plugin-inappbrowser": "1.7.2",
-    "cordova-plugin-facebook4": "1.9.1"
+    "cordova-plugin-safariviewcontroller": "1.5.2",
+    "cordova-plugin-customurlscheme": "4.3.0"
 }
 // BOTTOM OF METADATA
 });
