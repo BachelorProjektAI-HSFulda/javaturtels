@@ -13,10 +13,35 @@
         "cordova-plugin-console": {
             "PACKAGE_NAME": "io.cordova.myapp2d678f"
         },
+        "cordova-plugin-customurlscheme": {
+            "URL_SCHEME": "{io.cordova.myapp2d678f}",
+            "ANDROID_SCHEME": "{io.cordova.myapp2d678f}",
+            "ANDROID_HOST": "javaturtles.eu.auth0.com",
+            "ANDROID_PATHPREFIX": "/cordova/{io.cordova.myapp2d678f}/callback",
+            "PACKAGE_NAME": "io.cordova.myapp2d678f"
+        },
         "cordova-plugin-device": {
             "PACKAGE_NAME": "io.cordova.myapp2d678f"
         },
         "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "io.cordova.myapp2d678f"
+        },
+        "cordova-plugin-media": {
+            "PACKAGE_NAME": "io.cordova.myapp2d678f"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "io.cordova.myapp2d678f"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "io.cordova.myapp2d678f"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "io.cordova.myapp2d678f"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "io.cordova.myapp2d678f"
+        },
+        "cordova-plugin-ms-azure-mobile-apps": {
             "PACKAGE_NAME": "io.cordova.myapp2d678f"
         }
     },
@@ -25,6 +50,9 @@
             "PACKAGE_NAME": "io.cordova.myapp2d678f"
         },
         "cordova-plugin-contacts": {
+            "PACKAGE_NAME": "io.cordova.myapp2d678f"
+        },
+        "cordova-sqlite-storage": {
             "PACKAGE_NAME": "io.cordova.myapp2d678f"
         }
     }

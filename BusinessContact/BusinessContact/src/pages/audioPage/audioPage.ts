@@ -22,7 +22,7 @@ export class audioPage {
     recording: boolean = false;
     filePath: string;
     fileName: string;
-    audio: MediaObject;
+    audio: any;
     audioList: any[] = [];
    
 
@@ -81,7 +81,7 @@ export class audioPage {
     deleteRecord() {
         if (confirm("Are you sure, this Audiorecord will be deleted?") == true) {
 
-            //this.audio = removeFile(this.filePath, this.fileName);
+            this.file.removeFile(this.filePath, this.fileName);
         }
 
     }

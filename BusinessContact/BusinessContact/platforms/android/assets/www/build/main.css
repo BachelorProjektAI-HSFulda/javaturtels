@@ -33099,6 +33099,21 @@ page-contact .btn {
   font-size: 20px;
 }
 
+page-contact .contact-button-block .contact-button {
+  border: none;
+}
+
+page-contact-details .btn {
+  font-size: 20px;
+}
+
+page-contact-details .ion-avatar img {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 80px !important;
+  max-height: 80px !important;
+}
+
 page-contactsOfKampagne .btn {
   font-size: 20px;
 }

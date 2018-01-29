@@ -6,8 +6,9 @@ import { camerSeitePage } from '../camerSeite/camerSeite';
 import { imgWahlPage } from '../imgWahl/imgWahl'; 
 import { addContactPage } from '../addContact/addContact';
 import { audioPage } from '../audioPage/audioPage';
-
-
+import { contactclass } from '../provider/contactclass'; 
+import { contactData } from '../provider/contactData'; 
+import { SQLite } from "ionic-native";
 
 @Component({
   selector: 'page-contact',
@@ -15,14 +16,23 @@ import { audioPage } from '../audioPage/audioPage';
 })
 export class ContactPage {
 
+    
+    contactList: Array<contactclass> = []; 
+
 
     public base64Image: string; 
     public textOutput: any;
 
     constructor(public navCtrl: NavController, private alert: AlertController, 
-        private camera: Camera, public loadingCtrl: LoadingController, public actionCtrl: ActionSheetController) {
-
+        private camera: Camera, public loadingCtrl: LoadingController, public actionCtrl: ActionSheetController,
+        private cntData: contactData)
+    {
+        this.contactList = this.cntData.contacts; 
+        
     }
+
+    
+  
 
     choosePhoto()
     {
@@ -103,8 +113,28 @@ export class ContactPage {
    }
 
 
-   
+   goToEdit()
+   {
+       alert('Edit clicked'); 
    }
+
+   deleteContact()
+   {
+       alert('Delete Clicked');
+   }
+
+   goToContactInfo()
+   {
+       alert('contact information clicked'); 
+   }
+
+  shaRe()
+{
+      alert('contact shared'); 
+}
+   
+
+}
   
 
    

@@ -1,0 +1,61 @@
+﻿<ion-header>
+    <ion-navbar color="primary">
+        <ion-title>New Contact</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <form (ngSubmit)="onAddContact(f.value)" #f="ngForm">
+        <ion-item>
+            <ion-label color="primary" fixed>Vorname</ion-label>
+            <ion-input type="text" name="vorname" ngModel required></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label color="primary" fixed>Name</ion-label>
+            <ion-input type="text" name="name" ngModel required></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label color="primary" fixed>Firma</ion-label>
+            <ion-input type="text" name="firma" ngModel required></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label color="primary" fixed>Telefon</ion-label>
+            <ion-input type="tel" name="telefon" ngModel></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label color="primary" fixed>Mobile</ion-label>
+            <ion-input type="tel" name="mobil" ngModel required></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label color="primary" fixed>Email</ion-label>
+            <ion-input type="email" name="email" ngModel required></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label color="primary" fixed>Straße</ion-label>
+            <ion-input type="text" name="street" ngModel></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label color="primary" fixed>PLZ</ion-label>
+            <ion-input type="number" name="plz" ngModel></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label color="primary" fixed>Ort</ion-label>
+            <ion-input type="text" name="ort" ngModel></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label color="primary" fixed>Homepage</ion-label>
+            <ion-input type="url" name="homepage" ngModel></ion-input>
+        </ion-item>
+
+        <button ion-button block type="submit" [disabled]="!f.valid">Save</button>
+    </form>
+</ion-content>

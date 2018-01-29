@@ -66,7 +66,7 @@
     "cordova-plugin-file": {
         "source": {
             "type": "registry",
-            "id": "cordova-plugin-file@4.3.3"
+            "id": "cordova-plugin-file@~5.0.0"
         },
         "is_top_level": true,
         "variables": {}
@@ -82,9 +82,38 @@
     "cordova-plugin-media": {
         "source": {
             "type": "registry",
-            "id": "cordova-plugin-media@^2.4.1"
+            "id": "cordova-plugin-media@~2.4.1"
         },
         "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-customurlscheme": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-customurlscheme"
+        },
+        "is_top_level": true,
+        "variables": {
+            "URL_SCHEME": "{io.cordova.myapp2d678f}",
+            "ANDROID_SCHEME": "{io.cordova.myapp2d678f}",
+            "ANDROID_HOST": "javaturtles.eu.auth0.com",
+            "ANDROID_PATHPREFIX": "/cordova/{io.cordova.myapp2d678f}/callback"
+        }
+    },
+    "cordova-plugin-ms-azure-mobile-apps": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-ms-azure-mobile-apps"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-sqlite-storage": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-sqlite-storage@1.4.8"
+        },
+        "is_top_level": false,
         "variables": {}
     }
 }
