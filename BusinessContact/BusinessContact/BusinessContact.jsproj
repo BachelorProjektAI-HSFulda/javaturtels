@@ -106,5 +106,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Connected Services\" />
+    <Folder Include="src\providers\" />
   </ItemGroup>
 </Project>
