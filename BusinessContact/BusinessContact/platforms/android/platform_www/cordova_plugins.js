@@ -174,6 +174,28 @@ module.exports = [
             "cordova.plugins.Keyboard"
         ],
         "runs": true
+    },
+    {
+        "file": "plugins/cordova-sqlite-storage/www/SQLitePlugin.js",
+        "id": "cordova-sqlite-storage.SQLitePlugin",
+        "pluginId": "cordova-sqlite-storage",
+        "clobbers": [
+            "SQLitePlugin"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-ms-azure-mobile-apps/www/MobileServices.Cordova.Ext.js",
+        "id": "cordova-plugin-ms-azure-mobile-apps.AzureMobileServices.Ext",
+        "pluginId": "cordova-plugin-ms-azure-mobile-apps",
+        "runs": true
+    },
+    {
+        "file": "plugins/cordova-plugin-ms-azure-mobile-apps/www/MobileServices.Cordova.js",
+        "id": "cordova-plugin-ms-azure-mobile-apps.AzureMobileServices",
+        "pluginId": "cordova-plugin-ms-azure-mobile-apps",
+        "clobbers": [
+            "WindowsAzure"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -190,7 +212,9 @@ module.exports.metadata =
     "cordova-plugin-splashscreen": "4.0.3",
     "cordova-plugin-statusbar": "2.2.1",
     "cordova-plugin-whitelist": "1.3.1",
-    "ionic-plugin-keyboard": "2.2.1"
-};
+    "ionic-plugin-keyboard": "2.2.1",
+    "cordova-sqlite-storage": "1.4.8",
+    "cordova-plugin-ms-azure-mobile-apps": "2.0.0"
+}
 // BOTTOM OF METADATA
 });
