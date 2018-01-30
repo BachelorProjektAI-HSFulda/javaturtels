@@ -1,7 +1,7 @@
 ﻿import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { contactData } from '../provider/contactData'; 
-import { ContactPage} from '../contact/contact'; 
+import { ContactPage } from '../contact/contact'; 
 /*
   Generated class for the addContact page.
 
