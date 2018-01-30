@@ -18,11 +18,6 @@
                 <ion-icon name="camera"></ion-icon>
             </button>
         </ion-buttons>
-        <!-->ion-buttons end>
-        <button ion-button class="btn" (click)="newCampaign()">
-            <ion-icon name="add"></ion-icon>
-        </button>
-    </ion-buttons-->
     </ion-navbar>
     <ion-toolbar no-border-top color="light" *ngIf="showSearchbar">
         <ion-searchbar placeholder="Search" (ionInput)="filterItems($event)"></ion-searchbar>
@@ -38,7 +33,8 @@
                     <img *ngIf="!imageAvailable" src="assets/placeholder.png">
                 </ion-thumbnail>
                 <h2>{{ item.title }}</h2>
-                <p><small><ion-icon name="md-contacts" item-start> 0 </ion-icon></small></p>
+                <br />
+                <!-->p><small><ion-icon name="md-contacts" item-start> Contacts: 0 </ion-icon></small></!--p-->
                 <button ion-button clear item-right (click)="onItemSelected(item)">View</button>
             </ion-item>
             <ion-item-options>

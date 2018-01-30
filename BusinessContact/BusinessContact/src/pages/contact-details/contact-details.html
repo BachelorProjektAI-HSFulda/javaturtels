@@ -1,8 +1,12 @@
 ﻿<ion-header>
     <ion-navbar color="primary">
         <ion-title>Contact details</ion-title>
+        <ion-buttons end>
+            <button ion-button class="btn">
+                <ion-icon name="create"></ion-icon>
+            </button>
+        </ion-buttons>
     </ion-navbar>
-
 </ion-header>
 
 <ion-content padding>
@@ -13,7 +17,7 @@
             <ion-avatar item-left class="ion-avatar">
                 <img src="assets/placeholder.png">
             </ion-avatar>
-            <h2><strong> {{item.vorname+" "+item.name}}</strong> </h2>
+            <h2><strong> {{item.name}}</strong> </h2>
             <p>{{item.firma}}</p>
         </ion-item>
 
@@ -21,7 +25,7 @@
             <ion-icon name="home" item-left></ion-icon>
             <h2>Location</h2>
             <p>{{item.street}}</p>
-            <p>{{item.plz+" "+item.ort}}</p>
+            <p>{{item.ort}}</p>
         </ion-item>
 
         <ion-item>
@@ -48,8 +52,19 @@
             <p>{{item.homepage}}</p>
         </ion-item>
 
-
+        <br />
+        <button ion-button clear item-right>View Notes</button>
     </ion-card>
+
+    <ion-fab right bottom>
+        <button ion-fab color="primary"><ion-icon name="md-share"></ion-icon></button>
+        <ion-fab-list side="top">
+            <button ion-fab><ion-icon name="logo-facebook"></ion-icon></button>
+            <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>
+            <button ion-fab><ion-icon name="logo-vimeo"></ion-icon></button>
+            <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>
+        </ion-fab-list>
+    </ion-fab>
 
 
 </ion-content>
