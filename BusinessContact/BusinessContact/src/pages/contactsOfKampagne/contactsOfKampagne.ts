@@ -14,7 +14,7 @@ import { ContactService } from '../../services/contact.service';
 export class contactsOfKampagnePage {
     item: any;
     srcImage: string;
-    contacts: { name: string, vorname: string, firma: string, street: string, plz:string, ort: string, telefon: string, mobil:string, email: string, homepage: string  }[] = [];
+    contacts: { name: string, firma: string, street: string, ort: string, telefon: string, mobil: string, email: string, homepage: string }[] = [];
     
     constructor(public navCtrl: NavController, public navParams: NavParams,
         public actionSheetCtrl: ActionSheetController, public loadingCtrl: LoadingController,
