@@ -33114,6 +33114,10 @@ page-contact-details .ion-avatar img {
   max-height: 80px !important;
 }
 
+page-contactInformation .titre-info-block {
+  text-align: center;
+}
+
 page-contactsOfKampagne .btn {
   font-size: 20px;
 }

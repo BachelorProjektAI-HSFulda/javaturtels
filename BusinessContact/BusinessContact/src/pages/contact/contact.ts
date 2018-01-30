@@ -9,6 +9,7 @@ import { audioPage } from '../audioPage/audioPage';
 import { contactclass } from '../provider/contactclass'; 
 import { contactData } from '../provider/contactData'; 
 import { SQLite } from "ionic-native";
+import { contactInformationPage } from '../contactInformation/contactInformation'; 
 
 @Component({
   selector: 'page-contact',
@@ -53,7 +54,6 @@ export class ContactPage {
   search()
   {
       this.navCtrl.push(searchPage);
-
   }
 
   
@@ -123,9 +123,10 @@ export class ContactPage {
        alert('Delete Clicked');
    }
 
-   goToContactInfo()
+   goToContactInfo(contact)
    {
-       alert('contact information clicked'); 
+       let index = this.contactList.indexOf(contact); 
+       this.navCtrl.push(contactInformationPage, { ContactDetails : this.contactList[index]}); 
    }
 
   shaRe()
