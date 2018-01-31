@@ -30,13 +30,12 @@ function start(n) {
   if (wait == 0) test_it_done();
 }
 
-var isWindows = /Windows /.test(navigator.userAgent); // Windows 8.1/Windows Phone 8.1/Windows 10
+var isWindows = /Windows /.test(navigator.userAgent); // Windows (8.1)
 var isAndroid = !isWindows && /Android/.test(navigator.userAgent);
 
-// NOTE: While in certain version branches there is no difference between
-// the default Android implementation and implementation #2,
-// this test script will also apply the androidLockWorkaround: 1 option
-// in case of implementation #2.
+// NOTE: In the common storage-master branch there is no difference between the
+// default implementation and implementation #2. But the test will also apply
+// the androidLockWorkaround: 1 option in the case of implementation #2.
 var scenarioList = [
   isAndroid ? 'Plugin-implementation-default' : 'Plugin',
   'HTML5',
@@ -53,25 +52,23 @@ var mytests = function() {
       var scenarioName = scenarioList[i];
       var suiteName = scenarioName + ': ';
       var isWebSql = (i === 1);
-      var isImpl2 = (i === 2);
+      var isOldImpl = (i === 2);
 
       // NOTE: MUST be defined in function scope, NOT outer scope:
       var openDatabase = function(name, ignored1, ignored2, ignored3) {
-        if (isImpl2) {
+        if (isOldImpl) {
           return window.sqlitePlugin.openDatabase({
             // prevent reuse of database from default db implementation:
             name: 'i2-'+name,
-            // explicit database location:
-            location: 'default',
             androidDatabaseImplementation: 2,
-            androidLockWorkaround: 1
+            androidLockWorkaround: 1,
+            location: 1
           });
         }
         if (isWebSql) {
-          return window.openDatabase(name, '1.0', 'Test', DEFAULT_SIZE);
+          return window.openDatabase(name, "1.0", "Demo", DEFAULT_SIZE);
         } else {
-          // explicit database location:
-          return window.sqlitePlugin.openDatabase({name: name, location: 'default'});
+          return window.sqlitePlugin.openDatabase({name: name, location: 0});
         }
       }
 

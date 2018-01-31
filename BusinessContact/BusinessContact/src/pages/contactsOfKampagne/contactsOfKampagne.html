@@ -1,4 +1,4 @@
-﻿<ion-header class="custom-font-size">
+﻿<ion-header>
     <ion-navbar color="primary">
         <ion-title>{{ item.title }}</ion-title>
         <ion-buttons end>
@@ -22,13 +22,24 @@
             Contacts
         </ion-list-header>
 
-        <ion-item (click)="onItemSelected()">
-            <ion-avatar item-left>
-                <img src="assets/placeholder.png" />
-            </ion-avatar>
-            <h2>Max Mustermann</h2>
-            <p>Informatiker</p>
-        </ion-item>
+        <ion-item-sliding *ngFor="let contact of contacts">
+            <ion-item (click)="onItemSelected(contact)">
+                <ion-avatar item-left>
+                    <img src="assets/placeholder.png" />
+                </ion-avatar>
+                <h2>{{contact.name}}</h2>
+                <p>{{contact.firma}}</p>
+            </ion-item>
+
+            <ion-item-options>
+                <button ion-button icon-only color="light" icon-left (click)="edit()">
+                    <ion-icon name="paper"></ion-icon>
+                </button>
+                <button ion-button icon-only color="danger" icon-left (click)="delete(contact)">
+                    <ion-icon name="trash"></ion-icon>
+                </button>
+            </ion-item-options>
+        </ion-item-sliding>
 
     </ion-list>
 

@@ -1,0 +1,21 @@
+﻿page-newContact {
+    .btn {
+        font-size: 25px;
+    }
+
+    .icon {
+        font-size: 25px;
+    }
+
+    .custom-width {
+        width: 20%;
+        height: auto;
+        margin: auto;
+    }
+
+    .img-circle {
+        border-radius: 60%;
+        overflow: hidden;
+        perspective: 1px;
+    }
+}

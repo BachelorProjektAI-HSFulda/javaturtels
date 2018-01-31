@@ -19,12 +19,13 @@ import { NeueKampagnePage } from '../pages/neueKampagne/neueKampagne';
 import { KampagneService } from '../services/kampagne.service';
 import { ReaderPage } from '../pages/reader-page/reader-page';
 import { contactsOfKampagnePage } from '../pages/contactsOfKampagne/contactsOfKampagne';
+import { contactDetails } from '../pages/contact-details/contact-details';
 import { camerSeitePage } from '../pages/camerSeite/camerSeite'; 
 import { imgWahlPage } from '../pages/imgWahl/imgWahl';
 import { audioPage } from '../pages/audioPage/audioPage';
 import { Media } from '@ionic-native/media';
 import { File } from '@ionic-native/file';
-import { StatusBar, Splashscreen } from 'ionic-native';
+import { StatusBar, Splashscreen, SQLite } from 'ionic-native';
 import { synchronisationPage } from '../pages/synchronisation/synchronisation';
 import { accountInformationPage } from '../pages/accountInformation/accountInformation';
 import { groupsContactPage } from '../pages/groupsContact/groupsContact';
@@ -33,12 +34,12 @@ import { cameraOfcampagnePage } from '../pages/cameraOfcampagne/cameraOfcampagne
 import { BrowserModule } from '@angular/platform-browser';
 import { addContactPage } from '../pages/addContact/addContact';
 import { CommonModule } from '@angular/common';
-import { MScomputerService } from '../pages/provider/MScomputerService'; 
-import { facebookAuthPage } from '../pages/facebookAuth/facebookauth';
-import { contactclass } from '../pages/provider/contactclass'; 
+import { MScomputerService } from '../pages/provider/MScomputerService';
+import { NewContactPage } from '../pages/newContact/newContact';
+import { ContactService } from '../services/contact.service';
 import { contactData } from '../pages/provider/contactData'; 
-
-
+import { contactclass } from '../pages/provider/contactclass'; 
+import { contactInformationPage } from '../pages/contactInformation/contactInformation'; 
 
 
 @NgModule({
@@ -61,15 +62,16 @@ import { contactData } from '../pages/provider/contactData';
         camerSeitePage,
         imgWahlPage,
         contactsOfKampagnePage,
+        contactDetails,
         audioPage,
         synchronisationPage,
         accountInformationPage, 
         groupsContactPage,
         AnimateItemSliding,
         cameraOfcampagnePage,
-        addContactPage 
-       
-
+        addContactPage,
+        NewContactPage, 
+        contactInformationPage
       
     ],
     imports: [
@@ -93,6 +95,7 @@ import { contactData } from '../pages/provider/contactData';
         settingsPage,
         groupsSearchPage,
         NeueKampagnePage,
+        contactDetails,
         ReaderPage,
         camerSeitePage,
         imgWahlPage,
@@ -102,13 +105,14 @@ import { contactData } from '../pages/provider/contactData';
         accountInformationPage, 
         groupsContactPage,
         cameraOfcampagnePage,
-        addContactPage
-
+        addContactPage,
+        NewContactPage, 
+        contactInformationPage
       
     ],
     providers: [
         Camera, KampagneService, Media, File, StatusBar, Splashscreen, Storage,
-        MScomputerService, contactData, contactclass,
+        MScomputerService, ContactService, contactData, contactclass,
         { provide: ErrorHandler, useClass: IonicErrorHandler }]
 })
 export class AppModule { }

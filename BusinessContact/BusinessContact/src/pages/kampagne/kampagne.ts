@@ -1,5 +1,4 @@
 import { Component, ViewChild } from '@angular/core';
-//import { Keyboard } from '@ionic-native/keyboard';
 import { NavController, ActionSheetController, Content, Keyboard } from 'ionic-angular';
 import { NeueKampagnePage } from "../neueKampagne/neueKampagne";
 import { contactsOfKampagnePage } from "../contactsOfKampagne/contactsOfKampagne"
@@ -12,7 +11,7 @@ import { camerSeitePage } from '../camerSeite/camerSeite';
 })
 export class KampagnePage {
     items: { title: string }[] = [];
-    shouldAnimate: boolean = true;
+    shouldAnimate: boolean = false;
     showSearchbar: boolean = false;
     @ViewChild('content') content: Content;
  

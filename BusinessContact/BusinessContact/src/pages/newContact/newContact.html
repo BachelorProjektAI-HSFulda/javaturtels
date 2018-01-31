@@ -1,0 +1,66 @@
+﻿<ion-header>
+    <ion-navbar color="primary">
+        <ion-title>New Contact</ion-title>
+        <ion-buttons end>
+            <button class="btn" ion-button type="submit" [disabled]="!f.valid" form="myform">
+                <ion-icon name="md-checkmark"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-avatar class="custom-width">
+        <div class="img-circle">
+            <img src="assets/person-placeholder.png">
+        </div>
+    </ion-avatar>
+    <form (ngSubmit)="onAddContact(f.value)" #f="ngForm" id="myform">
+        <ion-item></ion-item>
+        <ion-item>
+            <ion-label color="dark" fixed><ion-icon name="contact"></ion-icon></ion-label>
+            <ion-input type="text" placeholder="First and last name" name="name" ngModel required></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label color="dark" fixed><ion-icon name="briefcase"></ion-icon></ion-label>
+            <ion-input type="text" placeholder="Company name" name="firma" ngModel required></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label color="dark" fixed><ion-icon name="call"></ion-icon></ion-label>
+            <ion-input type="tel" placeholder="Phone number" name="telefon" ngModel></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label color="dark" fixed><ion-icon name="call"></ion-icon></ion-label>
+            <ion-input type="tel" placeholder="Mobile number" name="mobil" ngModel required></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label color="dark" fixed><ion-icon name="mail"></ion-icon></ion-label>
+            <ion-input type="email" placeholder="E-Mail address" name="email" ngModel required></ion-input>
+        </ion-item><br /><br />
+
+        <ion-item>
+            <ion-label color="dark" fixed><ion-icon name="home"></ion-icon></ion-label>
+            <ion-input type="text" placeholder="Full address" name="street" ngModel></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label color="dark" fixed><ion-icon name="pin"></ion-icon></ion-label>
+            <ion-input type="text" placeholder="Postcode with city" name="ort" ngModel></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label color="dark" fixed><ion-icon name="at"></ion-icon></ion-label>
+            <ion-input type="url" placeholder="Homepage" name="homepage" ngModel></ion-input>
+        </ion-item><br /><br />
+
+        <ion-item>
+            <ion-label stacked>Notes</ion-label>
+            <ion-input type="text" placeholder="Add some notes here" name="note" ngModel></ion-input>
+        </ion-item><br />
+        <!-->button ion-button block type="submit" [disabled]="!f.valid">Save</!--button-->
+    </form>
+</ion-content>
