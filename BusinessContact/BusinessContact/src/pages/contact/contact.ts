@@ -118,9 +118,16 @@ export class ContactPage {
        alert('Edit clicked'); 
    }
 
-   deleteContact()
+   deleteContact(item)
    {
-       alert('Delete Clicked');
+       let index = this.contactList.indexOf(item); 
+
+       if (confirm('Are you sure you want to delete this Contact ?') == true)
+       {
+           this.contactList.splice(index,0); 
+           this.cntData.deleteContact(item); 
+       }
+      
    }
 
    goToContactInfo(contact)

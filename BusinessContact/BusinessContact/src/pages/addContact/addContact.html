@@ -16,8 +16,13 @@
         
 
         <ion-item>
-            <ion-label color="primary" stacked>Tel</ion-label>
-            <ion-input #number type="number" placeholder="Tel"></ion-input>
+            <ion-label color="primary" stacked>mobile</ion-label>
+            <ion-input #number type="number" placeholder="mobile Number"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label color="primary" stacked>tel</ion-label>
+            <ion-input #tel type="number" placeholder="Tel"></ion-input>
         </ion-item>
 
         <ion-item>
@@ -55,11 +60,16 @@
             <ion-input #role type="text" placeholder="your role"></ion-input>
         </ion-item>
 
+        <ion-item>
+            <ion-label color="primary" stacked>Note</ion-label>
+            <ion-input #note type="text" placeholder="Add some Note"></ion-input>
+        </ion-item>
+
    </ion-list>
 
 
     <ion-buttons>
-        <button ion-button (click)="addcontact(name,number, email, address, postalCode, ville, url, organisation, role)">Save</button>
+        <button ion-button (click)="addcontact(name,number, email, address, postalCode, ville, url, organisation, role, tel , note)">Save</button>
         <button ion-button>Cancel</button>
     </ion-buttons>
 

@@ -3,13 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NavController, NavParams, AlertController } from 'ionic-angular';
 import { anmeldungPage } from '../anmeldung/anmeldung';
 import { TabsPage } from '../tabs/tabs';
-<<<<<<< HEAD
 import { Facebook } from '@ionic-native/facebook'
 import { Component, NgModule, Input } from '@angular/core';
 
-=======
-import { NgModule } from '@angular/core';
->>>>>>> ee6b571851eb5e5e6b7d737d549c3eb73a298256
 
 
 @Component({
