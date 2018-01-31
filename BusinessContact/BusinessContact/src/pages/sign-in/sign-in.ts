@@ -1,9 +1,11 @@
-﻿import { Component } from '@angular/core';
+﻿import { CommonModule } from '@angular/common';
+import { BrowserModule } from '@angular/platform-browser';
 import { NavController, NavParams, AlertController } from 'ionic-angular';
 import { anmeldungPage } from '../anmeldung/anmeldung';
 import { TabsPage } from '../tabs/tabs';
 import { Facebook } from '@ionic-native/facebook'
-import { NgModule } from '@angular/core';
+import { Component, NgModule, Input } from '@angular/core';
+
 
 
 @Component({

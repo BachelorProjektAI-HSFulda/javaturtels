@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar color="primary">
-    <ion-title>sign_in</ion-title>
+    <ion-title>Sign In</ion-title>
       <ion-buttons left>
           <button ion-button  (click)="goBack()">
               <ion-icon name="arrow-back"></ion-icon>
@@ -21,17 +21,18 @@
     <ion-list class="Liste" >
         <ion-item>
             <ion-label fixed>Username</ion-label>
-            <ion-input type="Text Input" value=""></ion-input>
+            <ion-input placeholder="" type="Text Input" value="" id="loginField" required [(ngModel)]="username" #email></ion-input>
+            
         </ion-item>
 
         <ion-item>
             <ion-label fixed>Password</ion-label>
-            <ion-input type="Text Input" ></ion-input>
+            <ion-input placeholder="" type="Text Input" id="passwordField" required [(ngModel)]="password"></ion-input>
         </ion-item>
     </ion-list>
 
     <div class="signInBlock">
-        <button ion-button  block (click)="signIn()">Sign In</button>
+        <button ion-button block (click) ="signIn()">Sign In</button>
     </div>
 
     <div class=" forgotBlock">
