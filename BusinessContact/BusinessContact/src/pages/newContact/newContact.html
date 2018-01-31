@@ -1,61 +1,66 @@
 ﻿<ion-header>
     <ion-navbar color="primary">
         <ion-title>New Contact</ion-title>
+        <ion-buttons end>
+            <button class="btn" ion-button type="submit" [disabled]="!f.valid" form="myform">
+                <ion-icon name="md-checkmark"></ion-icon>
+            </button>
+        </ion-buttons>
     </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-    <form (ngSubmit)="onAddContact(f.value)" #f="ngForm">
+    <ion-avatar class="custom-width">
+        <div class="img-circle">
+            <img src="assets/person-placeholder.png">
+        </div>
+    </ion-avatar>
+    <form (ngSubmit)="onAddContact(f.value)" #f="ngForm" id="myform">
+        <ion-item></ion-item>
         <ion-item>
-            <ion-label color="primary" fixed>Vorname</ion-label>
-            <ion-input type="text" name="vorname" ngModel required></ion-input>
+            <ion-label color="dark" fixed><ion-icon name="contact"></ion-icon></ion-label>
+            <ion-input type="text" placeholder="First and last name" name="name" ngModel required></ion-input>
         </ion-item>
 
         <ion-item>
-            <ion-label color="primary" fixed>Name</ion-label>
-            <ion-input type="text" name="name" ngModel required></ion-input>
+            <ion-label color="dark" fixed><ion-icon name="briefcase"></ion-icon></ion-label>
+            <ion-input type="text" placeholder="Company name" name="firma" ngModel required></ion-input>
         </ion-item>
 
         <ion-item>
-            <ion-label color="primary" fixed>Firma</ion-label>
-            <ion-input type="text" name="firma" ngModel required></ion-input>
+            <ion-label color="dark" fixed><ion-icon name="call"></ion-icon></ion-label>
+            <ion-input type="tel" placeholder="Phone number" name="telefon" ngModel></ion-input>
         </ion-item>
 
         <ion-item>
-            <ion-label color="primary" fixed>Telefon</ion-label>
-            <ion-input type="tel" name="telefon" ngModel></ion-input>
+            <ion-label color="dark" fixed><ion-icon name="call"></ion-icon></ion-label>
+            <ion-input type="tel" placeholder="Mobile number" name="mobil" ngModel required></ion-input>
         </ion-item>
 
         <ion-item>
-            <ion-label color="primary" fixed>Mobile</ion-label>
-            <ion-input type="tel" name="mobil" ngModel required></ion-input>
+            <ion-label color="dark" fixed><ion-icon name="mail"></ion-icon></ion-label>
+            <ion-input type="email" placeholder="E-Mail address" name="email" ngModel required></ion-input>
+        </ion-item><br /><br />
+
+        <ion-item>
+            <ion-label color="dark" fixed><ion-icon name="home"></ion-icon></ion-label>
+            <ion-input type="text" placeholder="Full address" name="street" ngModel></ion-input>
         </ion-item>
 
         <ion-item>
-            <ion-label color="primary" fixed>Email</ion-label>
-            <ion-input type="email" name="email" ngModel required></ion-input>
+            <ion-label color="dark" fixed><ion-icon name="pin"></ion-icon></ion-label>
+            <ion-input type="text" placeholder="Postcode with city" name="ort" ngModel></ion-input>
         </ion-item>
 
         <ion-item>
-            <ion-label color="primary" fixed>Straße</ion-label>
-            <ion-input type="text" name="street" ngModel></ion-input>
-        </ion-item>
+            <ion-label color="dark" fixed><ion-icon name="at"></ion-icon></ion-label>
+            <ion-input type="url" placeholder="Homepage" name="homepage" ngModel></ion-input>
+        </ion-item><br /><br />
 
         <ion-item>
-            <ion-label color="primary" fixed>PLZ</ion-label>
-            <ion-input type="number" name="plz" ngModel></ion-input>
-        </ion-item>
-
-        <ion-item>
-            <ion-label color="primary" fixed>Ort</ion-label>
-            <ion-input type="text" name="ort" ngModel></ion-input>
-        </ion-item>
-
-        <ion-item>
-            <ion-label color="primary" fixed>Homepage</ion-label>
-            <ion-input type="url" name="homepage" ngModel></ion-input>
-        </ion-item>
-
-        <button ion-button block type="submit" [disabled]="!f.valid">Save</button>
+            <ion-label stacked>Notes</ion-label>
+            <ion-input type="text" placeholder="Add some notes here" name="note" ngModel></ion-input>
+        </ion-item><br />
+        <!-->button ion-button block type="submit" [disabled]="!f.valid">Save</!--button-->
     </form>
 </ion-content>

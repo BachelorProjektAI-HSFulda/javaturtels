@@ -39,6 +39,8 @@ import { NewContactPage } from '../pages/newContact/newContact';
 import { ContactService } from '../services/contact.service';
 import { contactData } from '../pages/provider/contactData'; 
 import { contactclass } from '../pages/provider/contactclass'; 
+import { contactInformationPage } from '../pages/contactInformation/contactInformation'; 
+
 
 @NgModule({
     declarations: [
@@ -68,7 +70,8 @@ import { contactclass } from '../pages/provider/contactclass';
         AnimateItemSliding,
         cameraOfcampagnePage,
         addContactPage,
-        NewContactPage
+        NewContactPage, 
+        contactInformationPage
       
     ],
     imports: [
@@ -103,7 +106,8 @@ import { contactclass } from '../pages/provider/contactclass';
         groupsContactPage,
         cameraOfcampagnePage,
         addContactPage,
-        NewContactPage
+        NewContactPage, 
+        contactInformationPage
       
     ],
     providers: [

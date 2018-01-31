@@ -3,11 +3,11 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class ContactService {
-    private contacts: { name: string, vorname: string, firma: string, street: string, plz:string, ort: string, telefon: string, mobil: string, email: string, homepage: string }[] = [];
+    private contacts: { name: string, firma: string, street: string, ort: string, telefon: string, mobil: string, email: string, homepage: string }[] = [];
 
     constructor(private storage: Storage) { }
 
-    addContact(contact: { name: string, vorname: string, firma: string, street: string, plz:string, ort: string, telefon: string, mobil: string, email: string, homepage: string }) {
+    addContact(contact: { name: string, firma: string, street: string, ort: string, telefon: string, mobil: string, email: string, homepage: string }) {
         this.contacts.push(contact);
         this.storage.set('contacts', this.contacts);
     }

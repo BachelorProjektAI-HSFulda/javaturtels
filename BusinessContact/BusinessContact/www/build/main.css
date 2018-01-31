@@ -33114,6 +33114,10 @@ page-contact-details .ion-avatar img {
   max-height: 80px !important;
 }
 
+page-contactInformation .titre-info-block {
+  text-align: center;
+}
+
 page-contactsOfKampagne .btn {
   font-size: 20px;
 }
@@ -33154,6 +33158,27 @@ page-kampagne .btn {
 
 page-kampagne .item[no-lines].bottom-border {
   border-bottom: 1px solid grey;
+}
+
+page-newContact .btn {
+  font-size: 25px;
+}
+
+page-newContact .icon {
+  font-size: 25px;
+}
+
+page-newContact .custom-width {
+  width: 20%;
+  height: auto;
+  margin: auto;
+}
+
+page-newContact .img-circle {
+  border-radius: 60%;
+  overflow: hidden;
+  -webkit-perspective: 1px;
+  perspective: 1px;
 }
 
 page-reader-page .titel {
