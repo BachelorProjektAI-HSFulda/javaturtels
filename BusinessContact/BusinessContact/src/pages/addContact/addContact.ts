@@ -2,6 +2,7 @@
 import { NavController, NavParams } from 'ionic-angular';
 import { contactData } from '../provider/contactData'; 
 import { ContactPage } from '../contact/contact'; 
+
 /*
   Generated class for the addContact page.
 
@@ -23,9 +24,9 @@ private cntData : contactData) { }
     }
 
 
-    addcontact(name, number, email, address, postalCode, ville, url, organisation, role)
+    addcontact(name, number, email, address, postalCode, ville, url, organisation, role, tel, note)
     {
-        this.cntData.addContact(name, number, email, address, postalCode, ville, url, organisation, role); 
+        this.cntData.addContact(name, number, email, address, postalCode, ville, url, organisation, role, tel, note); 
         this.navCtrl.setRoot(ContactPage); 
     }
     

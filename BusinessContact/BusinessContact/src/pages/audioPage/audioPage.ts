@@ -3,6 +3,7 @@ import { Media, MediaObject } from '@ionic-native/media';
 import { File } from '@ionic-native/file';
 import { Component, NgModule, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MediaPlugin } from 'ionic-native';
 
 
 
@@ -81,7 +82,7 @@ export class audioPage {
     deleteRecord() {
         if (confirm("Are you sure, this Audiorecord will be deleted?") == true) {
 
-            this.file.removeFile(this.filePath, this.fileName);
+            //this.file.removeFile(this.filePath, this.fileName);
         }
 
     }
